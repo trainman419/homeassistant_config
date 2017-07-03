@@ -1,0 +1,88 @@
+
+android811da8b57630944b:
+  hide_if_away: false
+  mac: 64:BC:0C:48:3B:D9
+  name: android-811da8b57630944b
+  picture:
+  track: true
+  vendor: LG Electronics (Mobile Communications)
+
+hs105:
+  hide_if_away: false
+  mac: 50:C7:BF:11:24:A8
+  name: HS105
+  picture:
+  track: true
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+
+446132da2483:
+  hide_if_away: false
+  mac: 44:61:32:DA:24:83
+  name: 446132da2483
+  picture:
+  track: true
+  vendor: ecobee inc
+
+austinsiphone:
+  hide_if_away: false
+  mac: 4C:57:CA:57:5C:06
+  name: Austins-iPhone
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+greg:
+  hide_if_away: false
+  mac: 6C:19:C0:5D:06:D6
+  name: Greg
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+elwood:
+  hide_if_away: false
+  mac: 14:10:9F:D0:4A:4F
+  name: elwood
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+katiesmbp2:
+  hide_if_away: false
+  mac: 78:31:C1:B9:79:90
+  name: Katies-MBP-2
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+bowbell:
+  hide_if_away: false
+  mac: 10:08:B1:A9:41:77
+  name: bowbell
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
+
+cuddlepuddle:
+  hide_if_away: false
+  mac: 24:77:03:64:B4:D4
+  name: cuddlepuddle
+  picture:
+  track: true
+  vendor: Intel Corporate
+
+dunseith:
+  hide_if_away: false
+  mac: E4:A4:71:F2:0B:DE
+  name: dunseith
+  picture:
+  track: true
+  vendor: Intel Corporate
+
+padillo:
+  hide_if_away: false
+  mac: 84:29:99:DA:62:27
+  name: Padillo
+  picture:
+  track: true
+  vendor: Apple, Inc.

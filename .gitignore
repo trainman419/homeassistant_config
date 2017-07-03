@@ -1,0 +1,9 @@
+
+deps
+ecobee.conf
+ecobee.yaml
+home-assistant.log
+home-assistant_v2.db
+phue.conf
+unifi_password.yaml
+.uuid
