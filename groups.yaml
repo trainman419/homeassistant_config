@@ -1,0 +1,91 @@
+default_view:
+  view: true
+  icon: mdi:home-assistant
+  entities:
+    - binary_sensor.downstairs_occupancy
+    - binary_sensor.upstairs_occupancy
+    - device_tracker.austinsiphone
+    - device_tracker.austinsplewatch
+    - device_tracker.donnie
+    - sun.sun
+    - group.porch_lights
+    - group.hallway
+    - group.bedroom
+    - group.robot_lab
+    - group.weather
+    - light.driveway
+    - switch.fan
+    - media_player.yamaha_receiver
+    - media_player.yamaha_receiver_zone_2
+
+weather:
+  view: false
+  name: Weather
+  entities:
+    - sensor.yweather_current
+    - sensor.yweather_temperature
+    - sensor.yweather_humidity
+    - climate.upstairs
+    - sensor.downstairs_temperature
+    - sensor.upstairs_humidity
+    - sensor.upstairs_temperature
+    #- sensor.yweather_condition
+    #- sensor.yweather_temperature_max
+    #- sensor.yweather_temperature_min
+    #- weather.upstairs
+
+#all_lights:
+#  view: false
+#  name: All Lights
+#  entities:
+#    - light.bed
+#    - light.bed_left
+#    - light.bed_right
+#
+#    - light.carport
+#    - light.patio_light_1
+#    - light.patio_light_2
+#
+#    - light.driveway
+#
+#    - light.robot_lab
+#    - light.robot_lair_bed
+#
+#    - light.entry_light
+#    - light.living_room
+#    - light.stairwell_1
+#    - light.stairwell_2
+#    - light.stairwell_3
+
+porch_lights:
+  view: false
+  name: Front Porch
+  entities:
+    - light.carport
+    - light.patio_light_1
+    - light.patio_light_2
+
+hallway:
+  view: false
+  name: Hallway
+  entities:
+    - light.entry_light
+    - light.living_room
+    - light.stairwell_1
+    - light.stairwell_2
+    - light.stairwell_3
+
+bedroom:
+  view: false
+  name: Bedroom
+  entities:
+    - light.bed
+    - light.bed_left
+    - light.bed_right
+
+robot_lab:
+  view: false
+  name: Robot Lab
+  entities:
+    - light.robot_lab
+    - light.robot_lair_bed

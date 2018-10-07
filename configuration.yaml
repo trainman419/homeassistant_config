@@ -136,3 +136,5 @@ automation:
 media_player:
   - platform: yamaha
     host: 192.168.1.63
+
+group: !include groups.yaml
