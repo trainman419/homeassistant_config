@@ -89,6 +89,7 @@ device_tracker:
 #influxdb:
 
 automation: !include automations.yaml
+automation old: !include_dir_merge_list automations
 
 media_player:
   - platform: yamaha
