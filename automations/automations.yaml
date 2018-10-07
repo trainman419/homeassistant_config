@@ -1,4 +1,5 @@
-- alias: Lights on at Sunset
+- id: sunset_lights
+  alias: Lights on at Sunset
   trigger:
     platform: sun
     event: sunset
@@ -14,7 +15,8 @@
       - group.porch_lights
       - group.robot_lab
 
-- alias: Lights on when we get home
+- id: arrive_lights
+  alias: Lights on when we get home
   trigger:
     platform: state
     entity_id: group.all_devices
