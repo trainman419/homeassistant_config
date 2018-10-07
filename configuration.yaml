@@ -63,7 +63,10 @@ sensor:
 
 light:
   - platform: hue
-    host: 192.168.1.83
+    host: 192.168.1.42
+  - platform: decora_wifi
+    username: "namniart@gmail.com"
+    password: !include leviton_password.yaml
 
 switch:
   - platform: tplink

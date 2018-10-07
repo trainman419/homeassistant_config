@@ -1,9 +1,9 @@
-
+.uuid
 deps
 ecobee.conf
 ecobee.yaml
 home-assistant.log
 home-assistant_v2.db
+leviton_password.yaml
 phue.conf
 unifi_password.yaml
-.uuid
