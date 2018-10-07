@@ -1,0 +1,28 @@
+- alias: Lights on at Sunset
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:45:00"
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: home
+  action:
+    service: homeassistant.turn_on
+    entity_id:
+      - group.hallway
+      - group.porch_lights
+      - group.robot_lab
+
+- alias: Lights on when we get home
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    from: not_home
+    to: home
+  action:
+    service: homeassistant.turn_on
+    entity_id:
+      - group.porch_lights
+      - group.hallway
+

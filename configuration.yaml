@@ -88,50 +88,7 @@ device_tracker:
 
 #influxdb:
 
-automation:
-#  - alias: Turn Fan on when Heater is On
-#    trigger:
-#      platform: state
-#      entity_id: climate.downstairs
-#    condition:
-#      condition: template
-#      value_template: '{{ states.climate.downstairs.attributes.operation == "heat" }}'
-#    action:
-#      service: switch.turn_on
-#      entity_id: switch.fan
-#
-#  - alias: Turn Fan off when Heater is Off
-#    trigger:
-#      platform: state
-#      entity_id: climate.downstairs
-#    condition:
-#      condition: template
-#      value_template: '{{ states.climate.downstairs.attributes.operation == "idle" }}'
-#    action:
-#      service: switch.turn_off
-#      entity_id: switch.fan
-#
-#  - alias: Turn Fan on
-#    trigger:
-#      platform: state
-#      entity_id: climate.downstairs
-#    condition:
-#      condition: template
-#      value_template: '{{ states.sensor.temperatuer.difference.state|float > 5 }}'
-#    action:
-#      service: switch.turn_on
-#      entity_id: switch.fan
-#
-#  - alias: Turn Fan off
-#    trigger:
-#      platform: state
-#      entity_id: climate.downstairs
-#    condition:
-#      condition: template
-#      value_template: '{{ states.sensor.temperatuer.difference.state|float < 3 }}'
-#    action:
-#      service: switch.turn_off
-#      entity_id: switch.fan
+automation: !include automations.yaml
 
 media_player:
   - platform: yamaha
