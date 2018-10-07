@@ -86,3 +86,27 @@ padillo:
   picture:
   track: false
   vendor: Apple, Inc.
+
+samsungsmg935v:
+  hide_if_away: false
+  mac: 60:F1:89:81:FE:35
+  name: SAMSUNG-SM-G935V
+  picture:
+  track: true
+  vendor: Murata Manufacturing Co., Ltd.
+
+chrissipad:
+  hide_if_away: false
+  mac: 60:D9:C7:AF:B6:96
+  name: Chriss-iPad
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+donnie:
+  hide_if_away: false
+  mac: A4:E9:75:4B:E2:76
+  name: Donnie
+  picture:
+  track: true
+  vendor: Apple, Inc.
