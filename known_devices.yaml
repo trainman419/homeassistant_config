@@ -1,12 +1,4 @@
 
-android811da8b57630944b:
-  hide_if_away: false
-  mac: 64:BC:0C:48:3B:D9
-  name: Katrina's Phone
-  picture:
-  track: true
-  vendor: LG Electronics (Mobile Communications)
-
 hs105:
   hide_if_away: false
   mac: 50:C7:BF:11:24:A8
@@ -26,7 +18,7 @@ hs105:
 austinsiphone:
   hide_if_away: false
   mac: 4C:57:CA:57:5C:06
-  name: Austin's Phone
+  name: Austin
   picture:
   track: true
   vendor: Apple, Inc.
@@ -92,7 +84,7 @@ samsungsmg935v:
   mac: 60:F1:89:81:FE:35
   name: SAMSUNG-SM-G935V
   picture:
-  track: true
+  track: false
   vendor: Murata Manufacturing Co., Ltd.
 
 chrissipad:
@@ -100,13 +92,53 @@ chrissipad:
   mac: 60:D9:C7:AF:B6:96
   name: Chriss-iPad
   picture:
-  track: true
+  track: false
   vendor: Apple, Inc.
 
 donnie:
   hide_if_away: false
-  mac: A4:E9:75:4B:E2:76
+  icon:
+  mac: 08:E6:89:2D:61:9F
   name: Donnie
   picture:
   track: true
-  vendor: Apple, Inc.
+
+receiver:
+  hide_if_away: false
+  icon:
+  mac: 00:A0:DE:B4:A7:A3
+  name: Receiver
+  picture:
+  track: false
+
+leviton_device_c824:
+  hide_if_away: false
+  icon:
+  mac: 00:07:A6:07:D5:78
+  name: Leviton Device C824
+  picture:
+  track: false
+
+leviton_device_e665:
+  hide_if_away: false
+  icon:
+  mac: 00:07:A6:06:ED:CF
+  name: Leviton Device E665
+  picture:
+  track: false
+
+leviton_device_6100:
+  hide_if_away: false
+  icon:
+  mac: 00:07:A6:09:73:0C
+  name: Leviton Device 6100
+  picture:
+  track: false
+
+austinsplewatch:
+  hide_if_away: true
+  icon:
+  mac: 1C:36:BB:56:B1:87
+  name: Austin Watch
+  picture:
+  track: true

@@ -24,6 +24,9 @@ http:
   # Uncomment this to add a password (recommended!)
   # api_password: PASSWORD
 
+# Enable config UI
+config:
+
 # Checks for available updates
 updater:
 
@@ -31,7 +34,7 @@ updater:
 discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+#conversation:
 
 # Enables support for tracking state changes over time.
 history:
@@ -60,17 +63,19 @@ sensor:
         friendly_name: 'Temperature Difference'
         unit_of_measurement: '°F'
 
+hue:
+  bridges:
+    - host: 192.168.1.42
+      allow_hue_groups: False
 
 light:
-  - platform: hue
-    host: 192.168.1.42
   - platform: decora_wifi
-    username: "namniart@gmail.com"
+    username: namniart@gmail.com
     password: !include leviton_password.yaml
 
 switch:
   - platform: tplink
-    host: 192.168.1.105
+    host: 192.168.1.183
 
 ecobee: !include ecobee.yaml
 
@@ -78,52 +83,56 @@ device_tracker:
   - platform: unifi
     host: 192.168.1.1
     username: hendrix
+    verify_ssl: False
     password: !include unifi_password.yaml
 
 #influxdb:
 
 automation:
-  - alias: Turn Fan on when Heater is On
-    trigger:
-      platform: state
-      entity_id: climate.downstairs
-    condition:
-      condition: template
-      value_template: '{{ states.climate.downstairs.attributes.operation == "heat" }}'
-    action:
-      service: switch.turn_on
-      entity_id: switch.fan
+#  - alias: Turn Fan on when Heater is On
+#    trigger:
+#      platform: state
+#      entity_id: climate.downstairs
+#    condition:
+#      condition: template
+#      value_template: '{{ states.climate.downstairs.attributes.operation == "heat" }}'
+#    action:
+#      service: switch.turn_on
+#      entity_id: switch.fan
+#
+#  - alias: Turn Fan off when Heater is Off
+#    trigger:
+#      platform: state
+#      entity_id: climate.downstairs
+#    condition:
+#      condition: template
+#      value_template: '{{ states.climate.downstairs.attributes.operation == "idle" }}'
+#    action:
+#      service: switch.turn_off
+#      entity_id: switch.fan
+#
+#  - alias: Turn Fan on
+#    trigger:
+#      platform: state
+#      entity_id: climate.downstairs
+#    condition:
+#      condition: template
+#      value_template: '{{ states.sensor.temperatuer.difference.state|float > 5 }}'
+#    action:
+#      service: switch.turn_on
+#      entity_id: switch.fan
+#
+#  - alias: Turn Fan off
+#    trigger:
+#      platform: state
+#      entity_id: climate.downstairs
+#    condition:
+#      condition: template
+#      value_template: '{{ states.sensor.temperatuer.difference.state|float < 3 }}'
+#    action:
+#      service: switch.turn_off
+#      entity_id: switch.fan
 
-  - alias: Turn Fan off when Heater is Off
-    trigger:
-      platform: state
-      entity_id: climate.downstairs
-    condition:
-      condition: template
-      value_template: '{{ states.climate.downstairs.attributes.operation == "idle" }}'
-    action:
-      service: switch.turn_off
-      entity_id: switch.fan
-
-  - alias: Turn Fan on
-    trigger:
-      platform: state
-      entity_id: climate.downstairs
-    condition:
-      condition: template
-      value_template: '{{ states.sensor.temperatuer.difference.state|float > 5 }}'
-    action:
-      service: switch.turn_on
-      entity_id: switch.fan
-
-  - alias: Turn Fan off
-    trigger:
-      platform: state
-      entity_id: climate.downstairs
-    condition:
-      condition: template
-      value_template: '{{ states.sensor.temperatuer.difference.state|float < 3 }}'
-    action:
-      service: switch.turn_off
-      entity_id: switch.fan
-
+media_player:
+  - platform: yamaha
+    host: 192.168.1.63
