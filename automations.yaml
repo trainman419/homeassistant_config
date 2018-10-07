@@ -10,10 +10,12 @@
     state: home
   action:
     service: homeassistant.turn_on
-    entity_id:
-      - group.hallway
-      - group.porch_lights
-      - group.robot_lab
+    data:
+      entity_id:
+        - group.hallway
+        - group.porch_lights
+        - group.robot_lab
+        - group.bedroom
 
 - id: arrive_lights
   alias: Lights on when we get home
@@ -28,7 +30,36 @@
     state: below_horizon
   action:
     service: homeassistant.turn_on
-    entity_id:
-      - group.porch_lights
-      - group.hallway
+    data:
+      entity_id:
+        - group.porch_lights
+        - group.hallway
 
+
+- id: bedtime
+  alias: Lights down for bedtime
+  trigger:
+    platform: time
+    hours: 20
+    minutes: 0
+    seconds: 0
+  action:
+    service: homeassistant.turn_on
+    data:
+      brightness_pct: 10
+      entity_id:
+        - group.hallway
+
+- id: nighttime
+  alias: Lights off at 11pm
+  trigger:
+    platform: time
+    hours: 23
+    minutes: 0
+    seconds: 0
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id:
+        - group.porch_lights
+        - light.living_room

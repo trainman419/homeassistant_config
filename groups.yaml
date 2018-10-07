@@ -21,6 +21,7 @@ default_view:
 weather:
   view: false
   name: Weather
+  icon: mdi:cloud
   entities:
     - sensor.yweather_current
     - sensor.yweather_temperature
@@ -86,6 +87,7 @@ bedroom:
 robot_lab:
   view: false
   name: Robot Lab
+  icon: mdi:robot
   entities:
     - light.robot_lab
     - light.robot_lair_bed
@@ -93,6 +95,7 @@ robot_lab:
 automations:
   view: true
   name: Automation
+  icon: mdi:robot
   entities:
     - automation.lights_on_at_sunset
     - automation.lights_on_when_we_get_home
