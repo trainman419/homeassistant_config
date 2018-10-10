@@ -11,6 +11,7 @@
   action:
     service: homeassistant.turn_on
     data:
+      brightness_pct: 100
       entity_id:
         - group.hallway
         - group.porch_lights
@@ -22,7 +23,6 @@
   trigger:
     platform: state
     entity_id: group.all_devices
-    from: not_home
     to: home
   condition:
     condition: state
@@ -31,16 +31,16 @@
   action:
     service: homeassistant.turn_on
     data:
+      brightness_pct: 100
       entity_id:
         - group.porch_lights
         - group.hallway
-
 
 - id: bedtime
   alias: Lights down for bedtime
   trigger:
     platform: time
-    hours: 20
+    hours: 22
     minutes: 0
     seconds: 0
   action:

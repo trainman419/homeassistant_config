@@ -92,10 +92,7 @@ robot_lab:
     - light.robot_lab
     - light.robot_lair_bed
 
-automations:
+all_automations:
   view: true
   name: Automation
   icon: mdi:robot
-  entities:
-    - automation.lights_on_at_sunset
-    - automation.lights_on_when_we_get_home
