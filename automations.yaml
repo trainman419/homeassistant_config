@@ -132,3 +132,15 @@
       effect: colorloop
       entity_id:
         - light.bed
+
+- id: driveway_timer
+  alias: Turn off driveway after 10 minutes
+  trigger:
+    - platform: state
+      entity_id: light.driveway
+      to: 'on'
+      for:
+        minutes: 10
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.driveway
