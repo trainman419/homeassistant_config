@@ -152,3 +152,24 @@
   action:
     service: homeassistant.turn_off
     entity_id: light.driveway
+
+- id: robot_lab_light
+  alias: Robot lab mimic
+  trigger:
+    platform: state
+    entity_id: light.robot_lair_bed
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.robot_lab
+    data_template:
+      brightness: '{{ states.light.robot_lair_bed.attributes.brightness }}'
+
+- id: robot_lab_light_off
+  alias: Robot lab mimic off
+  trigger:
+    platform: state
+    entity_id: light.robot_lair_bed
+    to: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.robot_lab
