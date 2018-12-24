@@ -8,12 +8,11 @@ default_view:
     - device_tracker.austinsplewatch
     - device_tracker.donnie
     - sun.sun
-    - group.porch_lights
+    - group.outside_lights
     - group.hallway
     - group.bedroom
     - group.robot_lab
     - group.weather
-    - light.driveway
     - switch.fan
     - media_player.yamaha_receiver
     - media_player.yamaha_receiver_zone_2
@@ -62,9 +61,17 @@ porch_lights:
   view: false
   name: Front Porch
   entities:
-    - light.carport
     - light.patio_light_1
     - light.patio_light_2
+
+outside_lights:
+  view: false
+  name: Outside Lights
+  entities:
+    - light.patio_light_1
+    - light.patio_light_2
+    - light.carport
+    - light.driveway
 
 hallway:
   view: false

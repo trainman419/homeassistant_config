@@ -9,6 +9,12 @@
       brightness_pct: 100
       entity_id:
         - group.porch_lights
+        - light.entry_light
+    service: homeassistant.turn_on
+    data:
+      brightness_pct: 60
+      entity_id:
+        - light.carport
 
 - id: sunset_lights
   alias: Lights on at Sunset
@@ -46,6 +52,7 @@
       entity_id:
         - group.porch_lights
         - group.hallway
+        - light.carport
 
 - id: bedtime
   alias: Lights down for bedtime
@@ -74,6 +81,7 @@
       entity_id:
         - group.porch_lights
         - light.living_room
+        - light.carport
 
 - id: weather
   alias: Color loop bed if rain
