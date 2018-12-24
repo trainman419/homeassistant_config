@@ -56,6 +56,7 @@ sensor:
       - temp_max
       - temperature
       - humidity
+    forecast: 0
   - platform: template
     sensors:
       temperature_difference:

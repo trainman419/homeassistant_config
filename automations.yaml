@@ -74,3 +74,61 @@
       entity_id:
         - group.porch_lights
         - light.living_room
+
+- id: weather
+  alias: Color loop bed if rain
+  trigger:
+    platform: time
+    hours: [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: yweather.weather_condition
+        state: 'rainy'
+      - condition: state
+        entity_id: yweather.weather_condition
+        state: 'pouring'
+  action:
+    service: homeassistant.turn_on
+    data:
+      effect: colorloop
+      entity_id:
+        - light.bed
+
+- id: weather_unusual
+  alias: Set bed to red if unusual weather
+  trigger:
+    platform: time
+    hours: [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: yweather.weather_condition
+        state: 'hail'
+      - condition: state
+        entity_id: yweather.weather_condition
+        state: 'lightning'
+      - condition: state
+        entity_id: yweather.weather_condition
+        state: 'lightning-rainy'
+      - condition: state
+        entity_id: yweather.weather_condition
+        state: 'snowy'
+      - condition: state
+        entity_id: yweather.weather_condition
+        state: 'snowy-rainy'
+      - condition: state
+        entity_id: yweather.weather_condition
+        state: 'exceptional'
+  action:
+    service: homeassistant.turn_on
+    data:
+      effect: colorloop
+      entity_id:
+        - light.bed
