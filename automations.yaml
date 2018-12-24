@@ -1,3 +1,15 @@
+- id: porch_sunset_lights
+  alias: Porch lights on at Sunset
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: homeassistant.turn_on
+    data:
+      brightness_pct: 100
+      entity_id:
+        - group.porch_lights
+
 - id: sunset_lights
   alias: Lights on at Sunset
   trigger:
@@ -14,7 +26,6 @@
       brightness_pct: 100
       entity_id:
         - group.hallway
-        - group.porch_lights
         - group.robot_lab
         - group.bedroom
 
