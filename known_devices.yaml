@@ -142,3 +142,11 @@ austinsplewatch:
   name: Austin Watch
   picture:
   track: true
+
+gainspand5c17a:
+  hide_if_away: false
+  icon:
+  mac: 00:1D:C9:D5:C1:7A
+  name: GainSpand5c17a
+  picture:
+  track: false
