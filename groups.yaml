@@ -54,7 +54,7 @@ weather:
 #    - light.entry_light
 #    - light.living_room
 #    - light.stairwell_1
-#    - light.stairwell_2
+#    - light.hue_color_light_1
 #    - light.stairwell_3
 
 porch_lights:
@@ -80,7 +80,7 @@ hallway:
     - light.entry_light
     - light.living_room
     - light.stairwell_1
-    - light.stairwell_2
+    - light.hue_color_light_1
     - light.stairwell_3
 
 bedroom:
