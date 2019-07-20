@@ -9,6 +9,7 @@ default_view:
     - device_tracker.donnie
     - sun.sun
     - group.outside_lights
+    - group.living_room
     - group.hallway
     - group.bedroom
     - group.robot_lab
@@ -73,12 +74,19 @@ outside_lights:
     - light.carport
     - light.driveway
 
+
+living_room:
+  view: false
+  name: Living Room
+  entities:
+    - light.living_room_oros
+    - light.living_room
+
 hallway:
   view: false
   name: Hallway
   entities:
     - light.entry_light
-    - light.living_room
     - light.stairwell_1
     - light.hue_color_light_1
     - light.stairwell_3

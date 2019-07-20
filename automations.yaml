@@ -7,6 +7,7 @@
     service: homeassistant.turn_on
     data:
       brightness_pct: 100
+      color_temp: 270
       entity_id:
         - group.porch_lights
         - light.entry_light
@@ -30,10 +31,11 @@
     service: homeassistant.turn_on
     data:
       brightness_pct: 100
+      color_temp: 270
       entity_id:
         - group.hallway
-        - group.robot_lab
         - group.bedroom
+        - group.living_room
 
 - id: arrive_lights
   alias: Lights on when we get home
@@ -49,6 +51,7 @@
     service: homeassistant.turn_on
     data:
       brightness_pct: 100
+      color_temp: 270
       entity_id:
         - group.porch_lights
         - group.hallway
@@ -58,13 +61,12 @@
   alias: Lights down for bedtime
   trigger:
     platform: time
-    hours: 22
-    minutes: 0
-    seconds: 0
+    at: "22:00:00"
   action:
     service: homeassistant.turn_on
     data:
       brightness_pct: 10
+      color_temp: 270
       entity_id:
         - group.hallway
 
@@ -72,22 +74,20 @@
   alias: Lights off at 11pm
   trigger:
     platform: time
-    hours: 23
-    minutes: 0
-    seconds: 0
+    at: "23:00:00"
   action:
     service: homeassistant.turn_off
     data:
       entity_id:
         - group.porch_lights
-        - light.living_room
+        - group.living_room
         - light.carport
 
 - id: weather
   alias: Color loop bed if rain
   trigger:
-    platform: time
-    hours: [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    platform: time_pattern
+    hours: [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
     minutes: 0
     seconds: 0
   condition:
@@ -109,7 +109,7 @@
 - id: weather_unusual
   alias: Set bed to red if unusual weather
   trigger:
-    platform: time
+    platform: time_pattern
     hours: [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     minutes: 0
     seconds: 0
@@ -167,9 +167,12 @@
 - id: robot_lab_light_off
   alias: Robot lab mimic off
   trigger:
-    platform: state
-    entity_id: light.robot_lair_bed
-    to: 'off'
+    - platform: state
+      entity_id: light.robot_lair_bed
+      to: 'off'
+    - platform: state
+      entity_id: light.robot_lair_bed
+      to: 'off'
   action:
     service: homeassistant.turn_off
     entity_id: light.robot_lab
