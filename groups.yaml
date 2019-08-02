@@ -13,6 +13,7 @@ default_view:
     - group.hallway
     - group.bedroom
     - group.robot_lab
+    - light.dining_room
     - group.weather
     - switch.fan
     - media_player.yamaha_receiver
@@ -90,6 +91,7 @@ hallway:
     - light.stairwell_1
     - light.hue_color_light_1
     - light.stairwell_3
+    - light.hallway
 
 bedroom:
   view: false
