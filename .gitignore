@@ -7,3 +7,4 @@ home-assistant_v2.db
 leviton_password.yaml
 phue.conf
 unifi_password.yaml
+known_devices.yaml
