@@ -15,7 +15,10 @@ homeassistant:
 logger:
   default: info
   logs:
-    homeassistant.components.automation: debug
+    #homeassistant.components.automation: debug
+    homeassistant.components.unifi: debug
+    homeassistant.components.unifi.device_tracker: debug
+    homeassistant.components.switch.unifi: debug
 
 # Enables the frontend
 frontend:
@@ -46,23 +49,23 @@ logbook:
 sun:
 
 # Weather Prediction
-sensor:
+#sensor:
 #  - platform: yr
-  - platform: yweather
-    monitored_conditions:
-      - weather
-      - weather_current
-      - temp_min
-      - temp_max
-      - temperature
-      - humidity
-    forecast: 0
-  - platform: template
-    sensors:
-      temperature_difference:
-        value_template: '{{ (states.sensor.downstairs_temperature.state|float - states.sensor.upstairs_temperature.state|float)|abs|round(2) }}'
-        friendly_name: 'Temperature Difference'
-        unit_of_measurement: '°F'
+#  - platform: yweather
+#    monitored_conditions:
+#      - weather
+#      - weather_current
+#      - temp_min
+#      - temp_max
+#      - temperature
+#      - humidity
+#    forecast: 0
+#  - platform: template
+#    sensors:
+#      temperature_difference:
+#        value_template: '{{ (states.sensor.downstairs_temperature.state|float - states.sensor.upstairs_temperature.state|float)|abs|round(2) }}'
+#        friendly_name: 'Temperature Difference'
+#        unit_of_measurement: '°F'
 
 hue:
   bridges:
@@ -82,9 +85,12 @@ ecobee: !include ecobee.yaml
 device_tracker:
   - platform: unifi
     host: 192.168.1.1
-    username: hendrix
+    username: homeassistant
     verify_ssl: False
+    site_id: default
     password: !include unifi_password.yaml
+    new_device_defaults:
+      track_new_devices: false
 
 #influxdb:
 
