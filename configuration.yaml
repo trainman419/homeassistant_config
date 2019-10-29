@@ -48,8 +48,28 @@ logbook:
 # Track the sun
 sun:
 
+apcupsd:
+  host: 192.168.1.1
+
+sensor:
+  - platform: apcupsd
+    resources:
+      - apc
+      - date
+      - hostname
+      - upsname
+      - upsmode
+      - starttime
+      - model
+      - status
+      - linev
+      - loadpct
+      - bcharge
+      - timeleft
+      - mbattchg
+      - mintimel
+      - maxtime
 # Weather Prediction
-#sensor:
 #  - platform: yr
 #  - platform: yweather
 #    monitored_conditions:
@@ -100,5 +120,7 @@ automation old: !include_dir_merge_list automations
 media_player:
   - platform: yamaha
     host: 192.168.1.63
+
+
 
 group: !include groups.yaml

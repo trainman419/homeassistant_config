@@ -5,28 +5,28 @@ default_view:
     - binary_sensor.downstairs_occupancy
     - binary_sensor.upstairs_occupancy
     - device_tracker.austinsiphone
-    - device_tracker.austinsplewatch
     - device_tracker.donnie
     - sun.sun
     - group.outside_lights
     - group.living_room
+    - light.dining_room
     - group.hallway
     - group.bedroom
     - group.robot_lab
-    - light.dining_room
-    - group.weather
     - switch.fan
+    - group.weather
     - media_player.yamaha_receiver
     - media_player.yamaha_receiver_zone_2
+    - group.ups
 
 weather:
   view: false
   name: Weather
   icon: mdi:cloud
   entities:
-    - sensor.yweather_current
-    - sensor.yweather_temperature
-    - sensor.yweather_humidity
+    #- sensor.yweather_current
+    #- sensor.yweather_temperature
+    #- sensor.yweather_humidity
     - climate.upstairs
     - sensor.downstairs_temperature
     - sensor.upstairs_humidity
@@ -108,6 +108,16 @@ robot_lab:
   entities:
     - light.robot_lab
     - light.robot_lair_bed
+
+ups:
+  view: false
+  name: UPS
+  entities:
+    - sensor.ups_name
+    - sensor.ups_status
+    - sensor.ups_battery
+    - sensor.ups_load
+    - sensor.ups_time_left
 
 all_automations:
   view: true
