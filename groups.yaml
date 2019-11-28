@@ -1,6 +1,7 @@
 default_view:
+  name: Lights
   view: true
-  icon: mdi:home-assistant
+  icon: mdi:lightbulb
   entities:
     - binary_sensor.downstairs_occupancy
     - binary_sensor.upstairs_occupancy
@@ -14,6 +15,12 @@ default_view:
     - group.bedroom
     - group.robot_lab
     - switch.fan
+
+house:
+  name: House
+  view: true
+  icon: mdi:home-assistant
+  entities:
     - group.weather
     - media_player.yamaha_receiver
     - media_player.yamaha_receiver_zone_2
