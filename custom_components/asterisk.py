@@ -1,5 +1,6 @@
 import asterisk.manager
 import logging
+import socket
 import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
 
@@ -35,7 +36,9 @@ def setup(hass, config):
 
     astmanager = asterisk.manager.Manager()
     try:
+        socket.setdefaulttimeout(3)
         astmanager.connect(host, port)
+        socket.setdefaulttimeout(None)
         astmanager.login(username, password)
         hass.data['asterisk_manager'] = astmanager # this object is used by astext. Pass it on
         return True

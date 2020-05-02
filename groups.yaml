@@ -25,6 +25,7 @@ house:
     - media_player.yamaha_receiver
     - media_player.yamaha_receiver_zone_2
     - group.ups
+    - group.rainmachine
 
 weather:
   view: false
@@ -130,3 +131,19 @@ all_automations:
   view: true
   name: Automation
   icon: mdi:robot
+
+rainmachine:
+  view: false
+  name: The Moisturizer
+  entities:
+    - binary_sensor.hourly_restrictions
+    - binary_sensor.extra_water_on_hot_days
+    - binary_sensor.weekday_restrictions
+    - binary_sensor.month_restrictions
+    - binary_sensor.rain_sensor_restrictions
+    - binary_sensor.rain_delay_restrictions
+    - switch.moisturize_it
+    - switch.front_upper_drip
+    - switch.front_lower_drip
+    - switch.backyard
+    - switch.vegetables

@@ -51,11 +51,16 @@ sun:
 apcupsd:
   host: 192.168.1.1
 
-asterisk:
-  host: localhost
-  port: 5038
-  username: admin
-  password: xxxxxxxxxxxxxxxxxxxxxxxxxx
+#asterisk:
+#  host: arg
+#  port: 5038
+#  username: admin
+#  password: !include asterisk_password.yaml
+
+rainmachine:
+  controllers:
+    - ip_address: 192.168.1.16
+      password: !include rainmachine_password.yaml
 
 sensor:
   - platform: apcupsd
@@ -76,12 +81,12 @@ sensor:
       - mintimel
       - maxtime
   # Asterisk VoIP phones
-  - platform: astext
-    extension: 10
-  - platform: astext
-    extension: 11
-  - platform: astext
-    extension: 12
+  #- platform: astext
+  #  extension: 10
+  #- platform: astext
+  #  extension: 11
+  #- platform: astext
+  #  extension: 12
 # Weather Prediction
 #  - platform: yr
 #  - platform: yweather
