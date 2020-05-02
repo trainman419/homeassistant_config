@@ -51,6 +51,12 @@ sun:
 apcupsd:
   host: 192.168.1.1
 
+asterisk:
+  host: localhost
+  port: 5038
+  username: admin
+  password: xxxxxxxxxxxxxxxxxxxxxxxxxx
+
 sensor:
   - platform: apcupsd
     resources:
@@ -69,6 +75,13 @@ sensor:
       - mbattchg
       - mintimel
       - maxtime
+  # Asterisk VoIP phones
+  - platform: astext
+    extension: 10
+  - platform: astext
+    extension: 11
+  - platform: astext
+    extension: 12
 # Weather Prediction
 #  - platform: yr
 #  - platform: yweather
