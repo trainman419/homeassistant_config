@@ -8,3 +8,6 @@ leviton_password.yaml
 phue.conf
 unifi_password.yaml
 known_devices.yaml
+asterisk_password.yaml
+rainmachine_password.yaml
+wunderground.yaml
