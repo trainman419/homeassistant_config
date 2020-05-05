@@ -22,6 +22,8 @@ house:
   icon: mdi:home-assistant
   entities:
     - group.weather
+    - group.weather_outside
+    - group.weather_forecast
     - media_player.yamaha_receiver
     - media_player.yamaha_receiver_zone_2
     - group.ups
@@ -29,20 +31,48 @@ house:
 
 weather:
   view: false
-  name: Weather
+  name: Indoor Weather
   icon: mdi:cloud
   entities:
-    #- sensor.yweather_current
-    #- sensor.yweather_temperature
-    #- sensor.yweather_humidity
     - climate.upstairs
     - sensor.downstairs_temperature
     - sensor.upstairs_humidity
     - sensor.upstairs_temperature
-    #- sensor.yweather_condition
-    #- sensor.yweather_temperature_max
-    #- sensor.yweather_temperature_min
-    #- weather.upstairs
+
+weather_outside:
+  view: false
+  name: Outdoor Weather
+  icon: mdi:cloud
+  entities:
+    - sensor.wupws_stationid
+    - sensor.wupws_temp
+    - sensor.wupws_heatindex
+    - sensor.wupws_humidity
+    - sensor.wupws_winddir
+    - sensor.wupws_windgust
+    - sensor.wupws_windspeed
+    - sensor.wupws_windchill
+    - sensor.wupws_dewpt
+    - sensor.wupws_preciprate
+    - sensor.wupws_preciptotal
+    - sensor.wupws_pressure
+    - sensor.wupws_solarradiation
+    - sensor.wupws_uv
+
+weather_forecast:
+  view: false
+  name: Weather Forecast
+  icon: mdi:cloud
+  entities:
+    - sensor.wupws_weather_1d
+    - sensor.wupws_weather_1n
+    - sensor.wupws_weather_2d
+    - sensor.wupws_weather_2n
+    - sensor.wupws_weather_3d
+    - sensor.wupws_weather_3n
+    - sensor.wupws_weather_4d
+    - sensor.wupws_weather_4n
+
 
 #all_lights:
 #  view: false

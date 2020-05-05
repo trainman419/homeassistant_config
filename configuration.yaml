@@ -87,23 +87,40 @@ sensor:
   #  extension: 11
   #- platform: astext
   #  extension: 12
-# Weather Prediction
-#  - platform: yr
-#  - platform: yweather
-#    monitored_conditions:
-#      - weather
-#      - weather_current
-#      - temp_min
-#      - temp_max
-#      - temperature
-#      - humidity
-#    forecast: 0
-#  - platform: template
-#    sensors:
-#      temperature_difference:
-#        value_template: '{{ (states.sensor.downstairs_temperature.state|float - states.sensor.upstairs_temperature.state|float)|abs|round(2) }}'
-#        friendly_name: 'Temperature Difference'
-#        unit_of_measurement: '°F'
+  # Weather conditions from personal weather station and weather forecast.
+  - platform: wundergroundpws
+    api_key: !include wunderground.yaml
+    pws_id: KCAPACIF183
+    monitored_conditions:
+     # Weather sensors
+     - stationID
+     - solarRadiation
+     - uv
+     - winddir
+     - humidity
+     - dewpt
+     - heatIndex
+     - windChill
+     - precipTotal
+     - precipRate
+     - pressure
+     - temp
+     - windGust
+     - windSpeed
+     # Weather predictions
+     - precip_1d
+     - precip_chance_1d
+     - temp_high_1d
+     - temp_low_1d
+     - wind_1d
+     - weather_1d
+     - weather_1n
+     - weather_2d
+     - weather_2n
+     - weather_3d
+     - weather_3n
+     - weather_4d
+     - weather_4n
 
 hue:
   bridges:
@@ -130,7 +147,12 @@ device_tracker:
     new_device_defaults:
       track_new_devices: false
 
-#influxdb:
+influxdb:
+  host: 127.0.0.1
+  port: 8086
+  username: home_assistant
+  password: home_assistant
+
 
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations
