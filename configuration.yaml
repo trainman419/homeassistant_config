@@ -135,7 +135,9 @@ light:
 tplink:
   discovery: True
 
-ecobee: !include ecobee.yaml
+ecobee:
+  api_key: !secret ecobee_key
+  hold_temp: false
 
 device_tracker:
   - platform: unifi

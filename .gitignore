@@ -1,5 +1,6 @@
 .uuid
 deps
+secrets.yaml
 ecobee.conf
 ecobee.yaml
 home-assistant.log
