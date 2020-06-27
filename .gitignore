@@ -2,13 +2,7 @@
 deps
 secrets.yaml
 ecobee.conf
-ecobee.yaml
 home-assistant.log
 home-assistant_v2.db
-leviton_password.yaml
 phue.conf
-unifi_password.yaml
 known_devices.yaml
-asterisk_password.yaml
-rainmachine_password.yaml
-wunderground.yaml
