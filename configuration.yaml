@@ -55,12 +55,12 @@ apcupsd:
 #  host: arg
 #  port: 5038
 #  username: admin
-#  password: !include asterisk_password.yaml
+#  password: !secret asterisk_password
 
 rainmachine:
   controllers:
     - ip_address: 192.168.1.16
-      password: !include rainmachine_password.yaml
+      password: !secret rainmachine_password
 
 sensor:
   - platform: apcupsd
@@ -89,7 +89,7 @@ sensor:
   #  extension: 12
   # Weather conditions from personal weather station and weather forecast.
   - platform: wundergroundpws
-    api_key: !include wunderground.yaml
+    api_key: !secret wunderground_key
     pws_id: KCAPACIF183
     monitored_conditions:
      # Weather sensors
@@ -130,7 +130,7 @@ hue:
 light:
   - platform: decora_wifi
     username: namniart@gmail.com
-    password: !include leviton_password.yaml
+    password: !secret leviton_password
 
 tplink:
   discovery: True
@@ -143,7 +143,7 @@ device_tracker:
     username: homeassistant
     verify_ssl: False
     site_id: default
-    password: !include unifi_password.yaml
+    password: !secret unifi_password
     new_device_defaults:
       track_new_devices: false
 
