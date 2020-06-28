@@ -1,6 +1,5 @@
 default_view:
   name: Lights
-  view: true
   icon: mdi:lightbulb
   entities:
     - binary_sensor.downstairs_occupancy
@@ -18,7 +17,6 @@ default_view:
 
 house:
   name: House
-  view: true
   icon: mdi:home-assistant
   entities:
     - group.weather
@@ -30,7 +28,6 @@ house:
     - group.rainmachine
 
 weather:
-  view: false
   name: Indoor Weather
   icon: mdi:cloud
   entities:
@@ -40,7 +37,6 @@ weather:
     - sensor.upstairs_temperature
 
 weather_outside:
-  view: false
   name: Outdoor Weather
   icon: mdi:cloud
   entities:
@@ -60,7 +56,6 @@ weather_outside:
     - sensor.wupws_uv
 
 weather_forecast:
-  view: false
   name: Weather Forecast
   icon: mdi:cloud
   entities:
@@ -75,7 +70,6 @@ weather_forecast:
 
 
 #all_lights:
-#  view: false
 #  name: All Lights
 #  entities:
 #    - light.bed
@@ -98,14 +92,12 @@ weather_forecast:
 #    - light.stairwell_3
 
 porch_lights:
-  view: false
   name: Front Porch
   entities:
     - light.patio_light_1
     - light.patio_light_2
 
 outside_lights:
-  view: false
   name: Outside Lights
   entities:
     - light.patio_light_1
@@ -115,14 +107,12 @@ outside_lights:
 
 
 living_room:
-  view: false
   name: Living Room
   entities:
     - light.living_room_oros
     - light.living_room
 
 hallway:
-  view: false
   name: Hallway
   entities:
     - light.entry_light
@@ -132,7 +122,6 @@ hallway:
     - light.hallway
 
 bedroom:
-  view: false
   name: Bedroom
   entities:
     - light.bed
@@ -140,7 +129,6 @@ bedroom:
     - light.bed_right
 
 robot_lab:
-  view: false
   name: Robot Lab
   icon: mdi:robot
   entities:
@@ -148,7 +136,6 @@ robot_lab:
     - light.robot_lair_bed
 
 ups:
-  view: false
   name: UPS
   entities:
     - sensor.ups_name
@@ -158,12 +145,10 @@ ups:
     - sensor.ups_time_left
 
 all_automations:
-  view: true
   name: Automation
   icon: mdi:robot
 
 rainmachine:
-  view: false
   name: The Moisturizer
   entities:
     - binary_sensor.hourly_restrictions

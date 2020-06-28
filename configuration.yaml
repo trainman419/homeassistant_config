@@ -135,20 +135,6 @@ light:
 tplink:
   discovery: True
 
-ecobee:
-  api_key: !secret ecobee_key
-  hold_temp: false
-
-device_tracker:
-  - platform: unifi
-    host: 192.168.1.1
-    username: homeassistant
-    verify_ssl: False
-    site_id: default
-    password: !secret unifi_password
-    new_device_defaults:
-      track_new_devices: false
-
 influxdb:
   host: 127.0.0.1
   port: 8086
