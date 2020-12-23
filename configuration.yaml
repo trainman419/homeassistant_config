@@ -16,9 +16,11 @@ logger:
   default: info
   logs:
     #homeassistant.components.automation: debug
-    homeassistant.components.unifi: debug
-    homeassistant.components.unifi.device_tracker: debug
-    homeassistant.components.switch.unifi: debug
+    #homeassistant.components.unifi: debug
+    homeassistant.components.google: debug
+    homeassistant.components.calendar.google: debug
+    #homeassistant.components.unifi.device_tracker: debug
+    #homeassistant.components.switch.unifi: debug
 
 # Enables the frontend
 frontend:
@@ -141,6 +143,13 @@ influxdb:
   username: home_assistant
   password: home_assistant
 
+google:
+  client_id: !secret google_cal_client_id
+  client_secret: !secret google_cal_client_secret
+
+calendar:
+  - platform: todoist
+    token: !secret todoist_api_token
 
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations

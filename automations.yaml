@@ -1,33 +1,39 @@
 - id: porch_sunset_lights
   alias: Porch lights on at Sunset
   trigger:
-    platform: sun
+  - platform: sun
     event: sunset
   action:
-    service: homeassistant.turn_on
+  - service: homeassistant.turn_on
     data:
       brightness_pct: 100
       color_temp: 270
       entity_id:
-        - group.porch_lights
-        - light.entry_light
-    service: homeassistant.turn_on
+      - group.porch_lights
+      - light.entry_light
+  - service: homeassistant.turn_on
     data:
       brightness_pct: 60
       entity_id:
       - light.carport
+  mode: single
 - id: sunset_lights
   alias: Lights on at Sunset
   trigger:
-    platform: sun
+  - platform: sun
     event: sunset
     offset: -00:45:00
   condition:
-    condition: state
-    entity_id: group.all_devices
-    state: home
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: person.austin
+      state: home
+    - condition: state
+      entity_id: person.katrina
+      state: home
   action:
-    service: homeassistant.turn_on
+  - service: homeassistant.turn_on
     data:
       brightness_pct: 100
       color_temp: 270
@@ -35,18 +41,20 @@
       - group.hallway
       - group.bedroom
       - group.living_room
+      - light.dining_room
+  mode: single
 - id: arrive_lights
   alias: Lights on when we get home
   trigger:
-    platform: state
-    entity_id: group.all_devices
+  - platform: state
+    entity_id: person.austin, person.katrina
     to: home
   condition:
-    condition: state
+  - condition: state
     entity_id: sun.sun
     state: below_horizon
   action:
-    service: homeassistant.turn_on
+  - service: homeassistant.turn_on
     data:
       brightness_pct: 100
       color_temp: 270
@@ -54,149 +62,45 @@
       - group.porch_lights
       - group.hallway
       - light.carport
+      - light.dining_room
+  mode: single
 - id: bedtime
   alias: Lights down for bedtime
   trigger:
-    platform: time
-    at: '22:00:00'
+  - platform: time
+    at: '21:30:00'
   action:
-    service: homeassistant.turn_on
+  - service: homeassistant.turn_on
     data:
       brightness_pct: 10
       color_temp: 270
       entity_id:
       - group.hallway
+      - group.living_room
+      - light.dining_room
+  mode: single
 - id: nighttime
   alias: Lights off at 11pm
   trigger:
-    platform: time
+  - platform: time
     at: '23:00:00'
   action:
-    service: homeassistant.turn_off
+  - service: homeassistant.turn_off
     data:
       entity_id:
       - group.porch_lights
       - group.living_room
       - light.carport
-# - id: weather
-#   alias: Color loop bed if rain
-#   trigger:
-#     platform: time_pattern
-#     hours:
-#     - 6
-#     - 7
-#     - 8
-#     - 9
-#     - 10
-#     - 11
-#     - 12
-#     - 13
-#     - 14
-#     - 15
-#     - 16
-#     - 17
-#     - 18
-#     - 19
-#     - 20
-#     minutes: 0
-#     seconds: 0
-#   condition:
-#     condition: or
-#     conditions:
-#     - condition: state
-#       entity_id: yweather.weather_condition
-#       state: rainy
-#     - condition: state
-#       entity_id: yweather.weather_condition
-#       state: pouring
-#   action:
-#     service: homeassistant.turn_on
-#     data:
-#       effect: colorloop
-#       entity_id:
-#       - light.bed
-# - id: weather_unusual
-#   alias: Set bed to red if unusual weather
-#   trigger:
-#     platform: time_pattern
-#     hours:
-#     - 6
-#     - 7
-#     - 8
-#     - 9
-#     - 10
-#     - 11
-#     - 12
-#     - 13
-#     - 14
-#     - 15
-#     - 16
-#     - 17
-#     - 18
-#     - 19
-#     - 20
-#     minutes: 0
-#     seconds: 0
-#   condition:
-#     condition: or
-#     conditions:
-#     - condition: state
-#       entity_id: yweather.weather_condition
-#       state: hail
-#     - condition: state
-#       entity_id: yweather.weather_condition
-#       state: lightning
-#     - condition: state
-#       entity_id: yweather.weather_condition
-#       state: lightning-rainy
-#     - condition: state
-#       entity_id: yweather.weather_condition
-#       state: snowy
-#     - condition: state
-#       entity_id: yweather.weather_condition
-#       state: snowy-rainy
-#     - condition: state
-#       entity_id: yweather.weather_condition
-#       state: exceptional
-#   action:
-#     service: homeassistant.turn_on
-#     data:
-#       effect: colorloop
-#       entity_id:
-#       - light.bed
+      - light.dining_room
+  mode: single
 - id: driveway_timer
   alias: Turn off driveway after 10 minutes
   trigger:
   - platform: state
-    entity_id: light.driveway
+    entity_id: switch.leviton_dz15s_1bz_decora_smart_switch_switch
     to: 'on'
-    for:
-      minutes: 10
+    for: 0:10:00
   action:
-    service: homeassistant.turn_off
-    entity_id: light.driveway
-- id: robot_lab_light
-  alias: Robot lab mimic
-  trigger:
-    platform: state
-    entity_id: light.robot_lair_bed
-  action:
-    service: homeassistant.turn_on
-    entity_id: light.robot_lab
-    data_template:
-      brightness: '{{ states.light.robot_lair_bed.attributes.brightness }}'
-- id: robot_lab_light_off
-  alias: Robot lab mimic off
-  trigger:
-  - entity_id: light.robot_lair_bed
-    platform: state
-    to: 'off'
-  - entity_id: light.robot_lair_bed
-    platform: state
-    to: unavailable
-  action:
-  - data:
-      entity_id:
-      - light.robot_lab
-    entity_id: light.robot_lab
-    service: homeassistant.turn_off
+  - service: switch.turn_off
+    entity_id: switch.leviton_dz15s_1bz_decora_smart_switch_switch
+  mode: single
