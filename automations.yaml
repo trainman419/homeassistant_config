@@ -33,15 +33,19 @@
       entity_id: person.katrina
       state: home
   action:
-  - service: homeassistant.turn_on
+  - service: light.turn_on
     data:
       brightness_pct: 100
       color_temp: 270
       entity_id:
       - group.hallway
       - group.bedroom
-      - group.living_room
+      - light.living_room
       - light.dining_room
+  - service: light.turn_on
+    data:
+      brightness_pct: 15
+    entity_id: light.living_room_oros
   mode: single
 - id: arrive_lights
   alias: Lights on when we get home
@@ -72,12 +76,16 @@
   action:
   - service: homeassistant.turn_on
     data:
-      brightness_pct: 10
+      brightness_pct: 20
       color_temp: 270
       entity_id:
       - group.hallway
-      - group.living_room
+      - light.living_room
       - light.dining_room
+  - service: light.turn_on
+    data:
+      brightness_pct: 1
+    entity_id: light.living_room_oros
   mode: single
 - id: nighttime
   alias: Lights off at 11pm
@@ -103,4 +111,28 @@
   action:
   - service: switch.turn_off
     entity_id: switch.leviton_dz15s_1bz_decora_smart_switch_switch
+  mode: single
+- id: '1609020537681'
+  alias: Fans on at 5pm
+  description: ''
+  trigger:
+  - platform: time
+    at: '17:00'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.fans
+  mode: single
+- id: '1609020585677'
+  alias: Fans off at 8pm
+  description: ''
+  trigger:
+  - platform: time
+    at: '20:00'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.fans
   mode: single
