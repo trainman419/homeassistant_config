@@ -67,23 +67,23 @@ sun:
 #      password: !secret rainmachine_password
 
 sensor:
-  - platform: apcupsd
-    resources:
-      - apc
-      - date
-      - hostname
-      - upsname
-      - upsmode
-      - starttime
-      - model
-      - status
-      - linev
-      - loadpct
-      - bcharge
-      - timeleft
-      - mbattchg
-      - mintimel
-      - maxtime
+  #- platform: apcupsd
+  #  resources:
+  #    - apc
+  #    - date
+  #    - hostname
+  #    - upsname
+  #    - upsmode
+  #    - starttime
+  #    - model
+  #    - status
+  #    - linev
+  #    - loadpct
+  #    - bcharge
+  #    - timeleft
+  #    - mbattchg
+  #    - mintimel
+  #    - maxtime
   # Asterisk VoIP phones
   #- platform: astext
   #  extension: 10
