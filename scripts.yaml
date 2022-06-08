@@ -1,0 +1,27 @@
+bedtime:
+  alias: Bedtime
+  sequence:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.island_pendants
+  mode: single
+  icon: mdi:lightbulb-group-off
+lights_off:
+  sequence:
+  - service: light.turn_off
+    data: {}
+    target:
+      area_id:
+      - bar_room
+      - dining_room
+      - downstairs_hall
+      - great_room
+      - hallway
+      - kitchen
+      - living_room
+      - mechanical_room
+      - stairs
+  mode: single
+  icon: mdi:lightbulb-group-off
+  alias: Bedtime

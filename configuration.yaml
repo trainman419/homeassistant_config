@@ -34,6 +34,10 @@ http:
 # Enable config UI
 config:
 
+
+# Enable scripts?
+script: !include scripts.yaml
+
 # Checks for available updates
 updater:
 
