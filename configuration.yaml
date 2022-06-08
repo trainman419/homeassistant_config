@@ -11,6 +11,8 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Los_Angeles
 
+default_config:
+
 # logging setup
 logger:
   default: info
@@ -50,8 +52,8 @@ logbook:
 # Track the sun
 sun:
 
-apcupsd:
-  host: 192.168.1.1
+#apcupsd:
+#  host: 192.168.1.1
 
 #asterisk:
 #  host: arg
@@ -59,10 +61,10 @@ apcupsd:
 #  username: admin
 #  password: !secret asterisk_password
 
-rainmachine:
-  controllers:
-    - ip_address: 192.168.1.16
-      password: !secret rainmachine_password
+#rainmachine:
+#  controllers:
+#    - ip_address: 192.168.1.16
+#      password: !secret rainmachine_password
 
 sensor:
   - platform: apcupsd
@@ -90,43 +92,43 @@ sensor:
   #- platform: astext
   #  extension: 12
   # Weather conditions from personal weather station and weather forecast.
-  - platform: wundergroundpws
-    api_key: !secret wunderground_key
-    pws_id: KCAPACIF183
-    monitored_conditions:
-     # Weather sensors
-     - stationID
-     - solarRadiation
-     - uv
-     - winddir
-     - humidity
-     - dewpt
-     - heatIndex
-     - windChill
-     - precipTotal
-     - precipRate
-     - pressure
-     - temp
-     - windGust
-     - windSpeed
-     # Weather predictions
-     - precip_1d
-     - precip_chance_1d
-     - temp_high_1d
-     - temp_low_1d
-     - wind_1d
-     - weather_1d
-     - weather_1n
-     - weather_2d
-     - weather_2n
-     - weather_3d
-     - weather_3n
-     - weather_4d
-     - weather_4n
+  #  - platform: wundergroundpws
+  #    api_key: !secret wunderground_key
+  #    pws_id: KCAPACIF183
+  #    monitored_conditions:
+  #     # Weather sensors
+  #     - stationID
+  #     - solarRadiation
+  #     - uv
+  #     - winddir
+  #     - humidity
+  #     - dewpt
+  #     - heatIndex
+  #     - windChill
+  #     - precipTotal
+  #     - precipRate
+  #     - pressure
+  #     - temp
+  #     - windGust
+  #     - windSpeed
+  #     # Weather predictions
+  #     - precip_1d
+  #     - precip_chance_1d
+  #     - temp_high_1d
+  #     - temp_low_1d
+  #     - wind_1d
+  #     - weather_1d
+  #     - weather_1n
+  #     - weather_2d
+  #     - weather_2n
+  #     - weather_3d
+  #     - weather_3n
+  #     - weather_4d
+  #     - weather_4n
 
 hue:
   bridges:
-    - host: 192.168.1.42
+    - host: 192.168.0.91
       allow_hue_groups: False
 
 light:
@@ -134,8 +136,8 @@ light:
     username: namniart@gmail.com
     password: !secret leviton_password
 
-tplink:
-  discovery: True
+#tplink:
+#  discovery: True
 
 influxdb:
   host: 127.0.0.1
@@ -154,9 +156,9 @@ calendar:
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations
 
-media_player:
-  - platform: yamaha
-    host: 192.168.1.63
+#media_player:
+#  - platform: yamaha
+#    host: 192.168.1.63
 
 
 
