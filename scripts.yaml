@@ -1,13 +1,22 @@
-bedtime:
-  alias: Bedtime
+lights_off:
+  alias: Lights Off
   sequence:
   - service: light.turn_off
     data: {}
     target:
-      entity_id: light.island_pendants
+      entity_id: all
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.deck_light
+      - switch.great_room_porch
+      - switch.laundry
+      - switch.outside_laundry
   mode: single
   icon: mdi:lightbulb-group-off
-lights_off:
+bedtime:
+  alias: Bedtime
   sequence:
   - service: light.turn_off
     data: {}
@@ -22,6 +31,13 @@ lights_off:
       - living_room
       - mechanical_room
       - stairs
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.deck_light
+      - switch.great_room_porch
+      - switch.laundry
+      - switch.outside_laundry
   mode: single
   icon: mdi:lightbulb-group-off
-  alias: Bedtime
