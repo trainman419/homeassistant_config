@@ -39,7 +39,7 @@ config:
 script: !include scripts.yaml
 
 # Checks for available updates
-updater:
+#updater:
 
 # Discover some devices automatically
 discovery:
