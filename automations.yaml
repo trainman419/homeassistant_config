@@ -136,3 +136,29 @@
     data: {}
     entity_id: switch.fans
   mode: single
+- id: '1654842028622'
+  alias: Espresso on at 6:30am
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:30:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: e0a8d506052e4ab89dc725421ddf9f91
+    entity_id: switch.espresso
+    domain: switch
+  mode: single
+- id: '1654842059627'
+  alias: Espresso off at 5pm
+  description: ''
+  trigger:
+  - platform: time
+    at: '17:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: e0a8d506052e4ab89dc725421ddf9f91
+    entity_id: switch.espresso
+    domain: switch
+  mode: single

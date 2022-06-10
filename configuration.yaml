@@ -35,7 +35,7 @@ http:
 config:
 
 
-# Enable scripts?
+# Enable scripts
 script: !include scripts.yaml
 
 # Checks for available updates
