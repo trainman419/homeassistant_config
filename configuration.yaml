@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 37.4625
-  longitude: -122.2405
+  latitude: 47.450
+  longitude: -122.331
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 20
   # metric for Metric, imperial for Imperial
@@ -140,30 +140,25 @@ light:
     username: namniart@gmail.com
     password: !secret leviton_password
 
-#tplink:
-#  discovery: True
-
 influxdb:
   host: 127.0.0.1
   port: 8086
   username: home_assistant
   password: home_assistant
 
-google:
-  client_id: !secret google_cal_client_id
-  client_secret: !secret google_cal_client_secret
+#google:
+#  client_id: !secret google_cal_client_id
+#  client_secret: !secret google_cal_client_secret
 
 calendar:
   - platform: todoist
     token: !secret todoist_api_token
 
+
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations
 
-#media_player:
-#  - platform: yamaha
-#    host: 192.168.1.63
-
-
+media_player:
+  - platform: bluesound
 
 group: !include groups.yaml
