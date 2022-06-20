@@ -1,0 +1,34 @@
+{
+    "version": 2,
+    "key": "person",
+    "data": {
+        "items": [
+            {
+                "name": "Austin",
+                "device_trackers": [
+                    "device_tracker.austins_iphone",
+                    "device_tracker.austins_iphone_2",
+                    "device_tracker.austinsiphone",
+                    "device_tracker.austinsplewatch",
+                    "device_tracker.unifi_ee_70_90_b9_74_14_default"
+                ],
+                "user_id": null,
+                "picture": null,
+                "id": "austin"
+            },
+            {
+                "name": "Katrina",
+                "device_trackers": [
+                    "device_tracker.donnie",
+                    "device_tracker.donnie_2",
+                    "device_tracker.donnie_3",
+                    "device_tracker.katrinaplewatch",
+                    "device_tracker.katrinaplewatch_2"
+                ],
+                "user_id": null,
+                "picture": null,
+                "id": "katrina"
+            }
+        ]
+    }
+}
