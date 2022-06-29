@@ -5,11 +5,6 @@
                 "id": "6ff1a0c39b86475ea61e9ad97a2e2456",
                 "type": "module",
                 "url": "/local/community/atomic-calendar-revive/atomic-calendar-revive.js"
-            },
-            {
-                "id": "89309ac4fbef4228b2507df9bd90fcbc",
-                "type": "module",
-                "url": "/local/community/atomic-calendar-revive/atomic-calendar-revive-editor.js"
             }
         ]
     },

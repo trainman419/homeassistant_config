@@ -68,6 +68,16 @@
                 "name": "Thermostat 1 NativeZone",
                 "id": "thermostat_1_nativezone",
                 "picture": null
+            },
+            {
+                "name": "Bar",
+                "id": "bar",
+                "picture": null
+            },
+            {
+                "name": "Downstairs",
+                "id": "downstairs",
+                "picture": null
             }
         ]
     }

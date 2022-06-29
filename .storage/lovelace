@@ -172,9 +172,26 @@
                                 },
                                 {
                                     "entity": "light.hue_lightstrip_1"
+                                },
+                                {
+                                    "entity": "switch.back_door_light"
                                 }
                             ],
                             "title": "All Lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.downstairs_temperature_air_temperature",
+                                    "name": "Air temperature"
+                                },
+                                {
+                                    "entity": "sensor.downstairs_temperature_humidity",
+                                    "name": "Humidity"
+                                }
+                            ],
+                            "title": "Downstairs Temperature"
                         }
                     ]
                 },
@@ -334,29 +351,21 @@
                             "calEventIcon2": "mdi:account-circle-outline",
                             "defaultMode": 3,
                             "enableModeChange": true,
+                            "hideDuplicates": true,
                             "entities": [
                                 {
                                     "color": "green",
                                     "entity": "calendar.legotown_aol_com",
-                                    "eventCalName": "Austin",
                                     "type": "icon1"
                                 },
                                 {
                                     "color": "green",
                                     "entity": "calendar.austin_zoox_com",
-                                    "eventCalName": "Work (A)",
                                     "type": "icon1"
                                 },
                                 {
                                     "color": "orange",
                                     "entity": "calendar.kathendrixart_gmail_com",
-                                    "eventCalName": "Katrina",
-                                    "type": "icon2"
-                                },
-                                {
-                                    "color": "orange",
-                                    "entity": "calendar.katrina_zoox_com",
-                                    "eventCalName": "Work (K)",
                                     "type": "icon2"
                                 },
                                 {
@@ -371,7 +380,7 @@
                             "showLocation": false,
                             "showMonth": true,
                             "showWeekDay": true,
-                            "sortByStartTime": false,
+                            "sortByStartTime": true,
                             "type": "custom:atomic-calendar-revive"
                         }
                     ],
