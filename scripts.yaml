@@ -72,12 +72,13 @@ turn_down_lights:
       sequence:
       - if:
         - condition: template
-          value_template: '{{ is_state(repeat.item, "on") }}'
+          value_template: '{{ is_state(repeat.item, "on") and (state_attr(repeat.item,
+            "brightness")|int > 64) }}'
         then:
         - service: light.turn_on
           target:
             entity_id: '{{ repeat.item }}'
           data:
-            brightness_pct: 25
+            brightness: 64
   mode: single
   icon: mdi:lightbulb-night-outline
