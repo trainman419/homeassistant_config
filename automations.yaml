@@ -66,20 +66,10 @@
   alias: Lights down for bedtime
   trigger:
   - platform: time
-    at: '21:30:00'
+    at: '22:00:00'
   action:
-  - service: homeassistant.turn_on
-    data:
-      brightness_pct: 20
-      color_temp: 270
-      entity_id:
-      - group.hallway
-      - light.living_room
-      - light.dining_room
-  - service: light.turn_on
-    data:
-      brightness_pct: 1
-    entity_id: light.living_room_oros
+  - service: script.turn_down_lights
+    data: {}
   mode: single
 - id: nighttime
   alias: Lights off at 11pm
