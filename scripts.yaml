@@ -70,12 +70,14 @@ turn_down_lights:
       - light.stair_light
       - light.undercab_lights
       sequence:
-      - condition: template
-        value_template: '{{ is_state(repeat.item, "on") }}'
-      - service: light.turn_on
-        target: 
-          entity_id: '{{ repeat.item }}'
-        data:
-          brightness_pct: 25
+      - if:
+        - condition: template
+          value_template: '{{ is_state(repeat.item, "on") }}'
+        then:
+        - service: light.turn_on
+          target:
+            entity_id: '{{ repeat.item }}'
+          data:
+            brightness_pct: 25
   mode: single
   icon: mdi:lightbulb-night-outline
