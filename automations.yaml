@@ -4,18 +4,12 @@
   - platform: sun
     event: sunset
   action:
-  - service: homeassistant.turn_on
-    data:
-      brightness_pct: 100
-      color_temp: 270
-      entity_id:
-      - group.porch_lights
-      - light.entry_light
-  - service: homeassistant.turn_on
-    data:
-      brightness_pct: 60
-      entity_id:
-      - light.carport
+  - service: switch.turn_on
+    data: {}
+    target:
+      device_id:
+      - 7171da74eb678558e84b97f23ea8c79e
+      - 377a2f4dd175686d4152cbbc39103dd2
   mode: single
 - id: sunset_lights
   alias: Lights on at Sunset
@@ -93,13 +87,12 @@
   - platform: time
     at: '23:00:00'
   action:
-  - service: homeassistant.turn_off
-    data:
-      entity_id:
-      - group.porch_lights
-      - group.living_room
-      - light.carport
-      - light.dining_room
+  - service: switch.turn_off
+    data: {}
+    target:
+      device_id:
+      - 377a2f4dd175686d4152cbbc39103dd2
+      - 7171da74eb678558e84b97f23ea8c79e
   mode: single
 - id: driveway_timer
   alias: Turn off driveway after 10 minutes
