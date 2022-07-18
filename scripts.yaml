@@ -43,3 +43,36 @@ bedtime:
       - switch.back_door_light
   mode: single
   icon: mdi:lightbulb-group-off
+turn_down_lights:
+  alias: Turn Down Lights
+  sequence:
+  - repeat:
+      for_each:
+      - light.bar
+      - light.bar_2
+      - light.bar_hallway
+      - light.dining_room
+      - light.dining_room_2
+      - light.dining_table
+      - light.downstairs_hall
+      - light.fireplace_lights
+      - light.great_room_light
+      - light.hall_light
+      - light.hue_color_lamp_1
+      - light.hue_color_lamp_1_2
+      - light.hue_color_lamp_2
+      - light.hue_color_lamp_3
+      - light.hue_lightstrip_1
+      - light.island_pendants
+      sequence:
+      - if:
+        - condition: state
+          entity_id: light.dining_room
+          state: 'on'
+        then:
+        - service: light.turn_on
+          target: '{{ repeat.item }}'
+          data:
+            brightness_pct: 25
+  mode: single
+  icon: mdi:lightbulb-night-outline
