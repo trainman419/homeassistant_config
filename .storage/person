@@ -8,7 +8,8 @@
         "name": "Austin",
         "device_trackers": [
           "device_tracker.austinsiphone",
-          "device_tracker.austinsplewatch"
+          "device_tracker.austinsplewatch",
+          "device_tracker.austins_iphone_3"
         ],
         "user_id": null,
         "picture": null,
@@ -17,7 +18,8 @@
       {
         "name": "Katrina",
         "device_trackers": [
-          "device_tracker.allejandro"
+          "device_tracker.allejandro",
+          "device_tracker.allejandro_2"
         ],
         "user_id": null,
         "picture": null,
