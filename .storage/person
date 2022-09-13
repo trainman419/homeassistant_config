@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "minor_version": 1,
     "key": "person",
     "data": {
         "items": [
@@ -19,11 +20,9 @@
             {
                 "name": "Katrina",
                 "device_trackers": [
-                    "device_tracker.donnie",
-                    "device_tracker.donnie_2",
-                    "device_tracker.donnie_3",
                     "device_tracker.katrinaplewatch",
-                    "device_tracker.katrinaplewatch_2"
+                    "device_tracker.katrinaplewatch_2",
+                    "device_tracker.allejandro"
                 ],
                 "user_id": null,
                 "picture": null,
