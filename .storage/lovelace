@@ -144,6 +144,12 @@
                                     "entity": "light.bar"
                                 },
                                 {
+                                    "entity": "light.hue_color_lamp_1_3"
+                                },
+                                {
+                                    "entity": "light.hue_color_lamp_1_2"
+                                },
+                                {
                                     "entity": "light.bar_hallway"
                                 },
                                 {
