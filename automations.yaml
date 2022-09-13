@@ -31,36 +31,40 @@
     data:
       brightness_pct: 100
       color_temp: 270
+      transition: 300
+    target:
+      area_id: a7e7176a46f44fccb565020478a1496b
       entity_id:
-      - group.hallway
-      - group.bedroom
-      - light.living_room
-      - light.dining_room
-  - service: light.turn_on
-    data:
-      brightness_pct: 15
-    entity_id: light.living_room_oros
+      - light.hall_light
+      - light.stair_light
+      - light.kitchen
+      - light.living_room_walkway
+      - light.living_room_lights
   mode: single
 - id: arrive_lights
   alias: Lights on when we get home
   trigger:
   - platform: state
-    entity_id: person.austin, person.katrina
+    entity_id:
+    - person.austin
+    - person.katrina
     to: home
   condition:
   - condition: state
     entity_id: sun.sun
     state: below_horizon
   action:
-  - service: homeassistant.turn_on
+  - service: light.turn_on
     data:
+      color_temp: 300
       brightness_pct: 100
-      color_temp: 270
+    target:
+      area_id: a7e7176a46f44fccb565020478a1496b
       entity_id:
-      - group.porch_lights
-      - group.hallway
-      - light.carport
-      - light.dining_room
+      - light.hall_light
+      - light.stair_light
+      - light.kitchen
+      - light.living_room_walkway
   mode: single
 - id: bedtime
   alias: Lights down for bedtime
