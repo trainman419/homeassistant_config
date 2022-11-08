@@ -1,411 +1,381 @@
 {
-    "version": 1,
-    "minor_version": 1,
-    "key": "lovelace",
-    "data": {
-        "config": {
-            "views": [
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "icon": "mdi:lightbulb",
+          "path": "lights",
+          "title": "Lights",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
                 {
-                    "theme": "Backend-selected",
-                    "icon": "mdi:lightbulb",
-                    "path": "lights",
-                    "title": "Lights",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "light.hue_lightstrip_1"
-                                },
-                                {
-                                    "entity": "light.hue_color_lamp_3"
-                                },
-                                {
-                                    "entity": "light.hue_color_lamp_1"
-                                },
-                                {
-                                    "entity": "light.hue_color_lamp_2"
-                                }
-                            ],
-                            "title": "Bedroom"
-                        },
-                        {
-                            "show_name": true,
-                            "show_icon": true,
-                            "type": "button",
-                            "name": "All lights off",
-                            "icon": "",
-                            "show_state": false,
-                            "entity": "script.lights_off",
-                            "tap_action": {
-                                "action": "call-service",
-                                "service": "script.turn_on",
-                                "service_data": {},
-                                "target": {
-                                    "entity_id": "script.lights_off"
-                                }
-                            }
-                        },
-                        {
-                            "show_name": true,
-                            "show_icon": true,
-                            "type": "button",
-                            "tap_action": {
-                                "action": "call-service",
-                                "service": "script.turn_on",
-                                "service_data": {},
-                                "target": {
-                                    "entity_id": "script.bedtime"
-                                }
-                            },
-                            "entity": "script.bedtime",
-                            "name": "Bed Time",
-                            "icon": "mdi:bed-king"
-                        },
-                        {
-                            "type": "thermostat",
-                            "entity": "climate.thermostat_1_nativezone_2"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.fs336922n_laundry_time_remaining",
-                                    "name": "Washer Time Remaining"
-                                },
-                                {
-                                    "entity": "sensor.ms115331g_laundry_time_remaining",
-                                    "name": "Dryer Time Remaining"
-                                }
-                            ]
-                        },
-                        {
-                            "show_name": true,
-                            "show_icon": true,
-                            "type": "button",
-                            "tap_action": {
-                                "action": "toggle"
-                            },
-                            "entity": "switch.espresso"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "light.kitchen"
-                                },
-                                {
-                                    "entity": "light.island_pendants"
-                                },
-                                {
-                                    "entity": "light.undercab_lights"
-                                },
-                                {
-                                    "entity": "light.hall_light"
-                                },
-                                {
-                                    "entity": "light.stair_light"
-                                },
-                                {
-                                    "entity": "light.living_room_walkway"
-                                },
-                                {
-                                    "entity": "light.living_room_lights"
-                                },
-                                {
-                                    "entity": "light.fireplace_lights"
-                                },
-                                {
-                                    "entity": "light.dining_room"
-                                },
-                                {
-                                    "entity": "light.dining_table"
-                                },
-                                {
-                                    "entity": "light.great_room_light"
-                                },
-                                {
-                                    "entity": "light.mechanical_room"
-                                },
-                                {
-                                    "entity": "switch.front_porch_light"
-                                },
-                                {
-                                    "entity": "switch.great_room_porch"
-                                },
-                                {
-                                    "entity": "switch.deck_light"
-                                },
-                                {
-                                    "entity": "switch.outside_laundry"
-                                },
-                                {
-                                    "entity": "light.bar"
-                                },
-                                {
-                                    "entity": "light.hue_color_lamp_1_3"
-                                },
-                                {
-                                    "entity": "light.hue_color_lamp_1_2"
-                                },
-                                {
-                                    "entity": "light.bar_hallway"
-                                },
-                                {
-                                    "entity": "light.downstairs_hall"
-                                },
-                                {
-                                    "entity": "switch.laundry_fan"
-                                },
-                                {
-                                    "entity": "switch.laundry"
-                                },
-                                {
-                                    "entity": "light.kitchen_toe_kick"
-                                },
-                                {
-                                    "entity": "light.hue_color_lamp_1"
-                                },
-                                {
-                                    "entity": "light.hue_color_lamp_2"
-                                },
-                                {
-                                    "entity": "light.hue_color_lamp_3"
-                                },
-                                {
-                                    "entity": "light.hue_lightstrip_1"
-                                },
-                                {
-                                    "entity": "switch.back_door_light"
-                                },
-                                {
-                                    "entity": "switch.front_garage_light"
-                                }
-                            ],
-                            "title": "All Lights"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.downstairs_temperature_air_temperature",
-                                    "name": "Air temperature"
-                                },
-                                {
-                                    "entity": "sensor.downstairs_temperature_humidity",
-                                    "name": "Humidity"
-                                }
-                            ],
-                            "title": "Downstairs Temperature"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.temperature_sensor_1_air_temperature",
-                                    "name": "Air temperature"
-                                },
-                                {
-                                    "entity": "sensor.temperature_sensor_1_humidity",
-                                    "name": "Humidity"
-                                }
-                            ],
-                            "title": "Temperature Sensor #1"
-                        }
-                    ]
+                  "entity": "light.hue_lightstrip_1"
                 },
                 {
-                    "theme": "Backend-selected",
-                    "icon": "mdi:speaker-multiple",
-                    "path": "audio",
-                    "title": "Audio",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "entity",
-                            "entity": "media_player.kitchen"
-                        },
-                        {
-                            "type": "entity",
-                            "entity": "media_player.living_room"
-                        }
-                    ]
+                  "entity": "light.hue_color_lamp_3"
                 },
                 {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.ups_status_date"
-                                },
-                                {
-                                    "entity": "sensor.ups_hostname"
-                                },
-                                {
-                                    "entity": "sensor.ups_load"
-                                },
-                                {
-                                    "entity": "sensor.ups_time_left"
-                                }
-                            ],
-                            "title": "UPS"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "device_tracker.austinsiphone"
-                                },
-                                {
-                                    "entity": "device_tracker.austins_iphone"
-                                },
-                                {
-                                    "entity": "device_tracker.austinsplewatch"
-                                },
-                                {
-                                    "entity": "device_tracker.katrinaplewatch"
-                                },
-                                {
-                                    "entity": "device_tracker.donnie"
-                                },
-                                {
-                                    "entity": "device_tracker.donnie_2"
-                                },
-                                {
-                                    "entity": "device_tracker.greg"
-                                },
-                                {
-                                    "entity": "device_tracker.austins_iphone_2"
-                                },
-                                {
-                                    "entity": "device_tracker.donnie_3"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "history-graph",
-                            "entities": [
-                                {
-                                    "entity": "sun.sun"
-                                },
-                                {
-                                    "entity": "device_tracker.austins_iphone"
-                                },
-                                {
-                                    "entity": "device_tracker.austins_iphone_2"
-                                },
-                                {
-                                    "entity": "device_tracker.austinsiphone"
-                                },
-                                {
-                                    "entity": "device_tracker.donnie"
-                                },
-                                {
-                                    "entity": "device_tracker.donnie_2"
-                                },
-                                {
-                                    "entity": "device_tracker.donnie_3"
-                                },
-                                {
-                                    "entity": "person.austin"
-                                },
-                                {
-                                    "entity": "person.katrina"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "refresh_interval": 0
-                        },
-                        {
-                            "type": "thermostat",
-                            "entity": "climate.upstairs"
-                        },
-                        {
-                            "type": "weather-forecast",
-                            "entity": "weather.upstairs"
-                        }
-                    ],
-                    "icon": "mdi:home-assistant",
-                    "path": "home",
-                    "title": "Home"
+                  "entity": "light.hue_color_lamp_1"
                 },
                 {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "automation.bedtime_lights_low_9_30"
-                                },
-                                {
-                                    "entity": "automation.lights_down_for_bedtime"
-                                },
-                                {
-                                    "entity": "automation.lights_off_at_11pm"
-                                },
-                                {
-                                    "entity": "automation.lights_on_at_sunset"
-                                },
-                                {
-                                    "entity": "automation.lights_on_when_we_get_home"
-                                },
-                                {
-                                    "entity": "automation.porch_lights_on_at_sunset"
-                                }
-                            ]
-                        }
-                    ],
-                    "icon": "mdi:robot",
-                    "path": "automations",
-                    "title": "Automations"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "calEventIcon1": "mdi:account-circle",
-                            "calEventIcon2": "mdi:account-circle-outline",
-                            "defaultMode": 3,
-                            "enableModeChange": true,
-                            "hideDuplicates": true,
-                            "showNoEventsForToday": true,
-                            "entities": [
-                                {
-                                    "color": "green",
-                                    "entity": "calendar.legotown_aol_com",
-                                    "type": "icon1"
-                                },
-                                {
-                                    "color": "green",
-                                    "entity": "calendar.kathendrixart_gmail_com",
-                                    "type": "icon1"
-                                },
-                                {
-                                    "entity": "calendar.holidays_in_united_states",
-                                    "type": "holiday"
-                                }
-                            ],
-                            "firstDayOfWeek": 0,
-                            "name": "Calendar",
-                            "showColors": true,
-                            "showDate": false,
-                            "showLocation": false,
-                            "showMonth": true,
-                            "showWeekDay": true,
-                            "sortByStartTime": true,
-                            "type": "custom:atomic-calendar-revive"
-                        }
-                    ],
-                    "icon": "mdi:calendar",
-                    "panel": true,
-                    "path": "calendar",
-                    "title": "Calendar"
+                  "entity": "light.hue_color_lamp_2"
                 }
-            ]
+              ],
+              "title": "Bedroom"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "input_boolean.vacation"
+                },
+                {
+                  "entity": "input_datetime.wakeup"
+                }
+              ],
+              "show_header_toggle": false
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "name": "All lights off",
+              "icon": "",
+              "show_state": false,
+              "entity": "script.lights_off",
+              "tap_action": {
+                "action": "call-service",
+                "service": "script.turn_on",
+                "service_data": {},
+                "target": {
+                  "entity_id": "script.lights_off"
+                }
+              }
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "call-service",
+                "service": "script.turn_on",
+                "service_data": {},
+                "target": {
+                  "entity_id": "script.bedtime"
+                }
+              },
+              "entity": "script.bedtime",
+              "name": "Bed Time",
+              "icon": "mdi:bed-king"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.thermostat_1_nativezone"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.fs336922n_laundry_time_remaining",
+                  "name": "Washer Time Remaining"
+                },
+                {
+                  "entity": "sensor.ms115331g_laundry_time_remaining",
+                  "name": "Dryer Time Remaining"
+                }
+              ]
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "switch.espresso",
+              "icon": "mdi:coffee-maker"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "light.kitchen"
+                },
+                {
+                  "entity": "light.island_pendants"
+                },
+                {
+                  "entity": "light.undercab_lights"
+                },
+                {
+                  "entity": "light.hall_light"
+                },
+                {
+                  "entity": "light.stair_light"
+                },
+                {
+                  "entity": "light.living_room_walkway"
+                },
+                {
+                  "entity": "light.living_room_lights"
+                },
+                {
+                  "entity": "light.fireplace_lights"
+                },
+                {
+                  "entity": "light.dining_room"
+                },
+                {
+                  "entity": "light.dining_table"
+                },
+                {
+                  "entity": "light.extended_color_light_1"
+                },
+                {
+                  "entity": "light.great_room_light"
+                },
+                {
+                  "entity": "light.mechanical_room"
+                },
+                {
+                  "entity": "switch.front_porch_light"
+                },
+                {
+                  "entity": "switch.great_room_porch"
+                },
+                {
+                  "entity": "switch.deck_light"
+                },
+                {
+                  "entity": "switch.outside_laundry"
+                },
+                {
+                  "entity": "light.bar"
+                },
+                {
+                  "entity": "light.hue_color_lamp_1_3"
+                },
+                {
+                  "entity": "light.hue_color_lamp_1_2"
+                },
+                {
+                  "entity": "light.bar_hallway"
+                },
+                {
+                  "entity": "light.downstairs_hall"
+                },
+                {
+                  "entity": "switch.laundry_fan"
+                },
+                {
+                  "entity": "switch.laundry"
+                },
+                {
+                  "entity": "light.kitchen_toe_kick"
+                },
+                {
+                  "entity": "light.hue_color_lamp_1"
+                },
+                {
+                  "entity": "light.hue_color_lamp_2"
+                },
+                {
+                  "entity": "light.hue_color_lamp_3"
+                },
+                {
+                  "entity": "light.hue_lightstrip_1"
+                },
+                {
+                  "entity": "switch.back_door_light"
+                },
+                {
+                  "entity": "switch.front_garage_light"
+                }
+              ],
+              "title": "All Lights"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.orbiting_orb_status_code",
+                  "name": "Oribiting Orb",
+                  "icon": "mdi:orbit"
+                },
+                {
+                  "entity": "sensor.poop_goblin_status_code",
+                  "name": "Poop Goblin",
+                  "icon": "mdi:emoticon-poop"
+                },
+                {
+                  "entity": "sensor.juicenet_device_charging_status",
+                  "name": "Car Charger",
+                  "icon": "mdi:car-electric-outline"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "icon": "mdi:speaker-multiple",
+          "path": "audio",
+          "title": "Audio",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entity",
+              "entity": "media_player.kitchen"
+            },
+            {
+              "type": "entity",
+              "entity": "media_player.living_room"
+            }
+          ]
+        },
+        {
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "person.austin"
+                },
+                {
+                  "entity": "person.katrina"
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sun.sun"
+                },
+                {
+                  "entity": "person.austin"
+                },
+                {
+                  "entity": "person.katrina"
+                },
+                {
+                  "entity": "sensor.humidity"
+                },
+                {
+                  "entity": "sensor.senseair_co2_value"
+                },
+                {
+                  "entity": "sensor.particulate_matter_2_5um_concentration"
+                },
+                {
+                  "entity": "sensor.temperature"
+                },
+                {
+                  "entity": "sensor.upstairs_temperature_sensor_air_temperature"
+                },
+                {
+                  "entity": "sensor.thermostat_1_nativezone_temperature"
+                },
+                {
+                  "entity": "sensor.humidity"
+                },
+                {
+                  "entity": "sensor.thermostat_1_relative_humidity"
+                },
+                {
+                  "entity": "sensor.upstairs_temperature_sensor_humidity"
+                }
+              ],
+              "hours_to_show": 24,
+              "refresh_interval": 0
+            }
+          ],
+          "icon": "mdi:home-assistant",
+          "path": "home",
+          "title": "Home"
+        },
+        {
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "automation.bedtime_lights_low_9_30"
+                },
+                {
+                  "entity": "automation.lights_down_for_bedtime"
+                },
+                {
+                  "entity": "automation.lights_off_at_11pm"
+                },
+                {
+                  "entity": "automation.lights_on_at_sunset"
+                },
+                {
+                  "entity": "automation.lights_on_when_we_get_home"
+                },
+                {
+                  "entity": "automation.porch_lights_on_at_sunset"
+                }
+              ]
+            }
+          ],
+          "icon": "mdi:robot",
+          "path": "automations",
+          "title": "Automations"
+        },
+        {
+          "badges": [],
+          "cards": [
+            {
+              "calEventIcon1": "mdi:account-circle",
+              "calEventIcon2": "mdi:account-circle-outline",
+              "defaultMode": 3,
+              "enableModeChange": true,
+              "hideDuplicates": true,
+              "showNoEventsForToday": true,
+              "entities": [
+                {
+                  "color": "green",
+                  "entity": "calendar.legotown_aol_com",
+                  "type": "icon1"
+                },
+                {
+                  "color": "green",
+                  "entity": "calendar.kathendrixart_gmail_com",
+                  "type": "icon1"
+                },
+                {
+                  "entity": "calendar.holidays_in_united_states",
+                  "type": "holiday"
+                }
+              ],
+              "firstDayOfWeek": 0,
+              "name": "Calendar",
+              "showColors": true,
+              "showDate": false,
+              "showLocation": false,
+              "showMonth": true,
+              "showWeekDay": true,
+              "sortByStartTime": true,
+              "type": "custom:atomic-calendar-revive"
+            }
+          ],
+          "icon": "mdi:calendar",
+          "panel": true,
+          "path": "calendar",
+          "title": "Calendar"
         }
+      ]
     }
+  }
 }

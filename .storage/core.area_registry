@@ -1,84 +1,114 @@
 {
-    "version": 1,
-    "minor_version": 1,
-    "key": "core.area_registry",
-    "data": {
-        "areas": [
-            {
-                "name": "bedroom",
-                "id": "a7e7176a46f44fccb565020478a1496b",
-                "picture": null
-            },
-            {
-                "name": "Mechanical Room",
-                "id": "mechanical_room",
-                "picture": null
-            },
-            {
-                "name": "Stairs",
-                "id": "stairs",
-                "picture": null
-            },
-            {
-                "name": "Front Porch",
-                "id": "front_porch",
-                "picture": null
-            },
-            {
-                "name": "Hallway",
-                "id": "hallway",
-                "picture": null
-            },
-            {
-                "name": "Kitchen",
-                "id": "kitchen",
-                "picture": null
-            },
-            {
-                "name": "Living Room",
-                "id": "living_room",
-                "picture": null
-            },
-            {
-                "name": "Dining Room",
-                "id": "dining_room",
-                "picture": null
-            },
-            {
-                "name": "Great Room",
-                "id": "great_room",
-                "picture": null
-            },
-            {
-                "name": "Bar Room",
-                "id": "bar_room",
-                "picture": null
-            },
-            {
-                "name": "Downstairs Hall",
-                "id": "downstairs_hall",
-                "picture": null
-            },
-            {
-                "name": "Laundry Room",
-                "id": "laundry_room",
-                "picture": null
-            },
-            {
-                "name": "Thermostat 1 NativeZone",
-                "id": "thermostat_1_nativezone",
-                "picture": null
-            },
-            {
-                "name": "Bar",
-                "id": "bar",
-                "picture": null
-            },
-            {
-                "name": "Downstairs",
-                "id": "downstairs",
-                "picture": null
-            }
-        ]
-    }
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.area_registry",
+  "data": {
+    "areas": [
+      {
+        "name": "bedroom",
+        "id": "a7e7176a46f44fccb565020478a1496b",
+        "picture": null
+      },
+      {
+        "name": "Mechanical Room",
+        "id": "mechanical_room",
+        "picture": null
+      },
+      {
+        "name": "Stairs",
+        "id": "stairs",
+        "picture": null
+      },
+      {
+        "name": "Front Porch",
+        "id": "front_porch",
+        "picture": null
+      },
+      {
+        "name": "Hallway",
+        "id": "hallway",
+        "picture": null
+      },
+      {
+        "name": "Kitchen",
+        "id": "kitchen",
+        "picture": null
+      },
+      {
+        "name": "Living Room",
+        "id": "living_room",
+        "picture": null
+      },
+      {
+        "name": "Dining Room",
+        "id": "dining_room",
+        "picture": null
+      },
+      {
+        "name": "Great Room",
+        "id": "great_room",
+        "picture": null
+      },
+      {
+        "name": "Bar Room",
+        "id": "bar_room",
+        "picture": null
+      },
+      {
+        "name": "Downstairs Hall",
+        "id": "downstairs_hall",
+        "picture": null
+      },
+      {
+        "name": "Laundry Room",
+        "id": "laundry_room",
+        "picture": null
+      },
+      {
+        "name": "Thermostat 1 NativeZone",
+        "id": "thermostat_1_nativezone",
+        "picture": null
+      },
+      {
+        "name": "Bar",
+        "id": "bar",
+        "picture": null
+      },
+      {
+        "name": "Downstairs",
+        "id": "downstairs",
+        "picture": null
+      },
+      {
+        "name": "Bed 1",
+        "id": "bed_1",
+        "picture": null
+      },
+      {
+        "name": "Garage",
+        "id": "garage",
+        "picture": null
+      },
+      {
+        "name": "Outside",
+        "id": "outside",
+        "picture": null
+      },
+      {
+        "name": "Entry",
+        "id": "entry",
+        "picture": null
+      },
+      {
+        "name": "Detached Garage",
+        "id": "detached_garage",
+        "picture": null
+      },
+      {
+        "name": "Front Entry",
+        "id": "front_entry",
+        "picture": null
+      }
+    ]
+  }
 }

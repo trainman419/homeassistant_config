@@ -26,6 +26,9 @@
     - condition: state
       entity_id: person.katrina
       state: home
+    - condition: state
+      entity_id: input_boolean.vacation
+      state: 'on'
   action:
   - service: light.turn_on
     data:
@@ -38,8 +41,14 @@
       - light.hall_light
       - light.stair_light
       - light.kitchen
-      - light.living_room_walkway
+  - service: light.turn_on
+    data:
+      brightness_pct: 50
+      transition: 300
+    target:
+      entity_id:
       - light.living_room_lights
+      - light.living_room_walkway
   mode: single
 - id: arrive_lights
   alias: Lights on when we get home
@@ -124,12 +133,15 @@
     entity_id: switch.fans
   mode: single
 - id: '1654842028622'
-  alias: Espresso on at 6:30am
+  alias: Espresso on for wakeup
   description: ''
   trigger:
   - platform: time
-    at: 06:30:00
-  condition: []
+    at: input_datetime.espresso_time
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation
+    state: 'off'
   action:
   - type: turn_on
     device_id: e0a8d506052e4ab89dc725421ddf9f91
@@ -199,7 +211,7 @@
   description: ''
   trigger:
   - platform: time
-    at: 07:30:00
+    at: input_datetime.wakeup
   condition: []
   action:
   - service: light.turn_on
@@ -213,4 +225,34 @@
       - 08684f8fb3a4d2131a1de46a184c9893
       - 6fd7e8960856e5a726b5c44a2810a402
       - 463917272dafea89c447c90046d776ac
+  mode: single
+- id: '1663601026179'
+  alias: Update espresso time
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_datetime.wakeup
+  condition: []
+  action:
+  - service: input_datetime.set_datetime
+    data:
+      time: '{{ strptime(states(''input_datetime.wakeup''), ''%H:%M:%S'') - strptime(''30'',
+        ''%M'') }}'
+    target:
+      entity_id: input_datetime.espresso_time
+  mode: single
+- id: '1663601520815'
+  alias: Lights off on Vacation
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:30:00'
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation
+    state: 'on'
+  action:
+  - service: script.lights_off
+    data: {}
   mode: single
