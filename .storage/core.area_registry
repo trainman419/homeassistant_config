@@ -108,6 +108,11 @@
         "name": "Front Entry",
         "id": "front_entry",
         "picture": null
+      },
+      {
+        "name": "Workshop",
+        "id": "workshop",
+        "picture": null
       }
     ]
   }
