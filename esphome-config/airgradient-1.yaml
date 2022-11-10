@@ -23,6 +23,7 @@ globals:
     type: int
     restore_value: no
     initial_value: '0'
+
 ota:
   password: !secret ota_password
   id: my_ota
@@ -179,4 +180,4 @@ sensor:
     co2:
       id: co2
       name: "SenseAir CO2 Value"
-    update_interval: 60s   
+    update_interval: 60s
