@@ -82,8 +82,8 @@ i2c:
   scl: D1
 
 font:
-  - file: "font/monofont.ttf"
-    id: opensans
+  - file: "font/t0-16-uni.bdf"
+    id: "uw_ttyp0_t0_16"
     size: 16
 
 display:
@@ -93,30 +93,30 @@ display:
     pages:
       - id: page1
         lambda: |-
-          it.printf(0, 0, id(opensans), "CO2: %.0fppm", id(co2).state);
-          it.printf(0, 16, id(opensans), "PM25: %.0f", id(pm25).state);
-          it.printf(0, 32, id(opensans), "Hmdty: %.1f", id(humidity).state);
-          it.printf(0, 48, id(opensans), "Temp: %.1fF", id(temp).state * (9.0/5.0) + 32.0);
+          it.printf(0, 0, id(uw_ttyp0_t0_16), "CO2: %.0fppm", id(co2).state);
+          it.printf(0, 16, id(uw_ttyp0_t0_16), "PM25: %.0f", id(pm25).state);
+          it.printf(0, 32, id(uw_ttyp0_t0_16), "Hmdty: %.1f", id(humidity).state);
+          it.printf(0, 48, id(uw_ttyp0_t0_16), "Temp: %.1fF", id(temp).state * (9.0/5.0) + 32.0);
       - id: ota_page
         lambda: |-
           switch (id(ota_state)) {
             case ota::OTA_STARTED:
-              it.printf(0, 0, id(opensans), "OTA Started");
+              it.printf(0, 0, id(uw_ttyp0_t0_16), "OTA Started");
               break;
             case ota::OTA_IN_PROGRESS:
-              it.printf(0, 0, id(opensans), "OTA %0.1f%%", id(ota_progress));
+              it.printf(0, 0, id(uw_ttyp0_t0_16), "OTA %0.1f%%", id(ota_progress));
               break;
             case ota::OTA_COMPLETED:
-              it.printf(0, 0, id(opensans), "OTA Complete!");
+              it.printf(0, 0, id(uw_ttyp0_t0_16), "OTA Complete!");
               break;
             case ota::OTA_ERROR:
-              it.printf(0, 0, id(opensans), "OTA update error %d", id(ota_error));
+              it.printf(0, 0, id(uw_ttyp0_t0_16), "OTA update error %d", id(ota_error));
               break;
           }
       - id: safe_mode_page
         lambda: |-
-          it.printf(0, 0, id(opensans), "Safe Mode");
-          it.printf(0, 16, id(opensans), "Waiting for update");
+          it.printf(0, 0, id(uw_ttyp0_t0_16), "Safe Mode");
+          it.printf(0, 16, id(uw_ttyp0_t0_16), "Waiting for update");
 #      - id: page2
 #        lambda: |-
 #          it.printf(0, 0, id(opensans), "PM10 : %.0f", id(pm10).state);
