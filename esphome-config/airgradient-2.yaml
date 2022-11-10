@@ -10,15 +10,61 @@ logger:
 # Enable Home Assistant API
 api:
 
+globals:
+  - id: ota_state
+    type: int
+    restore_value: no
+    initial_value: '-1'
+  - id: ota_progress
+    type: float
+    restore_value: no
+    initial_value: '0'
+  - id: ota_error
+    type: int
+    restore_value: no
+    initial_value: '0'
+
 ota:
   password: !secret ota_password
+  id: my_ota
+  on_state_change:
+    then:
+      - lambda: |-
+          id(ota_state) = state;
+      - display.page.show: ota_page
+      - component.update: oled
+  on_progress:
+    then:
+      - lambda: |-
+          if (x >= id(ota_progress) + 5.0) {
+            id(ota_progress) = x;
+            id(oled)->show_page(id(ota_page));
+            id(oled)->update();
+          }
+  on_error:
+    then:
+      - lambda: |-
+          id(ota_state) = ota::OTA_ERROR;
+          id(ota_error) = x;
+      - display.page.show: ota_page
+      - component.update: oled
 
 # Create a switch for safe_mode in order to flash the device
 # Solution from this thread:
 # https://community.home-assistant.io/t/esphome-flashing-over-wifi-does-not-work/357352/1
-switch:
-  - platform: safe_mode
+button:
+  - platform: template
     name: "Flash Mode (Safe Mode)"
+    on_press:
+      - lambda: |-
+          id(ota_state) = ota::OTA_STARTED;
+          id(my_ota)->set_safe_mode_pending(true);
+      - display.page.show: safe_mode_page
+      - component.update: oled
+      - delay: 100ms
+      - lambda: |-
+          App.safe_reboot();
+
 
 wifi:
   ssid: !secret wifi_ssid
@@ -31,15 +77,15 @@ wifi:
     password: "fx36NooYCAp2"
 
 captive_portal:
-    
+
 i2c:
   sda: D2
   scl: D1
 
 font:
-  - file: "font/monofont.ttf"
-    id: opensans
-    size: 12
+  - file: "font/t0-16-uni.bdf"
+    id: "uw_ttyp0_t0_16"
+    size: 16
 
 display:
   - platform: ssd1306_i2c
@@ -48,10 +94,30 @@ display:
     pages:
       - id: page1
         lambda: |-
-          it.printf(0, 0, id(opensans), "CO2: %.0fppm", id(co2).state);
-          it.printf(0, 12, id(opensans), "PM25: %.0f", id(pm25).state);
-          it.printf(0, 24, id(opensans), "Hmdty: %.0f", id(humidity).state);
-          it.printf(0, 36, id(opensans), "Temp: %.0fC", id(temp).state);
+          it.printf(0, 0, id(uw_ttyp0_t0_16), "CO2: %.0fppm", id(co2).state);
+          it.printf(0, 16, id(uw_ttyp0_t0_16), "PM25: %.0f", id(pm25).state);
+          it.printf(0, 32, id(uw_ttyp0_t0_16), "Hmdty: %.1f", id(humidity).state);
+          it.printf(0, 48, id(uw_ttyp0_t0_16), "Temp: %.1fF", id(temp).state * (9.0/5.0) + 32.0);
+      - id: ota_page
+        lambda: |-
+          switch (id(ota_state)) {
+            case ota::OTA_STARTED:
+              it.printf(0, 0, id(uw_ttyp0_t0_16), "OTA Started");
+              break;
+            case ota::OTA_IN_PROGRESS:
+              it.printf(0, 0, id(uw_ttyp0_t0_16), "OTA %0.1f%%", id(ota_progress));
+              break;
+            case ota::OTA_COMPLETED:
+              it.printf(0, 0, id(uw_ttyp0_t0_16), "OTA Complete!");
+              break;
+            case ota::OTA_ERROR:
+              it.printf(0, 0, id(uw_ttyp0_t0_16), "OTA update error %d", id(ota_error));
+              break;
+          }
+      - id: safe_mode_page
+        lambda: |-
+          it.printf(0, 0, id(uw_ttyp0_t0_16), "Safe Mode");
+          it.printf(0, 16, id(uw_ttyp0_t0_16), "Waiting for update");
 #      - id: page2
 #        lambda: |-
 #          it.printf(0, 0, id(opensans), "PM10 : %.0f", id(pm10).state);
@@ -60,10 +126,14 @@ display:
 # Maybe add a page later
 
 interval:
-  - interval: 5s
+  - interval: 1s
     then:
-      - display.page.show_next: oled
-      - component.update: oled
+      - if:
+          condition:
+          - lambda: "return id(ota_state) == -1;"
+          then:
+          - display.page.show: page1
+          - component.update: oled
 
 uart:
   - rx_pin: D5
@@ -92,15 +162,15 @@ sensor:
     # https://esphome.io/components/sensor/pmsx003.html
     type: PMSX003
     uart_id: uart1
-#    pm_1_0:
-#      id: pm10
-#      name: "Particulate Matter <1.0µm Concentration"
+    pm_1_0:
+      id: pm10
+      name: "Particulate Matter <1.0µm Concentration"
     pm_2_5:
       id: pm25
       name: "Particulate Matter <2.5µm Concentration"
-#    pm_10_0:
-#      id: pm100
-#      name: "Particulate Matter <10.0µm Concentration"
+    pm_10_0:
+      id: pm100
+      name: "Particulate Matter <10.0µm Concentration"
 #    formaldehyde:
 #      id: hcho
 #      name: "Formaldehyde (HCHO) concentration in µg per cubic meter"
