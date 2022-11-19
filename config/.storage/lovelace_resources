@@ -1,13 +1,19 @@
 {
-    "data": {
-        "items": [
-            {
-                "id": "6ff1a0c39b86475ea61e9ad97a2e2456",
-                "type": "module",
-                "url": "/local/community/atomic-calendar-revive/atomic-calendar-revive.js"
-            }
-        ]
-    },
-    "key": "lovelace_resources",
-    "version": 1
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "id": "6ff1a0c39b86475ea61e9ad97a2e2456",
+        "type": "module",
+        "url": "/local/community/atomic-calendar-revive/atomic-calendar-revive.js"
+      },
+      {
+        "url": "/local/mini-graph-card-bundle.js?v=0.11.0",
+        "type": "module",
+        "id": "0efb369ac3444fc6a73603bfb433d86d"
+      }
+    ]
+  }
 }
