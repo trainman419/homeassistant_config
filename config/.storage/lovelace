@@ -292,10 +292,104 @@
                 },
                 {
                   "entity": "sensor.upstairs_temperature_sensor_humidity"
+                },
+                {
+                  "entity": "sensor.particulate_matter_2_5um_concentration_2"
+                },
+                {
+                  "entity": "sensor.temperature_2"
+                },
+                {
+                  "entity": "sensor.senseair_co2_value_2"
+                },
+                {
+                  "entity": "sensor.humidity_2"
                 }
               ],
               "hours_to_show": 24,
               "refresh_interval": 0
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "climate.thermostat_1_nativezone"
+                },
+                {
+                  "entity": "sensor.thermostat_1_current_compressor_speed"
+                },
+                {
+                  "entity": "sensor.temperature"
+                },
+                {
+                  "entity": "sensor.upstairs_temperature_sensor_air_temperature"
+                },
+                {
+                  "entity": "sensor.thermostat_1_requested_compressor_speed"
+                },
+                {
+                  "entity": "binary_sensor.thermostat_1_emergency_heat_active"
+                },
+                {
+                  "entity": "binary_sensor.thermostat_1_blower_active"
+                }
+              ]
+            },
+            {
+              "type": "custom:mini-graph-card",
+              "entities": [
+                {
+                  "entity": "sensor.humidity"
+                },
+                {
+                  "entity": "sensor.humidity_2"
+                },
+                {
+                  "entity": "sensor.thermostat_1_relative_humidity"
+                },
+                {
+                  "entity": "sensor.upstairs_temperature_sensor_humidity"
+                }
+              ]
+            },
+            {
+              "type": "custom:mini-graph-card",
+              "entities": [
+                {
+                  "entity": "sensor.temperature"
+                },
+                {
+                  "entity": "sensor.upstairs_temperature_sensor_air_temperature"
+                },
+                {
+                  "entity": "sensor.thermostat_1_nativezone_temperature"
+                },
+                {
+                  "entity": "sensor.temperature_2"
+                }
+              ]
+            },
+            {
+              "type": "custom:mini-graph-card",
+              "entities": [
+                {
+                  "entity": "sensor.senseair_co2_value"
+                },
+                {
+                  "entity": "sensor.senseair_co2_value_2"
+                }
+              ]
+            },
+            {
+              "type": "custom:mini-graph-card",
+              "entities": [
+                {
+                  "entity": "sensor.particulate_matter_2_5um_concentration"
+                },
+                {
+                  "entity": "sensor.particulate_matter_2_5um_concentration_2"
+                }
+              ]
             }
           ],
           "icon": "mdi:home-assistant",
