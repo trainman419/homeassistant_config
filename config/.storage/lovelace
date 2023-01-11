@@ -236,18 +236,51 @@
         },
         {
           "theme": "Backend-selected",
-          "icon": "mdi:speaker-multiple",
-          "path": "audio",
-          "title": "Audio",
+          "title": "Printer",
+          "path": "printer",
+          "icon": "mdi:printer-3d",
           "badges": [],
           "cards": [
             {
-              "type": "entity",
-              "entity": "media_player.kitchen"
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "button.octoprint_pause_job"
             },
             {
-              "type": "entity",
-              "entity": "media_player.living_room"
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "button.octoprint_resume_job"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.octoprint_current_state"
+                },
+                {
+                  "entity": "sensor.octoprint_job_percentage"
+                },
+                {
+                  "entity": "sensor.octoprint_estimated_finish_time"
+                }
+              ]
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "button.octoprint_stop_job"
             }
           ]
         },
