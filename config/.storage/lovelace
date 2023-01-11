@@ -83,8 +83,16 @@
               "type": "entities",
               "entities": [
                 {
+                  "entity": "sensor.fs336922n_laundry_machine_state",
+                  "name": "Washer Status"
+                },
+                {
                   "entity": "sensor.fs336922n_laundry_time_remaining",
                   "name": "Washer Time Remaining"
+                },
+                {
+                  "entity": "sensor.ms115331g_laundry_machine_state",
+                  "name": "Dryer Status"
                 },
                 {
                   "entity": "sensor.ms115331g_laundry_time_remaining",
@@ -115,6 +123,9 @@
                   "entity": "light.undercab_lights"
                 },
                 {
+                  "entity": "light.kitchen_toe_kick"
+                },
+                {
                   "entity": "light.hall_light"
                 },
                 {
@@ -142,22 +153,19 @@
                   "entity": "light.great_room_light"
                 },
                 {
-                  "entity": "light.mechanical_room"
-                },
-                {
-                  "entity": "switch.front_porch_light"
-                },
-                {
-                  "entity": "switch.great_room_porch"
-                },
-                {
-                  "entity": "switch.deck_light"
-                },
-                {
-                  "entity": "switch.outside_laundry"
-                },
+                  "entity": "switch.tplink_switch"
+                }
+              ],
+              "title": "Upstairs Lights"
+            },
+            {
+              "type": "entities",
+              "entities": [
                 {
                   "entity": "light.bar"
+                },
+                {
+                  "entity": "light.bar_hallway"
                 },
                 {
                   "entity": "light.hue_color_lamp_1_3"
@@ -166,40 +174,43 @@
                   "entity": "light.hue_color_lamp_1_2"
                 },
                 {
-                  "entity": "light.bar_hallway"
-                },
-                {
                   "entity": "light.downstairs_hall"
-                },
-                {
-                  "entity": "switch.laundry_fan"
                 },
                 {
                   "entity": "switch.laundry"
                 },
                 {
-                  "entity": "light.kitchen_toe_kick"
+                  "entity": "switch.laundry_fan"
                 },
                 {
-                  "entity": "light.hue_color_lamp_1"
+                  "entity": "light.mechanical_room"
+                }
+              ],
+              "title": "Basement Lights"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.front_porch_light"
                 },
                 {
-                  "entity": "light.hue_color_lamp_2"
+                  "entity": "switch.front_garage_light"
                 },
                 {
-                  "entity": "light.hue_color_lamp_3"
+                  "entity": "switch.great_room_porch"
                 },
                 {
-                  "entity": "light.hue_lightstrip_1"
+                  "entity": "switch.deck_light"
                 },
                 {
                   "entity": "switch.back_door_light"
                 },
                 {
-                  "entity": "switch.front_garage_light"
+                  "entity": "switch.outside_laundry"
                 }
               ],
-              "title": "All Lights"
+              "title": "Outdoor Lights"
             },
             {
               "type": "entities",
@@ -253,6 +264,19 @@
                   "entity": "person.katrina"
                 }
               ]
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.thermostat_1_nativezone_temperature",
+              "needle": false
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.temperature_2"
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.thermostat_1_outdoor_temperature"
             },
             {
               "type": "history-graph",
@@ -334,62 +358,6 @@
                   "entity": "binary_sensor.thermostat_1_blower_active"
                 }
               ]
-            },
-            {
-              "type": "custom:mini-graph-card",
-              "entities": [
-                {
-                  "entity": "sensor.humidity"
-                },
-                {
-                  "entity": "sensor.humidity_2"
-                },
-                {
-                  "entity": "sensor.thermostat_1_relative_humidity"
-                },
-                {
-                  "entity": "sensor.upstairs_temperature_sensor_humidity"
-                }
-              ]
-            },
-            {
-              "type": "custom:mini-graph-card",
-              "entities": [
-                {
-                  "entity": "sensor.temperature"
-                },
-                {
-                  "entity": "sensor.upstairs_temperature_sensor_air_temperature"
-                },
-                {
-                  "entity": "sensor.thermostat_1_nativezone_temperature"
-                },
-                {
-                  "entity": "sensor.temperature_2"
-                }
-              ]
-            },
-            {
-              "type": "custom:mini-graph-card",
-              "entities": [
-                {
-                  "entity": "sensor.senseair_co2_value"
-                },
-                {
-                  "entity": "sensor.senseair_co2_value_2"
-                }
-              ]
-            },
-            {
-              "type": "custom:mini-graph-card",
-              "entities": [
-                {
-                  "entity": "sensor.particulate_matter_2_5um_concentration"
-                },
-                {
-                  "entity": "sensor.particulate_matter_2_5um_concentration_2"
-                }
-              ]
             }
           ],
           "icon": "mdi:home-assistant",
@@ -397,14 +365,28 @@
           "title": "Home"
         },
         {
+          "theme": "Backend-selected",
+          "icon": "mdi:speaker-multiple",
+          "path": "audio",
+          "title": "Audio",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entity",
+              "entity": "media_player.kitchen"
+            },
+            {
+              "type": "entity",
+              "entity": "media_player.living_room"
+            }
+          ]
+        },
+        {
           "badges": [],
           "cards": [
             {
               "type": "entities",
               "entities": [
-                {
-                  "entity": "automation.bedtime_lights_low_9_30"
-                },
                 {
                   "entity": "automation.lights_down_for_bedtime"
                 },

@@ -113,6 +113,11 @@
         "name": "Workshop",
         "id": "workshop",
         "picture": null
+      },
+      {
+        "name": "Guest Room",
+        "id": "guest_room",
+        "picture": null
       }
     ]
   }
