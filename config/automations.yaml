@@ -3,6 +3,7 @@
   trigger:
   - platform: sun
     event: sunset
+    offset: -00:15
   action:
   - service: switch.turn_on
     data: {}
@@ -258,4 +259,106 @@
   action:
   - service: script.lights_off
     data: {}
+  mode: single
+- id: '1670289138359'
+  alias: Xmas Tree On
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:00:00
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.tplink_switch
+  mode: single
+- id: '1670289179108'
+  alias: Xmas Tree Off
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.tplink_switch
+  mode: single
+- id: '1670641280609'
+  alias: Laundry Motion Light - On
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 1e17080446c3fc31a51f3d50fa99a7b6
+    entity_id: binary_sensor.laundry_fan_home_security_motion_detection
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.laundry
+  mode: single
+- id: '1670641407544'
+  alias: Laundry Motion Light - Off
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 1e17080446c3fc31a51f3d50fa99a7b6
+    entity_id: binary_sensor.laundry_fan_home_security_motion_detection
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.laundry
+  mode: single
+- id: '1670642031921'
+  alias: Laundry Fan - On
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.ms115331g_laundry_machine_state
+    - sensor.fs336922n_laundry_machine_state
+    to: Run
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.laundry_fan
+  mode: single
+- id: '1670643644507'
+  alias: Laundry Fan - Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.ms115331g_laundry_machine_state
+    - sensor.fs336922n_laundry_machine_state
+    from: Run
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: sensor.ms115331g_laundry_machine_state
+      state: Run
+    - condition: state
+      entity_id: sensor.fs336922n_laundry_machine_state
+      state: Run
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.laundry_fan
   mode: single
