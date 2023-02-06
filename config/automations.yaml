@@ -41,15 +41,27 @@
       entity_id:
       - light.hall_light
       - light.stair_light
-      - light.kitchen
+      - light.island_pendants
   - service: light.turn_on
     data:
-      brightness_pct: 50
+      brightness_pct: 35
       transition: 300
     target:
       entity_id:
       - light.living_room_lights
-      - light.living_room_walkway
+      - light.fireplace_lights
+  - service: light.turn_on
+    data:
+      transition: 300
+      brightness_pct: 10
+    target:
+      entity_id: light.living_room_walkway
+  - service: light.turn_on
+    data:
+      transition: 300
+      brightness_pct: 70
+    target:
+      entity_id: light.kitchen
   mode: single
 - id: arrive_lights
   alias: Lights on when we get home
