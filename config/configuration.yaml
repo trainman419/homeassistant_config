@@ -181,7 +181,7 @@ cover:
           - condition: state
             entity_id: binary_sensor.left_garage_door_sensor_window_door_is_open
             state: "on"
-          - service: switch.turn_off
+          - service: switch.turn_on
             target:
               entity_id: switch.left_garage_door
         stop_cover:
@@ -209,7 +209,7 @@ cover:
           - condition: state
             entity_id: binary_sensor.right_garage_door_sensor_window_door_is_open
             state: "on"
-          - service: switch.turn_off
+          - service: switch.turn_on
             target:
               entity_id: switch.right_garage_door
         stop_cover:
