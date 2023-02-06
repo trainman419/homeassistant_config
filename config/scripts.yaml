@@ -82,7 +82,7 @@ turn_down_lights:
             brightness: 64
   mode: single
   icon: mdi:lightbulb-night-outline
-dining_blinds_up:
+dining_blinds_down:
   alias: Dining Blinds Down
   sequence:
   - service: remote.send_command
@@ -93,7 +93,7 @@ dining_blinds_up:
       entity_id: remote.dining_room_remote
   mode: single
   icon: mdi:blinds
-dining_blinds_down_duplicate:
+dining_blinds_up:
   alias: Dining Blinds Up
   sequence:
   - service: remote.send_command
