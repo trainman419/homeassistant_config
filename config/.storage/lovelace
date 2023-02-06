@@ -279,21 +279,6 @@
               ]
             },
             {
-              "show_name": true,
-              "show_icon": true,
-              "show_state": true,
-              "type": "glance",
-              "entities": [
-                {
-                  "entity": "binary_sensor.left_garage_door_sendor_window_door_is_open"
-                },
-                {
-                  "entity": "binary_sensor.right_garage_door_sensor_window_door_is_open"
-                }
-              ],
-              "title": "Garage"
-            },
-            {
               "type": "horizontal-stack",
               "cards": [
                 {
@@ -303,7 +288,8 @@
                   "tap_action": {
                     "action": "toggle"
                   },
-                  "entity": "switch.left_garage_door"
+                  "entity": "cover.left_garage_door",
+                  "show_state": true
                 },
                 {
                   "show_name": true,
@@ -312,7 +298,8 @@
                   "tap_action": {
                     "action": "toggle"
                   },
-                  "entity": "switch.right_garage_door"
+                  "entity": "cover.right_garage_door",
+                  "show_state": true
                 }
               ]
             }
