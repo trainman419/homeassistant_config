@@ -82,3 +82,47 @@ turn_down_lights:
             brightness: 64
   mode: single
   icon: mdi:lightbulb-night-outline
+dining_blinds_up:
+  alias: Dining Blinds Down
+  sequence:
+  - service: remote.send_command
+    data:
+      device: blinds
+      command: down
+    target:
+      entity_id: remote.dining_room_remote
+  mode: single
+  icon: mdi:blinds
+dining_blinds_down_duplicate:
+  alias: Dining Blinds Up
+  sequence:
+  - service: remote.send_command
+    data:
+      device: blinds
+      command: up
+    target:
+      entity_id: remote.dining_room_remote
+  mode: single
+  icon: mdi:blinds-open
+great_room_blinds_down:
+  alias: Great Room Blinds Down
+  sequence:
+  - service: remote.send_command
+    data:
+      device: blinds
+      command: down
+    target:
+      entity_id: remote.family_room_remote
+  mode: single
+  icon: mdi:blinds
+great_room_blinds_up:
+  alias: Great Room Blinds Up
+  sequence:
+  - service: remote.send_command
+    data:
+      device: blinds
+      command: up
+    target:
+      entity_id: remote.family_room_remote
+  mode: single
+  icon: mdi:blinds-open
