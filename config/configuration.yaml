@@ -169,7 +169,7 @@ cover:
       left_garage_door:
         device_class: garage
         friendly_name: "Left Garage Door"
-        position_template: "{{ states('binary_sensor.left_garage_door_sensor_window_door_is_open') }}"
+        position_template: "{{ states('binary_sensor.left_garage_door_sensor_window_door_is_open') != 'off' }}"
         open_cover:
           - condition: state
             entity_id: binary_sensor.left_garage_door_sensor_window_door_is_open
@@ -189,7 +189,7 @@ cover:
           target:
             entity_id: switch.left_garage_door
         icon_template: >-
-          {% if states('binary_sensor.left_garage_door_sensor_window_door_is_open') %}
+          {% if states('binary_sensor.left_garage_door_sensor_window_door_is_open') != 'off' %}
             mdi:garage-open
           {% else %}
             mdi:garage
@@ -197,7 +197,7 @@ cover:
       right_garage_door:
         device_class: garage
         friendly_name: "Right Garage Door"
-        position_template: "{{ states('binary_sensor.right_garage_door_sensor_window_door_is_open') }}"
+        position_template: "{{ states('binary_sensor.right_garage_door_sensor_window_door_is_open') != 'off' }}"
         open_cover:
           - condition: state
             entity_id: binary_sensor.right_garage_door_sensor_window_door_is_open
@@ -217,7 +217,7 @@ cover:
           target:
             entity_id: switch.right_garage_door
         icon_template: >-
-          {% if states('binary_sensor.right_garage_door_sensor_window_door_is_open')|float > 0 %}
+          {% if states('binary_sensor.right_garage_door_sensor_window_door_is_open') != 'off' %}
             mdi:garage-open
           {% else %}
             mdi:garage
