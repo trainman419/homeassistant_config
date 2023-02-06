@@ -239,7 +239,7 @@
                   "show_name": true,
                   "show_icon": true,
                   "type": "button",
-                  "entity": "script.dining_blinds_down",
+                  "entity": "cover.dining_blinds",
                   "tap_action": {
                     "action": "toggle"
                   }
@@ -248,30 +248,7 @@
                   "show_name": true,
                   "show_icon": true,
                   "type": "button",
-                  "entity": "script.dining_blinds_up",
-                  "tap_action": {
-                    "action": "toggle"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "horizontal-stack",
-              "cards": [
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "entity": "script.great_room_blinds_down",
-                  "tap_action": {
-                    "action": "toggle"
-                  }
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "entity": "script.great_room_blinds_up",
+                  "entity": "cover.great_room_blinds",
                   "tap_action": {
                     "action": "toggle"
                   }
