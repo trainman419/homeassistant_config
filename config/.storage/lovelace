@@ -383,6 +383,10 @@
               ]
             },
             {
+              "type": "entity",
+              "entity": "fan.winix_bedroom"
+            },
+            {
               "type": "gauge",
               "entity": "sensor.thermostat_1_nativezone_temperature",
               "needle": false
@@ -473,6 +477,17 @@
                 },
                 {
                   "entity": "binary_sensor.thermostat_1_blower_active"
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.winix_bedroom_2"
+                },
+                {
+                  "entity": "sensor.winix_bedroom"
                 }
               ]
             }
