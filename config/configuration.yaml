@@ -222,5 +222,42 @@ cover:
           {% else %}
             mdi:garage
           {% endif %}
+      dining_blinds:
+        device_class: shade
+        friendly_name: "Dining Shades"
+        open_cover:
+          - service: remote.send_command
+            data:
+              device: blinds
+              command: up
+            target:
+              entity_id: remote.dining_room_remote
+        close_cover:
+          - service: remote.send_command
+            data:
+              device: blinds
+              command: down
+            target:
+              entity_id: remote.dining_room_remote
+        # Icons
+        # icon: mdi:blinds
+        # icon: mdi:blinds-open
+      great_room_blinds:
+        device_class: shade
+        friendly_name: "Great Room Shades"
+        open_cover:
+          - service: remote.send_command
+            data:
+              device: blinds
+              command: up
+            target:
+              entity_id: remote.family_room_remote
+        close_cover:
+          - service: remote.send_command
+            data:
+              device: blinds
+              command: down
+            target:
+              entity_id: remote.family_room_remote
 
 group: !include groups.yaml
