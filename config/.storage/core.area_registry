@@ -118,6 +118,11 @@
         "name": "Guest Room",
         "id": "guest_room",
         "picture": null
+      },
+      {
+        "name": "Downstairs Pantry",
+        "id": "downstairs_pantry",
+        "picture": null
       }
     ]
   }

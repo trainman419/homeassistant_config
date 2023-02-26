@@ -183,6 +183,12 @@
                   "entity": "switch.laundry_fan"
                 },
                 {
+                  "entity": "switch.pantry_light"
+                },
+                {
+                  "entity": "switch.workshop_ligths"
+                },
+                {
                   "entity": "light.mechanical_room"
                 }
               ],
@@ -208,6 +214,9 @@
                 },
                 {
                   "entity": "switch.outside_laundry"
+                },
+                {
+                  "entity": "switch.workshop_driveway_lights"
                 }
               ],
               "title": "Outdoor Lights"
@@ -277,6 +286,29 @@
                   },
                   "entity": "cover.right_garage_door",
                   "show_state": true
+                }
+              ]
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "cover.guest_blinds_left"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "cover.guest_blinds_right"
                 }
               ]
             }
