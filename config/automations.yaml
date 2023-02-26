@@ -373,3 +373,80 @@
     target:
       entity_id: switch.laundry_fan
   mode: single
+- id: '1676705023554'
+  alias: Bar Hall on when Downstairs Hall On
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 0c27a8ca4e24809c2c9cc5402aff2d75
+    entity_id: light.downstairs_hall
+    domain: light
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      brightness_pct: 100
+    target:
+      entity_id: light.bar_hallway
+  mode: single
+- id: '1677387560950'
+  alias: Workshop Driveway Override
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 0a7f8c6399fed067d2d711f309a748e7
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '005'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 005
+  condition: []
+  action:
+  - service: input_boolean.toggle
+    data: {}
+    target:
+      entity_id: input_boolean.workshop_driveway_override
+  mode: single
+- id: '1677392618128'
+  alias: Workshop Driveway Override Indicator
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.workshop_driveway_override
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: input_boolean.workshop_driveway_override
+      state: 'on'
+    then:
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id:
+        - switch.workshop_driveway_north
+        - switch.workshop_driveway_south
+    - service: zwave_js.set_config_parameter
+      data:
+        parameter: '1'
+        value: '3'
+      target:
+        entity_id: switch.workshop_driveway_lights
+    else:
+    - service: switch.turn_off
+      data: {}
+      target:
+        entity_id:
+        - switch.workshop_driveway_north
+        - switch.workshop_driveway_south
+    - service: zwave_js.set_config_parameter
+      data:
+        parameter: '1'
+        value: '2'
+      target:
+        entity_id: switch.workshop_driveway_lights
+  mode: single

@@ -494,6 +494,45 @@
         },
         {
           "theme": "Backend-selected",
+          "title": "Automation Status",
+          "path": "automation-status",
+          "icon": "mdi:head-snowflake",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.workshop_driveway_lights"
+                },
+                {
+                  "entity": "switch.workshop_driveway_north"
+                },
+                {
+                  "entity": "switch.workshop_driveway_south"
+                },
+                {
+                  "entity": "binary_sensor.workshop_driveway_north_motion_detection"
+                },
+                {
+                  "entity": "binary_sensor.workshop_driveway_south_motion_detection"
+                },
+                {
+                  "entity": "input_boolean.workshop_driveway_override"
+                }
+              ]
+            },
+            {
+              "type": "logbook",
+              "entities": [
+                "switch.workshop_driveway_lights"
+              ],
+              "title": "Switch Events"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
           "icon": "mdi:speaker-multiple",
           "path": "audio",
           "title": "Audio",
