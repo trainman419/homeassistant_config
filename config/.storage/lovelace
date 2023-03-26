@@ -525,9 +525,34 @@
             {
               "type": "logbook",
               "entities": [
-                "switch.workshop_driveway_lights"
+                "switch.workshop_driveway_lights",
+                "sensor.workshop_driveway_lights_node_status",
+                "switch.workshop_driveway_north",
+                "switch.workshop_driveway_south",
+                "sensor.node_98_node_status",
+                "sensor.workshop_driveway_south_node_status",
+                "binary_sensor.workshop_driveway_north_motion_detection",
+                "binary_sensor.workshop_driveway_south_motion_detection"
               ],
               "title": "Switch Events"
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "binary_sensor.workshop_driveway_north_motion_detection"
+                },
+                {
+                  "entity": "switch.workshop_driveway_north"
+                },
+                {
+                  "entity": "binary_sensor.workshop_driveway_south_motion_detection"
+                },
+                {
+                  "entity": "switch.workshop_driveway_south"
+                }
+              ],
+              "hours_to_show": 2
             }
           ]
         },

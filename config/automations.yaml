@@ -415,7 +415,7 @@
       entity_id: input_boolean.workshop_driveway_override
   mode: single
 - id: '1677392618128'
-  alias: Workshop Driveway Override Indicator
+  alias: Workshop Driveway Override Action
   description: ''
   trigger:
   - platform: state
@@ -424,33 +424,78 @@
   condition: []
   action:
   - if:
-    - condition: state
-      entity_id: input_boolean.workshop_driveway_override
-      state: 'on'
+    - condition: template
+      value_template: '{{trigger.to_state.state == ''on''}}'
     then:
-    - service: switch.turn_on
-      data: {}
-      target:
-        entity_id:
-        - switch.workshop_driveway_north
-        - switch.workshop_driveway_south
     - service: zwave_js.set_config_parameter
       data:
         parameter: '1'
         value: '3'
       target:
         entity_id: switch.workshop_driveway_lights
-    else:
-    - service: switch.turn_off
+    - service: switch.turn_on
       data: {}
       target:
         entity_id:
         - switch.workshop_driveway_north
         - switch.workshop_driveway_south
+    else:
     - service: zwave_js.set_config_parameter
       data:
         parameter: '1'
         value: '2'
       target:
         entity_id: switch.workshop_driveway_lights
+    - service: switch.turn_off
+      data: {}
+      target:
+        entity_id:
+        - switch.workshop_driveway_north
+        - switch.workshop_driveway_south
+  mode: single
+- id: '1679805742869'
+  alias: 9pm Door Check
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:00:00'
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: cover.left_garage_door
+      attribute: current_position
+      state: open
+    - condition: state
+      entity_id: cover.right_garage_door
+      attribute: current_position
+      state: open
+  action:
+  - service: notify.notify
+    data:
+      title: Check Doors
+      message: Doors unlocked or garage door open
+  mode: single
+- id: '1679805896144'
+  alias: 11pm Door Check
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: cover.left_garage_door
+      attribute: current_position
+      state: open
+    - condition: state
+      entity_id: cover.right_garage_door
+      attribute: current_position
+      state: open
+  action:
+  - service: notify.notify
+    data:
+      title: Check Doors
+      message: Doors unlocked or garage door open
   mode: single
