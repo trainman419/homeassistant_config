@@ -350,7 +350,7 @@
       entity_id: switch.laundry_fan
   mode: single
 - id: '1670643644507'
-  alias: Laundry Fan - Off
+  alias: Laundry Fan - Off & Notify
   description: ''
   trigger:
   - platform: state
@@ -372,6 +372,10 @@
     data: {}
     target:
       entity_id: switch.laundry_fan
+  - service: notify.notify
+    data:
+      title: Laundry Done
+      message: Washer and Dryer are Done!
   mode: single
 - id: '1676705023554'
   alias: Bar Hall on when Downstairs Hall On
