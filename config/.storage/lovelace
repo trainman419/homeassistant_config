@@ -216,28 +216,43 @@
                   "entity": "switch.outside_laundry"
                 },
                 {
-                  "entity": "switch.workshop_driveway_lights"
+                  "entity": "input_boolean.workshop_driveway_override",
+                  "icon": "mdi:toggle-switch-variant"
                 }
               ],
               "title": "Outdoor Lights"
-            },
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Doors",
+          "path": "doors",
+          "icon": "mdi:door",
+          "badges": [],
+          "cards": [
             {
-              "type": "entities",
-              "entities": [
+              "type": "horizontal-stack",
+              "cards": [
                 {
-                  "entity": "sensor.orbiting_orb_status_code",
-                  "name": "Oribiting Orb",
-                  "icon": "mdi:orbit"
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "cover.left_garage_door",
+                  "show_state": true
                 },
                 {
-                  "entity": "sensor.poop_goblin_status_code",
-                  "name": "Poop Goblin",
-                  "icon": "mdi:emoticon-poop"
-                },
-                {
-                  "entity": "sensor.juicenet_device_charging_status",
-                  "name": "Car Charger",
-                  "icon": "mdi:car-electric-outline"
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "cover.right_garage_door",
+                  "show_state": true
                 }
               ]
             },
@@ -261,31 +276,6 @@
                   "tap_action": {
                     "action": "toggle"
                   }
-                }
-              ]
-            },
-            {
-              "type": "horizontal-stack",
-              "cards": [
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "tap_action": {
-                    "action": "toggle"
-                  },
-                  "entity": "cover.left_garage_door",
-                  "show_state": true
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "tap_action": {
-                    "action": "toggle"
-                  },
-                  "entity": "cover.right_garage_door",
-                  "show_state": true
                 }
               ]
             },
@@ -375,6 +365,26 @@
                 },
                 {
                   "entity": "person.katrina"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.orbiting_orb_status_code",
+                  "name": "Oribiting Orb",
+                  "icon": "mdi:orbit"
+                },
+                {
+                  "entity": "sensor.poop_goblin_status_code",
+                  "name": "Poop Goblin",
+                  "icon": "mdi:emoticon-poop"
+                },
+                {
+                  "entity": "sensor.juicenet_device_charging_status",
+                  "name": "Car Charger",
+                  "icon": "mdi:car-electric-outline"
                 }
               ]
             },
