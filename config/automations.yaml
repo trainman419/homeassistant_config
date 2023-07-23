@@ -68,9 +68,9 @@
   trigger:
   - platform: state
     entity_id:
-    - person.austin
-    - person.katrina
-    to: home
+    - zone.home
+    to: '1'
+    from: '0'
   condition:
   - condition: state
     entity_id: sun.sun
@@ -240,6 +240,8 @@
       - 463917272dafea89c447c90046d776ac
       - b895526190c97def3ad9324f36f69f2a
       - 87ea2c970c100aa476cc72849701cfcb
+      - b6024b903b5a35924daeb44ce2f50820
+      - 0c27a8ca4e24809c2c9cc5402aff2d75
   mode: single
 - id: '1663601026179'
   alias: Update espresso time
@@ -375,7 +377,7 @@
   - service: notify.notify
     data:
       title: Laundry Done
-      message: Laundry is done!
+      message: It's time to move it! Move it!
   mode: single
 - id: '1676705023554'
   alias: Bar Hall on when Downstairs Hall On
@@ -498,4 +500,33 @@
     data:
       title: Check Doors
       message: Doors unlocked or garage door open
+  mode: single
+- id: '1684686910502'
+  alias: Bedroom off at 9am
+  description: ''
+  trigger:
+  - platform: time
+    at: 09:00:00
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      area_id: a7e7176a46f44fccb565020478a1496b
+  mode: single
+- id: '1687311611917'
+  alias: Pause workshop music when lights off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.workshop_ligths
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: media_player.media_pause
+    data: {}
+    target:
+      entity_id: media_player.workshop
   mode: single

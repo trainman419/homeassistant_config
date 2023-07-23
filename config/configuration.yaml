@@ -132,11 +132,6 @@ sensor:
   #     - weather_4d
   #     - weather_4n
 
-hue:
-  bridges:
-    - host: 192.168.0.91
-      allow_hue_groups: False
-
 light:
   - platform: decora_wifi
     username: namniart@gmail.com

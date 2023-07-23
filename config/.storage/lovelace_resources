@@ -13,6 +13,11 @@
         "url": "/local/mini-graph-card-bundle.js?v=0.11.0",
         "type": "module",
         "id": "0efb369ac3444fc6a73603bfb433d86d"
+      },
+      {
+        "id": "617605fa72584b74a941701d4b41543c",
+        "url": "/local/mushroom.js",
+        "type": "module"
       }
     ]
   }
