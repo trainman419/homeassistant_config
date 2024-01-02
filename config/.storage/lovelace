@@ -13,41 +13,27 @@
           "badges": [],
           "cards": [
             {
-              "type": "vertical-stack",
+              "square": true,
+              "type": "grid",
               "cards": [
                 {
-                  "type": "custom:mushroom-light-card",
-                  "entity": "light.hue_lightstrip_1",
-                  "show_brightness_control": true,
-                  "show_color_temp_control": false,
-                  "show_color_control": true,
-                  "collapsible_controls": true
+                  "type": "light",
+                  "entity": "light.hue_lightstrip_1"
                 },
                 {
-                  "type": "custom:mushroom-light-card",
-                  "entity": "light.hue_color_lamp_3",
-                  "show_brightness_control": true,
-                  "show_color_temp_control": true,
-                  "collapsible_controls": true,
-                  "show_color_control": true
+                  "type": "light",
+                  "entity": "light.hue_color_lamp_1"
                 },
                 {
-                  "type": "custom:mushroom-light-card",
-                  "entity": "light.hue_color_lamp_1",
-                  "show_brightness_control": true,
-                  "show_color_temp_control": true,
-                  "collapsible_controls": true,
-                  "show_color_control": true
+                  "type": "light",
+                  "entity": "light.hue_color_lamp_3"
                 },
                 {
-                  "type": "custom:mushroom-light-card",
-                  "entity": "light.hue_color_lamp_2",
-                  "show_brightness_control": true,
-                  "show_color_temp_control": true,
-                  "collapsible_controls": true,
-                  "show_color_control": true
+                  "type": "light",
+                  "entity": "light.hue_color_lamp_2"
                 }
-              ]
+              ],
+              "columns": 2
             },
             {
               "type": "entities",
@@ -130,52 +116,73 @@
               "icon": "mdi:coffee-maker"
             },
             {
-              "type": "entities",
-              "entities": [
+              "square": false,
+              "type": "grid",
+              "title": "Upstairs Lights",
+              "cards": [
                 {
+                  "type": "light",
                   "entity": "light.kitchen"
                 },
                 {
+                  "type": "light",
                   "entity": "light.island_pendants"
                 },
                 {
+                  "type": "light",
                   "entity": "light.undercab_lights"
                 },
                 {
+                  "type": "light",
                   "entity": "light.kitchen_toe_kick"
                 },
                 {
+                  "type": "light",
                   "entity": "light.hall_light"
                 },
                 {
+                  "type": "light",
                   "entity": "light.stair_light"
                 },
                 {
+                  "type": "light",
                   "entity": "light.living_room_walkway"
                 },
                 {
+                  "type": "light",
                   "entity": "light.living_room_lights"
                 },
                 {
+                  "type": "light",
                   "entity": "light.fireplace_lights"
                 },
                 {
+                  "type": "light",
                   "entity": "light.dining_room"
                 },
                 {
+                  "type": "light",
                   "entity": "light.dining_table"
                 },
                 {
+                  "type": "light",
                   "entity": "light.extended_color_light_1"
                 },
                 {
+                  "type": "light",
                   "entity": "light.great_room_light"
                 },
                 {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
                   "entity": "switch.tplink_switch"
                 }
               ],
-              "title": "Upstairs Lights"
+              "columns": 3
             },
             {
               "type": "entities",
@@ -242,22 +249,41 @@
               "title": "Outdoor Lights"
             },
             {
-              "type": "entities",
-              "entities": [
+              "type": "vertical-stack",
+              "cards": [
                 {
-                  "entity": "light.hue_lightstrip_1"
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.hue_lightstrip_1",
+                  "show_brightness_control": true,
+                  "show_color_temp_control": false,
+                  "show_color_control": true,
+                  "collapsible_controls": true
                 },
                 {
-                  "entity": "light.hue_color_lamp_3"
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.hue_color_lamp_3",
+                  "show_brightness_control": true,
+                  "show_color_temp_control": true,
+                  "collapsible_controls": true,
+                  "show_color_control": true
                 },
                 {
-                  "entity": "light.hue_color_lamp_1"
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.hue_color_lamp_1",
+                  "show_brightness_control": true,
+                  "show_color_temp_control": true,
+                  "collapsible_controls": true,
+                  "show_color_control": true
                 },
                 {
-                  "entity": "light.hue_color_lamp_2"
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.hue_color_lamp_2",
+                  "show_brightness_control": true,
+                  "show_color_temp_control": true,
+                  "collapsible_controls": true,
+                  "show_color_control": true
                 }
-              ],
-              "title": "Bedroom"
+              ]
             }
           ]
         },
@@ -436,7 +462,7 @@
             },
             {
               "type": "gauge",
-              "entity": "sensor.temperature_2"
+              "entity": "sensor.thermostat_1_current_compressor_speed"
             },
             {
               "type": "gauge",
@@ -611,12 +637,12 @@
           "badges": [],
           "cards": [
             {
-              "type": "entity",
-              "entity": "media_player.kitchen"
+              "type": "media-control",
+              "entity": "media_player.magnepans"
             },
             {
-              "type": "entity",
-              "entity": "media_player.living_room"
+              "type": "media-control",
+              "entity": "media_player.workshop"
             }
           ]
         },

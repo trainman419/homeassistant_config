@@ -242,6 +242,7 @@
       - 87ea2c970c100aa476cc72849701cfcb
       - b6024b903b5a35924daeb44ce2f50820
       - 0c27a8ca4e24809c2c9cc5402aff2d75
+      entity_id: light.bar
   mode: single
 - id: '1663601026179'
   alias: Update espresso time
