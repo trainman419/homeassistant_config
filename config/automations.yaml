@@ -98,7 +98,8 @@
     data: {}
   mode: single
 - id: nighttime
-  alias: Lights off at 11pm
+  alias: Porch Lights off at 11pm
+  description: ''
   trigger:
   - platform: time
     at: '23:00:00'
@@ -521,7 +522,7 @@
   trigger:
   - platform: state
     entity_id:
-    - switch.workshop_ligths
+    - switch.workshop_lights
     from: 'on'
     to: 'off'
   condition: []

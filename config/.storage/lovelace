@@ -212,7 +212,7 @@
                   "entity": "switch.pantry_light"
                 },
                 {
-                  "entity": "switch.workshop_ligths"
+                  "entity": "switch.workshop_lights"
                 },
                 {
                   "entity": "light.mechanical_room"
@@ -221,32 +221,56 @@
               "title": "Basement Lights"
             },
             {
-              "type": "entities",
-              "entities": [
+              "type": "grid",
+              "title": "Outdoor Lights",
+              "square": false,
+              "cards": [
                 {
-                  "entity": "switch.front_porch_light"
+                  "show_name": true,
+                  "show_icon": true,
+                  "entity": "switch.front_porch_light",
+                  "type": "button"
                 },
                 {
-                  "entity": "switch.front_garage_light"
+                  "entity": "switch.front_garage_light",
+                  "type": "button"
                 },
                 {
-                  "entity": "switch.great_room_porch"
+                  "entity": "switch.great_room_porch",
+                  "type": "button"
                 },
                 {
-                  "entity": "switch.deck_light"
+                  "entity": "switch.deck_light",
+                  "type": "button"
                 },
                 {
-                  "entity": "switch.back_door_light"
+                  "entity": "switch.back_door_light",
+                  "type": "button"
                 },
                 {
-                  "entity": "switch.outside_laundry"
+                  "entity": "switch.outside_laundry",
+                  "type": "button"
                 },
                 {
                   "entity": "input_boolean.workshop_driveway_override",
+                  "type": "button",
+                  "icon": "mdi:toggle-switch-variant"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "entity": "switch.detached_garage_lights",
+                  "type": "button",
+                  "icon": "mdi:toggle-switch-variant"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "entity": "switch.detached_garage_courtyard",
+                  "type": "button",
                   "icon": "mdi:toggle-switch-variant"
                 }
-              ],
-              "title": "Outdoor Lights"
+              ]
             },
             {
               "type": "vertical-stack",
@@ -605,7 +629,10 @@
                 "sensor.node_98_node_status",
                 "sensor.workshop_driveway_south_node_status",
                 "binary_sensor.workshop_driveway_north_motion_detection",
-                "binary_sensor.workshop_driveway_south_motion_detection"
+                "binary_sensor.workshop_driveway_south_motion_detection",
+                "binary_sensor.detached_garage_motion_motion_detection",
+                "sensor.detached_garage_motion_node_status",
+                "switch.detached_garage_motion"
               ],
               "title": "Switch Events"
             },
@@ -623,6 +650,15 @@
                 },
                 {
                   "entity": "switch.workshop_driveway_south"
+                },
+                {
+                  "entity": "binary_sensor.detached_garage_motion_motion_detection"
+                },
+                {
+                  "entity": "switch.detached_garage_motion"
+                },
+                {
+                  "entity": "switch.detached_garage_courtyard"
                 }
               ],
               "hours_to_show": 2

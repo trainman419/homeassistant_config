@@ -14,6 +14,11 @@ lights_off:
       - switch.laundry
       - switch.outside_laundry
       - switch.back_door_light
+      - switch.detached_garage_lights
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.workshop_driveway_override
   mode: single
   icon: mdi:lightbulb-group-off
 bedtime:
@@ -32,6 +37,7 @@ bedtime:
       - living_room
       - mechanical_room
       - stairs
+      - bar
   - service: switch.turn_off
     data: {}
     target:
@@ -41,6 +47,11 @@ bedtime:
       - switch.laundry
       - switch.outside_laundry
       - switch.back_door_light
+      - switch.detached_garage_lights
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.workshop_driveway_override
   mode: single
   icon: mdi:lightbulb-group-off
 turn_down_lights:
