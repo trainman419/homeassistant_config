@@ -587,7 +587,11 @@
     endpoint: 0
     command_class: 91
     subtype: Endpoint 0 Scene 002
-  condition: []
+  condition:
+  - condition: state
+    entity_id: automation.garage_and_courtyard_lights_off
+    attribute: current
+    state: 0
   action:
   - service: switch.turn_on
     data: {}
@@ -648,7 +652,11 @@
     endpoint: 0
     command_class: 91
     subtype: Endpoint 0 Scene 004
-  condition: []
+  condition:
+  - condition: state
+    entity_id: automation.garage_and_courtyard_lights
+    state: 0
+    attribute: current
   action:
   - service: switch.turn_on
     target:
