@@ -556,3 +556,98 @@
         entity_id: switch.courtyard_soffet_button_2_indication_binary
       data: {}
   mode: single
+- id: '1704600528866'
+  alias: Garage and Courtyard Lights On
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 0a7f8c6399fed067d2d711f309a748e7
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '002'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 002
+  - platform: device
+    device_id: 895bbbaf83ed172a238129f7b408d99c
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '002'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 002
+  - platform: device
+    device_id: 1d601dc58da228890d5c437dc365fe4a
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '002'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 002
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id:
+      - switch.courtyard_soffet
+      - switch.courtyard_cafe_lights
+      - switch.detached_garage_courtyard
+    data: {}
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.workshop_driveway_override
+    data: {}
+  mode: single
+- id: '1704601193373'
+  alias: Garage and Courtyard Lights Off
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 0a7f8c6399fed067d2d711f309a748e7
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '004'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 004
+  - platform: device
+    device_id: 895bbbaf83ed172a238129f7b408d99c
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '004'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 004
+  - platform: device
+    device_id: 1d601dc58da228890d5c437dc365fe4a
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '004'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 004
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.courtyard_soffet
+      - switch.courtyard_cafe_lights
+      - switch.detached_garage_courtyard
+      device_id: []
+      area_id: []
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id:
+      - input_boolean.workshop_driveway_override
+      device_id: []
+      area_id: []
+    data: {}
+  mode: single
