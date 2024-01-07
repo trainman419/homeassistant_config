@@ -590,6 +590,13 @@
   condition: []
   action:
   - service: switch.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.courtyard_soffet_button_3_indication_binary
+      - switch.workshop_driveway_lights_button_3_indication_binary
+      - switch.detached_garage_courtyard_button_3_indication_binary
+  - service: switch.turn_on
     target:
       entity_id:
       - switch.courtyard_soffet
@@ -599,6 +606,15 @@
   - service: input_boolean.turn_on
     target:
       entity_id: input_boolean.workshop_driveway_override
+    data: {}
+  - service: switch.turn_off
+    target:
+      device_id: []
+      area_id: []
+      entity_id:
+      - switch.courtyard_soffet_button_3_indication_binary
+      - switch.workshop_driveway_lights_button_3_indication_binary
+      - switch.detached_garage_courtyard_button_3_indication_binary
     data: {}
   mode: single
 - id: '1704601193373'
@@ -634,6 +650,13 @@
     subtype: Endpoint 0 Scene 004
   condition: []
   action:
+  - service: switch.turn_on
+    target:
+      entity_id:
+      - switch.courtyard_soffet_button_5_indication_binary
+      - switch.workshop_driveway_lights_button_5_indication_binary
+      - switch.detached_garage_courtyard_button_5_indication_binary
+    data: {}
   - service: switch.turn_off
     target:
       entity_id:
@@ -647,6 +670,15 @@
     target:
       entity_id:
       - input_boolean.workshop_driveway_override
+      device_id: []
+      area_id: []
+    data: {}
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.courtyard_soffet_button_5_indication_binary
+      - switch.workshop_driveway_lights_button_5_indication_binary
+      - switch.detached_garage_courtyard_button_5_indication_binary
       device_id: []
       area_id: []
     data: {}
