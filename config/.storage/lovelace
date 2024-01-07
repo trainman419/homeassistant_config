@@ -269,6 +269,33 @@
                   "entity": "switch.detached_garage_courtyard",
                   "type": "button",
                   "icon": "mdi:toggle-switch-variant"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.courtyard_soffet"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.courtyard_cafe_lights"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.christmas_lights"
                 }
               ]
             },
@@ -388,56 +415,77 @@
                   "entity": "cover.guest_blinds_right"
                 }
               ]
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "lock.front_door_lock"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "lock.detached_garage_lock"
+                }
+              ]
             }
           ]
         },
         {
-          "theme": "Backend-selected",
-          "title": "Printer",
-          "path": "printer",
-          "icon": "mdi:printer-3d",
+          "title": "Batteries",
+          "path": "batteries",
+          "icon": "mdi:battery-60",
           "badges": [],
           "cards": [
             {
-              "show_name": true,
-              "show_icon": true,
-              "type": "button",
-              "tap_action": {
-                "action": "toggle"
-              },
-              "entity": "button.octoprint_pause_job"
-            },
-            {
-              "show_name": true,
-              "show_icon": true,
-              "type": "button",
-              "tap_action": {
-                "action": "toggle"
-              },
-              "entity": "button.octoprint_resume_job"
-            },
-            {
-              "type": "entities",
-              "entities": [
+              "type": "custom:battery-state-card",
+              "bulk_rename": [
                 {
-                  "entity": "sensor.octoprint_current_state"
+                  "from": "level"
                 },
                 {
-                  "entity": "sensor.octoprint_job_percentage"
+                  "from": "Level"
                 },
                 {
-                  "entity": "sensor.octoprint_estimated_finish_time"
+                  "from": "Battery"
                 }
-              ]
-            },
-            {
-              "show_name": true,
-              "show_icon": true,
-              "type": "button",
-              "tap_action": {
-                "action": "toggle"
-              },
-              "entity": "button.octoprint_stop_job"
+              ],
+              "filter": {
+                "include": [
+                  {
+                    "name": "entity_id",
+                    "value": "*battery*"
+                  }
+                ],
+                "exclude": [
+                  {
+                    "name": "entity_id",
+                    "value": "*_low_battery_level"
+                  },
+                  {
+                    "name": "entity_id",
+                    "value": "*_battery_is_disconnected"
+                  },
+                  {
+                    "name": "entity_id",
+                    "value": "*_battery_temperature_is_low"
+                  },
+                  {
+                    "name": "entity_id",
+                    "value": "*_battery_state"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -616,6 +664,15 @@
                 },
                 {
                   "entity": "input_boolean.workshop_driveway_override"
+                },
+                {
+                  "entity": "binary_sensor.detached_garage_motion_motion_detection"
+                },
+                {
+                  "entity": "switch.detached_garage_motion"
+                },
+                {
+                  "entity": "switch.detached_garage_courtyard"
                 }
               ]
             },
@@ -709,6 +766,56 @@
           "icon": "mdi:robot",
           "path": "automations",
           "title": "Automations"
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Printer",
+          "path": "printer",
+          "icon": "mdi:printer-3d",
+          "badges": [],
+          "cards": [
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "button.octoprint_pause_job"
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "button.octoprint_resume_job"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.octoprint_current_state"
+                },
+                {
+                  "entity": "sensor.octoprint_job_percentage"
+                },
+                {
+                  "entity": "sensor.octoprint_estimated_finish_time"
+                }
+              ]
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "button.octoprint_stop_job"
+            }
+          ]
         },
         {
           "badges": [],

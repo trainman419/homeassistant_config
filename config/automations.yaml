@@ -532,3 +532,27 @@
     target:
       entity_id: media_player.workshop
   mode: single
+- id: '1704599342878'
+  alias: Set Courtyard Cafe button state
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.courtyard_cafe_lights
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: switch.courtyard_cafe_lights
+      state: 'on'
+    then:
+    - service: switch.turn_on
+      target:
+        entity_id: switch.courtyard_soffet_button_2_indication_binary
+      data: {}
+    else:
+    - service: switch.turn_off
+      target:
+        entity_id: switch.courtyard_soffet_button_2_indication_binary
+      data: {}
+  mode: single

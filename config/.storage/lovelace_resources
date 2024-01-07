@@ -18,6 +18,11 @@
         "id": "617605fa72584b74a941701d4b41543c",
         "url": "/local/mushroom.js",
         "type": "module"
+      },
+      {
+        "id": "82d28a29d42f424883b67ea3dd126c3d",
+        "url": "/local/battery-state-card.js",
+        "type": "module"
       }
     ]
   }
