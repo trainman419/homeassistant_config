@@ -240,10 +240,8 @@
       - 6fd7e8960856e5a726b5c44a2810a402
       - 463917272dafea89c447c90046d776ac
       - b895526190c97def3ad9324f36f69f2a
-      - 87ea2c970c100aa476cc72849701cfcb
       - b6024b903b5a35924daeb44ce2f50820
       - 0c27a8ca4e24809c2c9cc5402aff2d75
-      entity_id: light.bar
   mode: single
 - id: '1663601026179'
   alias: Update espresso time
@@ -380,6 +378,9 @@
     data:
       title: Laundry Done
       message: It's time to move it! Move it!
+      data:
+        push:
+          interruption-level: time-sensitive
   mode: single
 - id: '1676705023554'
   alias: Bar Hall on when Downstairs Hall On
@@ -458,27 +459,22 @@
         - switch.workshop_driveway_south
   mode: single
 - id: '1679805742869'
-  alias: 9pm Door Check
+  alias: 10pm Front Door Check
   description: ''
   trigger:
   - platform: time
-    at: '21:00:00'
+    at: '22:00:00'
   condition:
-  - condition: or
+  - condition: not
     conditions:
     - condition: state
-      entity_id: cover.left_garage_door
-      attribute: current_position
-      state: open
-    - condition: state
-      entity_id: cover.right_garage_door
-      attribute: current_position
-      state: open
+      entity_id: lock.front_door_lock
+      state: locked
   action:
   - service: notify.notify
     data:
-      title: Check Doors
-      message: Doors unlocked or garage door open
+      title: Check front door
+      message: Front door unlocked
   mode: single
 - id: '1679805896144'
   alias: 11pm Door Check
@@ -690,4 +686,77 @@
       device_id: []
       area_id: []
     data: {}
+  mode: single
+- id: '1716603389080'
+  alias: 10pm Garage Door Check
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition:
+  - condition: or
+    conditions:
+    - condition: not
+      conditions:
+      - condition: state
+        entity_id: cover.left_garage_door
+        state: closed
+    - condition: not
+      conditions:
+      - condition: state
+        entity_id: cover.right_garage_door
+        state: closed
+  action:
+  - service: notify.notify
+    data:
+      title: Check garage doors
+      message: Garage door open
+  mode: single
+- id: '1716603568746'
+  alias: 10pm Workshop door check
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition:
+  - condition: or
+    conditions:
+    - condition: not
+      conditions:
+      - condition: state
+        entity_id: binary_sensor.workshop_door_1_window_door_is_open
+        state: 'off'
+    - condition: not
+      conditions:
+      - condition: state
+        entity_id: binary_sensor.workshop_door_2_window_door_is_open
+        state: 'off'
+    - condition: not
+      conditions:
+      - condition: state
+        entity_id: binary_sensor.workshop_door_3_window_door_is_open
+        state: 'off'
+  action:
+  - service: notify.notify
+    data:
+      title: Check workshop doors
+      message: Workshop door unlocked
+  mode: single
+- id: '1716603691822'
+  alias: 10pm Detached Garage Check
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: lock.detached_garage_lock
+      state: locked
+  action:
+  - service: notify.notify
+    data:
+      title: Check detached garage door
+      message: Detached garage unlocked
   mode: single

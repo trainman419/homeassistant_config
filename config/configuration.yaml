@@ -21,10 +21,12 @@ logger:
   logs:
     #homeassistant.components.automation: debug
     #homeassistant.components.unifi: debug
-    homeassistant.components.google: debug
-    homeassistant.components.calendar.google: debug
+    #homeassistant.components.google: debug
+    #homeassistant.components.calendar.google: debug
     #homeassistant.components.unifi.device_tracker: debug
     #homeassistant.components.switch.unifi: debug
+    #homeassistant.components.zeroconf: debug
+    homeassistant.components.bluesound: debug
 
 # Enables the frontend
 frontend:
@@ -42,9 +44,6 @@ script: !include scripts.yaml
 
 # Checks for available updates
 #updater:
-
-# Discover some devices automatically
-discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 #conversation:
@@ -157,6 +156,8 @@ automation old: !include_dir_merge_list automations
 
 media_player:
   - platform: bluesound
+    hosts:
+      - host: 192.168.0.118
 
 cover:
   - platform: template
