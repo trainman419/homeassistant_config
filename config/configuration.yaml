@@ -154,11 +154,6 @@ calendar:
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations
 
-media_player:
-  - platform: bluesound
-    hosts:
-      - host: 192.168.0.118
-
 cover:
   - platform: template
     covers:

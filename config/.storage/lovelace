@@ -296,6 +296,19 @@
                     "action": "toggle"
                   },
                   "entity": "switch.christmas_lights"
+                },
+                {
+                  "type": "light",
+                  "entity": "light.yard"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.pond"
                 }
               ]
             },

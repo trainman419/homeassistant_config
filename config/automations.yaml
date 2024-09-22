@@ -11,6 +11,16 @@
       device_id:
       - 7171da74eb678558e84b97f23ea8c79e
       - 377a2f4dd175686d4152cbbc39103dd2
+      - ec36160436de3d753b910cd5337c2dc8
+  - service: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: 60
+      kelvin: 2554
+    target:
+      device_id:
+      - 35f7fdaf62631f445fc111823780504d
+      - 67a87fe6f08f0184cb101c472117327c
   mode: single
 - id: sunset_lights
   alias: Lights on at Sunset
@@ -110,6 +120,13 @@
       device_id:
       - 377a2f4dd175686d4152cbbc39103dd2
       - 7171da74eb678558e84b97f23ea8c79e
+  - service: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 35f7fdaf62631f445fc111823780504d
+      - 67a87fe6f08f0184cb101c472117327c
   mode: single
 - id: driveway_timer
   alias: Turn off driveway after 10 minutes
@@ -759,4 +776,57 @@
     data:
       title: Check detached garage door
       message: Detached garage unlocked
+  mode: single
+- id: '1718518161468'
+  alias: Button 1 bedtime
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 74069a48858502f4d46fa2f1c824f89e
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '001'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 001
+    value: 0
+  condition: []
+  action:
+  - service: script.bedtime
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1718518192433'
+  alias: Button 2 lights off
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 74069a48858502f4d46fa2f1c824f89e
+    domain: zwave_js
+    type: event.value_notification.central_scene
+    property: scene
+    property_key: '002'
+    endpoint: 0
+    command_class: 91
+    subtype: Endpoint 0 Scene 002
+    value: 0
+  condition: []
+  action:
+  - service: script.lights_off
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1726368007783'
+  alias: Cafe lights off at 9:30pm
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:30:00'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      device_id: ec36160436de3d753b910cd5337c2dc8
   mode: single
