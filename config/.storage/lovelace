@@ -42,6 +42,9 @@
                   "entity": "input_boolean.vacation"
                 },
                 {
+                  "entity": "input_boolean.christmas"
+                },
+                {
                   "entity": "input_datetime.wakeup"
                 }
               ],
@@ -677,6 +680,49 @@
           "title": "Home"
         },
         {
+          "title": "Power",
+          "path": "power",
+          "icon": "mdi:home-lightning-bolt",
+          "cards": [
+            {
+              "type": "gauge",
+              "entity": "sensor.mainsa",
+              "needle": true,
+              "min": 0,
+              "max": 24000
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.mainsb",
+              "needle": true,
+              "min": 0,
+              "max": 24000
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.mainsa"
+                },
+                {
+                  "entity": "sensor.mainsb"
+                },
+                {
+                  "entity": "sensor.kitchenb"
+                },
+                {
+                  "entity": "sensor.garagepanela"
+                },
+                {
+                  "entity": "sensor.garagepanelb"
+                }
+              ],
+              "title": "Power",
+              "min_y_axis": 0
+            }
+          ]
+        },
+        {
           "theme": "Backend-selected",
           "title": "Automation Status",
           "path": "automation-status",
@@ -805,56 +851,6 @@
           "icon": "mdi:robot",
           "path": "automations",
           "title": "Automations"
-        },
-        {
-          "theme": "Backend-selected",
-          "title": "Printer",
-          "path": "printer",
-          "icon": "mdi:printer-3d",
-          "badges": [],
-          "cards": [
-            {
-              "show_name": true,
-              "show_icon": true,
-              "type": "button",
-              "tap_action": {
-                "action": "toggle"
-              },
-              "entity": "button.octoprint_pause_job"
-            },
-            {
-              "show_name": true,
-              "show_icon": true,
-              "type": "button",
-              "tap_action": {
-                "action": "toggle"
-              },
-              "entity": "button.octoprint_resume_job"
-            },
-            {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "sensor.octoprint_current_state"
-                },
-                {
-                  "entity": "sensor.octoprint_job_percentage"
-                },
-                {
-                  "entity": "sensor.octoprint_estimated_finish_time"
-                }
-              ]
-            },
-            {
-              "show_name": true,
-              "show_icon": true,
-              "type": "button",
-              "tap_action": {
-                "action": "toggle"
-              },
-              "entity": "button.octoprint_stop_job"
-            }
-          ]
         },
         {
           "badges": [],

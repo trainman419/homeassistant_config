@@ -1,19 +1,18 @@
 - id: porch_sunset_lights
   alias: Porch lights on at Sunset
-  trigger:
-  - platform: sun
-    event: sunset
+  triggers:
+  - event: sunset
     offset: -00:15
-  action:
-  - service: switch.turn_on
-    data: {}
+    trigger: sun
+  actions:
+  - data: {}
     target:
       device_id:
       - 7171da74eb678558e84b97f23ea8c79e
       - 377a2f4dd175686d4152cbbc39103dd2
       - ec36160436de3d753b910cd5337c2dc8
-  - service: light.turn_on
-    metadata: {}
+    action: switch.turn_on
+  - metadata: {}
     data:
       brightness_pct: 60
       kelvin: 2554
@@ -21,6 +20,15 @@
       device_id:
       - 35f7fdaf62631f445fc111823780504d
       - 67a87fe6f08f0184cb101c472117327c
+    action: light.turn_on
+  - condition: state
+    entity_id: input_boolean.christmas
+    state: 'on'
+  - action: switch.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.christmas_lights
   mode: single
 - id: sunset_lights
   alias: Lights on at Sunset
@@ -110,23 +118,24 @@
 - id: nighttime
   alias: Porch Lights off at 11pm
   description: ''
-  trigger:
-  - platform: time
-    at: '23:00:00'
-  action:
-  - service: switch.turn_off
-    data: {}
+  triggers:
+  - at: '23:00:00'
+    trigger: time
+  actions:
+  - data: {}
     target:
       device_id:
       - 377a2f4dd175686d4152cbbc39103dd2
       - 7171da74eb678558e84b97f23ea8c79e
-  - service: light.turn_off
-    metadata: {}
+      - 7f2292c0be90120123e7d158cbb2d325
+    action: switch.turn_off
+  - metadata: {}
     data: {}
     target:
       device_id:
       - 35f7fdaf62631f445fc111823780504d
       - 67a87fe6f08f0184cb101c472117327c
+    action: light.turn_off
   mode: single
 - id: driveway_timer
   alias: Turn off driveway after 10 minutes
@@ -480,7 +489,7 @@
   description: ''
   trigger:
   - platform: time
-    at: '22:00:00'
+    at: '21:55:00'
   condition:
   - condition: not
     conditions:
@@ -488,33 +497,10 @@
       entity_id: lock.front_door_lock
       state: locked
   action:
-  - service: notify.notify
-    data:
+  - data:
       title: Check front door
       message: Front door unlocked
-  mode: single
-- id: '1679805896144'
-  alias: 11pm Door Check
-  description: ''
-  trigger:
-  - platform: time
-    at: '23:00:00'
-  condition:
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: cover.left_garage_door
-      attribute: current_position
-      state: open
-    - condition: state
-      entity_id: cover.right_garage_door
-      attribute: current_position
-      state: open
-  action:
-  - service: notify.notify
-    data:
-      title: Check Doors
-      message: Doors unlocked or garage door open
+    action: notify.notify
   mode: single
 - id: '1684686910502'
   alias: Bedroom off at 9am
@@ -709,7 +695,7 @@
   description: ''
   trigger:
   - platform: time
-    at: '22:00:00'
+    at: '21:55:00'
   condition:
   - condition: or
     conditions:
@@ -724,17 +710,17 @@
         entity_id: cover.right_garage_door
         state: closed
   action:
-  - service: notify.notify
-    data:
+  - data:
       title: Check garage doors
       message: Garage door open
+    action: notify.notify
   mode: single
 - id: '1716603568746'
   alias: 10pm Workshop door check
   description: ''
   trigger:
   - platform: time
-    at: '22:00:00'
+    at: '21:55:00'
   condition:
   - condition: or
     conditions:
@@ -754,17 +740,17 @@
         entity_id: binary_sensor.workshop_door_3_window_door_is_open
         state: 'off'
   action:
-  - service: notify.notify
-    data:
+  - data:
       title: Check workshop doors
       message: Workshop door unlocked
+    action: notify.notify
   mode: single
 - id: '1716603691822'
   alias: 10pm Detached Garage Check
   description: ''
   trigger:
   - platform: time
-    at: '22:00:00'
+    at: '21:55:00'
   condition:
   - condition: not
     conditions:
@@ -772,10 +758,10 @@
       entity_id: lock.detached_garage_lock
       state: locked
   action:
-  - service: notify.notify
-    data:
+  - data:
       title: Check detached garage door
       message: Detached garage unlocked
+    action: notify.notify
   mode: single
 - id: '1718518161468'
   alias: Button 1 bedtime
@@ -829,4 +815,48 @@
     data: {}
     target:
       device_id: ec36160436de3d753b910cd5337c2dc8
+  mode: single
+- id: '1732675867442'
+  alias: Front Door Person Detection
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.doorbell_person_detected
+    from: 'off'
+    to: 'on'
+  conditions:
+  - condition: state
+    entity_id: lock.front_door_lock
+    state: locked
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  actions:
+  - action: notify.mobile_app_austin_s_iphone
+    metadata: {}
+    data:
+      message: There's someone at the front door
+      title: Oh Hai!
+  mode: single
+- id: '1732678308623'
+  alias: Notify when Unifi Network Unavailable
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - sensor.barb_state
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  conditions: []
+  actions:
+  - action: notify.mobile_app_austin_s_iphone
+    metadata: {}
+    data:
+      message: Unifi Integration Offline
+      title: HA Help
   mode: single
