@@ -36,21 +36,6 @@
               "columns": 2
             },
             {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "input_boolean.vacation"
-                },
-                {
-                  "entity": "input_boolean.christmas"
-                },
-                {
-                  "entity": "input_datetime.wakeup"
-                }
-              ],
-              "show_header_toggle": false
-            },
-            {
               "show_name": true,
               "show_icon": true,
               "type": "button",
@@ -86,27 +71,6 @@
             {
               "type": "thermostat",
               "entity": "climate.thermostat_1_nativezone"
-            },
-            {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "sensor.fs336922n_laundry_machine_state",
-                  "name": "Washer Status"
-                },
-                {
-                  "entity": "sensor.fs336922n_laundry_time_remaining",
-                  "name": "Washer Time Remaining"
-                },
-                {
-                  "entity": "sensor.ms115331g_laundry_machine_state",
-                  "name": "Dryer Status"
-                },
-                {
-                  "entity": "sensor.ms115331g_laundry_time_remaining",
-                  "name": "Dryer Time Remaining"
-                }
-              ]
             },
             {
               "show_name": true,
@@ -157,6 +121,10 @@
                 },
                 {
                   "type": "light",
+                  "entity": "light.mechanical_room"
+                },
+                {
+                  "type": "light",
                   "entity": "light.fireplace_lights"
                 },
                 {
@@ -191,129 +159,16 @@
               "type": "entities",
               "entities": [
                 {
-                  "entity": "light.bar"
+                  "entity": "input_boolean.vacation"
                 },
                 {
-                  "entity": "light.bar_hallway"
+                  "entity": "input_boolean.christmas"
                 },
                 {
-                  "entity": "light.hue_color_lamp_1_3"
-                },
-                {
-                  "entity": "light.hue_color_lamp_1_2"
-                },
-                {
-                  "entity": "light.downstairs_hall"
-                },
-                {
-                  "entity": "switch.laundry"
-                },
-                {
-                  "entity": "switch.laundry_fan"
-                },
-                {
-                  "entity": "switch.pantry_light"
-                },
-                {
-                  "entity": "switch.workshop_lights"
-                },
-                {
-                  "entity": "light.mechanical_room"
+                  "entity": "input_datetime.wakeup"
                 }
               ],
-              "title": "Basement Lights"
-            },
-            {
-              "type": "grid",
-              "title": "Outdoor Lights",
-              "square": false,
-              "cards": [
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "entity": "switch.front_porch_light",
-                  "type": "button"
-                },
-                {
-                  "entity": "switch.front_garage_light",
-                  "type": "button"
-                },
-                {
-                  "entity": "switch.great_room_porch",
-                  "type": "button"
-                },
-                {
-                  "entity": "switch.deck_light",
-                  "type": "button"
-                },
-                {
-                  "entity": "switch.back_door_light",
-                  "type": "button"
-                },
-                {
-                  "entity": "switch.outside_laundry",
-                  "type": "button"
-                },
-                {
-                  "entity": "input_boolean.workshop_driveway_override",
-                  "type": "button",
-                  "icon": "mdi:toggle-switch-variant"
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "entity": "switch.detached_garage_lights",
-                  "type": "button",
-                  "icon": "mdi:toggle-switch-variant"
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "entity": "switch.detached_garage_courtyard",
-                  "type": "button",
-                  "icon": "mdi:toggle-switch-variant"
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "tap_action": {
-                    "action": "toggle"
-                  },
-                  "entity": "switch.courtyard_soffet"
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "tap_action": {
-                    "action": "toggle"
-                  },
-                  "entity": "switch.courtyard_cafe_lights"
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "tap_action": {
-                    "action": "toggle"
-                  },
-                  "entity": "switch.christmas_lights"
-                },
-                {
-                  "type": "light",
-                  "entity": "light.yard"
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "tap_action": {
-                    "action": "toggle"
-                  },
-                  "entity": "switch.pond"
-                }
-              ]
+              "show_header_toggle": false
             },
             {
               "type": "vertical-stack",
@@ -353,6 +208,196 @@
               ]
             }
           ]
+        },
+        {
+          "type": "sections",
+          "path": "downstairs",
+          "max_columns": 4,
+          "title": "Downstairs",
+          "icon": "mdi:home",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.downstairs_hall"
+                    },
+                    {
+                      "entity": "light.office_lights"
+                    },
+                    {
+                      "entity": "light.bar"
+                    },
+                    {
+                      "entity": "light.hue_color_lamp_1_3"
+                    },
+                    {
+                      "entity": "light.hue_color_lamp_1_2"
+                    },
+                    {
+                      "entity": "light.extended_color_light_1_2"
+                    },
+                    {
+                      "entity": "light.bar_hallway"
+                    },
+                    {
+                      "entity": "switch.laundry"
+                    },
+                    {
+                      "entity": "switch.laundry_fan"
+                    },
+                    {
+                      "entity": "switch.pantry_light"
+                    },
+                    {
+                      "entity": "switch.workshop_lights"
+                    }
+                  ],
+                  "title": "Basement Lights"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.fs336922n_laundry_machine_state",
+                      "name": "Washer Status"
+                    },
+                    {
+                      "entity": "sensor.fs336922n_laundry_time_remaining",
+                      "name": "Washer Time Remaining"
+                    },
+                    {
+                      "entity": "sensor.ms115331g_laundry_machine_state",
+                      "name": "Dryer Status"
+                    },
+                    {
+                      "entity": "sensor.ms115331g_laundry_time_remaining",
+                      "name": "Dryer Time Remaining"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "heading": "New section"
+                }
+              ]
+            }
+          ],
+          "cards": []
+        },
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "title": "Outdoors",
+          "path": "outdoors",
+          "icon": "mdi:tree",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "grid",
+                  "title": "Outdoor Lights",
+                  "square": false,
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "entity": "switch.front_porch_light",
+                      "type": "button"
+                    },
+                    {
+                      "entity": "switch.front_garage_light",
+                      "type": "button"
+                    },
+                    {
+                      "entity": "switch.great_room_porch",
+                      "type": "button"
+                    },
+                    {
+                      "entity": "switch.deck_light",
+                      "type": "button"
+                    },
+                    {
+                      "entity": "switch.back_door_light",
+                      "type": "button"
+                    },
+                    {
+                      "entity": "switch.outside_laundry",
+                      "type": "button"
+                    },
+                    {
+                      "entity": "input_boolean.workshop_driveway_override",
+                      "type": "button",
+                      "icon": "mdi:toggle-switch-variant"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "entity": "switch.detached_garage_lights",
+                      "type": "button",
+                      "icon": "mdi:toggle-switch-variant"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "entity": "switch.detached_garage_courtyard",
+                      "type": "button",
+                      "icon": "mdi:toggle-switch-variant"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "switch.courtyard_soffet"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "switch.courtyard_cafe_lights"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "switch.christmas_lights"
+                    },
+                    {
+                      "type": "light",
+                      "entity": "light.yard"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "switch.pond"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "heading": "New section"
+                }
+              ]
+            }
+          ],
+          "cards": []
         },
         {
           "theme": "Backend-selected",
@@ -719,91 +764,6 @@
               ],
               "title": "Power",
               "min_y_axis": 0
-            }
-          ]
-        },
-        {
-          "theme": "Backend-selected",
-          "title": "Automation Status",
-          "path": "automation-status",
-          "icon": "mdi:head-snowflake",
-          "badges": [],
-          "cards": [
-            {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "switch.workshop_driveway_lights"
-                },
-                {
-                  "entity": "switch.workshop_driveway_north"
-                },
-                {
-                  "entity": "switch.workshop_driveway_south"
-                },
-                {
-                  "entity": "binary_sensor.workshop_driveway_north_motion_detection"
-                },
-                {
-                  "entity": "binary_sensor.workshop_driveway_south_motion_detection"
-                },
-                {
-                  "entity": "input_boolean.workshop_driveway_override"
-                },
-                {
-                  "entity": "binary_sensor.detached_garage_motion_motion_detection"
-                },
-                {
-                  "entity": "switch.detached_garage_motion"
-                },
-                {
-                  "entity": "switch.detached_garage_courtyard"
-                }
-              ]
-            },
-            {
-              "type": "logbook",
-              "entities": [
-                "switch.workshop_driveway_lights",
-                "sensor.workshop_driveway_lights_node_status",
-                "switch.workshop_driveway_north",
-                "switch.workshop_driveway_south",
-                "sensor.node_98_node_status",
-                "sensor.workshop_driveway_south_node_status",
-                "binary_sensor.workshop_driveway_north_motion_detection",
-                "binary_sensor.workshop_driveway_south_motion_detection",
-                "binary_sensor.detached_garage_motion_motion_detection",
-                "sensor.detached_garage_motion_node_status",
-                "switch.detached_garage_motion"
-              ],
-              "title": "Switch Events"
-            },
-            {
-              "type": "history-graph",
-              "entities": [
-                {
-                  "entity": "binary_sensor.workshop_driveway_north_motion_detection"
-                },
-                {
-                  "entity": "switch.workshop_driveway_north"
-                },
-                {
-                  "entity": "binary_sensor.workshop_driveway_south_motion_detection"
-                },
-                {
-                  "entity": "switch.workshop_driveway_south"
-                },
-                {
-                  "entity": "binary_sensor.detached_garage_motion_motion_detection"
-                },
-                {
-                  "entity": "switch.detached_garage_motion"
-                },
-                {
-                  "entity": "switch.detached_garage_courtyard"
-                }
-              ],
-              "hours_to_show": 2
             }
           ]
         },

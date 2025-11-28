@@ -116,10 +116,10 @@
     data: {}
   mode: single
 - id: nighttime
-  alias: Porch Lights off at 11pm
+  alias: Porch Lights off at midnight
   description: ''
   triggers:
-  - at: '23:00:00'
+  - at: 00:30:00
     trigger: time
   actions:
   - data: {}
@@ -859,4 +859,77 @@
     data:
       message: Unifi Integration Offline
       title: HA Help
+  mode: single
+- id: '1764362415486'
+  alias: Bar Soffit On
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 8ed15575aabdb12a6a9a8a4947e6b21c
+    entity_id: fa5a1845fb3f5ee1ad69082156b4607d
+    domain: switch
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.hue_color_lamp_1_3
+      - light.hue_color_lamp_1_2
+  mode: single
+- id: '1764362466719'
+  alias: Bar Soffit Off
+  description: ''
+  triggers:
+  - type: turned_off
+    device_id: 8ed15575aabdb12a6a9a8a4947e6b21c
+    entity_id: fa5a1845fb3f5ee1ad69082156b4607d
+    domain: switch
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.hue_color_lamp_1_3
+      - light.hue_color_lamp_1_2
+  mode: single
+- id: '1764362615185'
+  alias: Bar Cabinet On
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 218eecd27adf66ebac9151215fe49df4
+    entity_id: 8e69215105dcc19b3fcc03f9271ada87
+    domain: switch
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.extended_color_light_1_2
+  mode: single
+- id: '1764362656886'
+  alias: Bar Cabinet Off
+  description: ''
+  triggers:
+  - type: turned_off
+    device_id: 218eecd27adf66ebac9151215fe49df4
+    entity_id: 8e69215105dcc19b3fcc03f9271ada87
+    domain: switch
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.extended_color_light_1_2
   mode: single

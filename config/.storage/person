@@ -24,6 +24,18 @@
         "user_id": null,
         "picture": null,
         "id": "katrina"
+      },
+      {
+        "id": "joe",
+        "name": "Joe",
+        "device_trackers": [
+          "device_tracker.iphone1_28",
+          "device_tracker.ms_iphone",
+          "device_tracker.cat_sitter_phone",
+          "device_tracker.cat_sitter_laptop"
+        ],
+        "user_id": "77bdb70271714acbb3e68c9e4d59a021",
+        "picture": null
       }
     ]
   }
