@@ -207,6 +207,14 @@
                 }
               ]
             }
+          ],
+          "visible": [
+            {
+              "user": "f3e532f7154b49ccbef5bc6f95dd3c83"
+            },
+            {
+              "user": "ca2feb668a1647e8a24cb2490dd1d7c5"
+            }
           ]
         },
         {
@@ -521,6 +529,14 @@
               ],
               "state_color": true,
               "title": "Workshop"
+            }
+          ],
+          "visible": [
+            {
+              "user": "f3e532f7154b49ccbef5bc6f95dd3c83"
+            },
+            {
+              "user": "ca2feb668a1647e8a24cb2490dd1d7c5"
             }
           ]
         },
@@ -863,19 +879,16 @@
               "type": "grid",
               "cards": [
                 {
-                  "type": "light",
-                  "entity": "light.hue_color_lamp_1"
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "scene.bedroom_on"
                 },
                 {
                   "show_name": true,
                   "show_icon": true,
                   "type": "button",
-                  "entity": "group.bedroom",
-                  "hold_action": {
-                    "action": "none"
-                  },
-                  "icon": "mdi:lightbulb",
-                  "show_state": false
+                  "entity": "scene.bedroom_off"
                 },
                 {
                   "show_name": true,
@@ -888,6 +901,10 @@
                   "show_icon": true,
                   "type": "button",
                   "entity": "script.lights_off"
+                },
+                {
+                  "type": "weather-forecast",
+                  "entity": ""
                 }
               ],
               "columns": 2
