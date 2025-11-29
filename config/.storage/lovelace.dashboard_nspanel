@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_nspanel",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "masonry",
+          "path": "home",
+          "title": "Home",
+          "icon": "mdi:home",
+          "cards": [
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "scene.bedroom_on",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "scene.turn_on",
+                    "target": {
+                      "entity_id": "scene.bedroom_on"
+                    },
+                    "data": {}
+                  },
+                  "show_state": false,
+                  "hold_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "scene.bedroom_off",
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "scene.turn_on",
+                    "target": {
+                      "entity_id": "scene.bedroom_off"
+                    },
+                    "data": {}
+                  }
+                }
+              ]
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "script.bedtime",
+                  "hold_action": {
+                    "action": "call-service",
+                    "service": "script.turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": "script.bedtime"
+                    }
+                  },
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "name": "Bedtime (hold)"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "script.lights_off",
+                  "hold_action": {
+                    "action": "call-service",
+                    "service": "script.turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": "script.lights_off"
+                    }
+                  },
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "name": "Lights Off (hold)"
+                }
+              ]
+            },
+            {
+              "show_current": true,
+              "show_forecast": true,
+              "type": "weather-forecast",
+              "entity": "weather.tomorrow_io_home_daily",
+              "forecast_type": "daily",
+              "forecast_slots": 7,
+              "secondary_info_attribute": "humidity"
+            },
+            {
+              "type": "custom:hourly-weather",
+              "entity": "weather.tomorrow_io_home_daily",
+              "show_precipitation_amounts": false,
+              "show_precipitation_probability": false
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "media_player.bathroom",
+                  "name": "KEXP",
+                  "hold_action": {
+                    "action": "perform-action",
+                    "perform_action": "media_player.turn_off",
+                    "target": {}
+                  },
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "media_player.play_media",
+                    "target": {
+                      "entity_id": "media_player.bathroom"
+                    },
+                    "data": {
+                      "media": {
+                        "media_content_id": "https://kexp.streamguys1.com/kexp160.aac",
+                        "media_content_type": "",
+                        "metadata": {
+                          "navigateIds": [
+                            {},
+                            {
+                              "media_content_type": "",
+                              "media_content_id": "__MANUAL_ENTRY__"
+                            }
+                          ],
+                          "browse_entity_id": "media_player.bathroom"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "media_player.bathroom",
+                  "hold_action": {
+                    "action": "perform-action",
+                    "perform_action": "media_player.turn_off",
+                    "target": {}
+                  },
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "media_player.play_media",
+                    "target": {
+                      "entity_id": "media_player.bathroom"
+                    },
+                    "data": {
+                      "media": {
+                        "media_content_id": "https://classicalking.streamguys1.com/king-fm-aac-128k",
+                        "media_content_type": "",
+                        "metadata": {
+                          "navigateIds": [
+                            {},
+                            {
+                              "media_content_type": "",
+                              "media_content_id": "__MANUAL_ENTRY__"
+                            }
+                          ],
+                          "browse_entity_id": "media_player.bathroom"
+                        }
+                      }
+                    }
+                  },
+                  "name": "Classical King"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "media_player.bathroom",
+                  "hold_action": {
+                    "action": "perform-action",
+                    "perform_action": "media_player.turn_off",
+                    "target": {}
+                  },
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "media_player.play_media",
+                    "target": {
+                      "entity_id": "media_player.bathroom"
+                    },
+                    "data": {
+                      "media": {
+                        "media_content_id": "https://knkx-live-a.edge.audiocdn.com/6285_256k",
+                        "media_content_type": "",
+                        "metadata": {
+                          "navigateIds": [
+                            {},
+                            {
+                              "media_content_type": "",
+                              "media_content_id": "__MANUAL_ENTRY__"
+                            }
+                          ],
+                          "browse_entity_id": "media_player.bathroom"
+                        }
+                      }
+                    }
+                  },
+                  "name": "JAZZ24"
+                }
+              ]
+            }
+          ],
+          "theme": "Graphite"
+        }
+      ]
+    }
+  }
+}

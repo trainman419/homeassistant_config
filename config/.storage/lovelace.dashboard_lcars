@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_lcars",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "masonry",
+          "path": "home",
+          "title": "Home",
+          "icon": "mdi:home",
+          "cards": [
+            {
+              "square": true,
+              "type": "grid",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "scene.bedroom_on"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "scene.bedroom_off"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "script.bedtime"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "script.lights_off"
+                }
+              ],
+              "columns": 2
+            },
+            {
+              "show_current": true,
+              "show_forecast": true,
+              "type": "weather-forecast",
+              "entity": "weather.tomorrow_io_home_daily",
+              "forecast_type": "daily",
+              "forecast_slots": 7,
+              "secondary_info_attribute": "humidity"
+            },
+            {
+              "type": "custom:hourly-weather",
+              "entity": "weather.tomorrow_io_home_daily",
+              "show_precipitation_amounts": false,
+              "show_precipitation_probability": false
+            }
+          ],
+          "theme": "LCARS Picard I"
+        }
+      ]
+    }
+  }
+}

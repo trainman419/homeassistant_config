@@ -8,3 +8,5 @@ phue.conf
 known_devices.yaml
 .storage/application_credentials
 .storage/auth
+.storage/unifi_data
+.storage/auth_provider.homeassistant
