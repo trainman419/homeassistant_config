@@ -9,20 +9,20 @@
       supported_color_modes:
       - color_temp
       - xy
-      color_mode: xy
-      brightness: 0
-      color_temp_kelvin:
-      color_temp:
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 2000
+      color_temp: 500
       hs_color:
-      - 33.767
-      - 84.314
+      - 30.601
+      - 94.547
       rgb_color:
       - 255
-      - 161
-      - 40
+      - 137
+      - 14
       xy_color:
-      - 0.561
-      - 0.4042
+      - 0.598
+      - 0.383
       mode: normal
       dynamics: none
       friendly_name: Austin Bed
@@ -36,20 +36,20 @@
       supported_color_modes:
       - color_temp
       - xy
-      color_mode: xy
-      brightness: 0
-      color_temp_kelvin:
-      color_temp:
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 2000
+      color_temp: 500
       hs_color:
-      - 36.053
-      - 89.412
+      - 30.601
+      - 94.547
       rgb_color:
       - 255
-      - 164
-      - 27
+      - 137
+      - 14
       xy_color:
-      - 0.5609
-      - 0.4111
+      - 0.598
+      - 0.383
       mode: normal
       dynamics: none
       friendly_name: Bed
@@ -63,20 +63,20 @@
       supported_color_modes:
       - color_temp
       - xy
-      color_mode: xy
-      brightness: 0
-      color_temp_kelvin:
-      color_temp:
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 2000
+      color_temp: 500
       hs_color:
-      - 33.767
-      - 84.314
+      - 30.601
+      - 94.547
       rgb_color:
       - 255
-      - 161
-      - 40
+      - 137
+      - 14
       xy_color:
-      - 0.561
-      - 0.4042
+      - 0.598
+      - 0.383
       mode: normal
       dynamics: none
       friendly_name: Katrina Bed
@@ -90,20 +90,20 @@
       supported_color_modes:
       - color_temp
       - xy
-      color_mode: xy
-      brightness: 0
-      color_temp_kelvin:
-      color_temp:
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 2000
+      color_temp: 500
       hs_color:
-      - 33.767
-      - 84.314
+      - 30.601
+      - 94.547
       rgb_color:
       - 255
-      - 161
-      - 40
+      - 137
+      - 14
       xy_color:
-      - 0.561
-      - 0.4042
+      - 0.598
+      - 0.383
       mode: normal
       dynamics: none
       friendly_name: Dresser

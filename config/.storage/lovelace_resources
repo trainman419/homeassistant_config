@@ -15,11 +15,6 @@
         "id": "0efb369ac3444fc6a73603bfb433d86d"
       },
       {
-        "id": "82d28a29d42f424883b67ea3dd126c3d",
-        "url": "/local/battery-state-card.js",
-        "type": "module"
-      },
-      {
         "id": "fa77b7394d614d6bbe0cd47aa92d9429",
         "url": "/hacsfiles/lovelace-hourly-weather/hourly-weather.js?hacstag=499270202680",
         "type": "module"
@@ -32,6 +27,11 @@
       {
         "id": "e53397ba6b2f4d70a5daefde062ce917",
         "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375508",
+        "type": "module"
+      },
+      {
+        "id": "1c00591ebc9f4ebe9b58a975776db55b",
+        "url": "/hacsfiles/battery-state-card/battery-state-card.js?hacstag=256292682321",
         "type": "module"
       }
     ]
