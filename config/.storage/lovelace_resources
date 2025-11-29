@@ -23,6 +23,11 @@
         "id": "82d28a29d42f424883b67ea3dd126c3d",
         "url": "/local/battery-state-card.js",
         "type": "module"
+      },
+      {
+        "id": "fa77b7394d614d6bbe0cd47aa92d9429",
+        "url": "/hacsfiles/lovelace-hourly-weather/hourly-weather.js?hacstag=499270202680",
+        "type": "module"
       }
     ]
   }
