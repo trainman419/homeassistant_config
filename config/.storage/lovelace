@@ -334,27 +334,31 @@
                       "type": "button"
                     },
                     {
+                      "show_name": true,
+                      "show_icon": true,
                       "entity": "switch.outside_laundry",
                       "type": "button"
                     },
                     {
+                      "show_name": true,
+                      "show_icon": true,
                       "entity": "input_boolean.workshop_driveway_override",
                       "type": "button",
-                      "icon": "mdi:toggle-switch-variant"
+                      "icon": ""
                     },
                     {
                       "show_name": true,
                       "show_icon": true,
                       "entity": "switch.detached_garage_lights",
                       "type": "button",
-                      "icon": "mdi:toggle-switch-variant"
+                      "icon": ""
                     },
                     {
                       "show_name": true,
                       "show_icon": true,
                       "entity": "switch.detached_garage_courtyard",
                       "type": "button",
-                      "icon": "mdi:toggle-switch-variant"
+                      "icon": ""
                     },
                     {
                       "show_name": true,

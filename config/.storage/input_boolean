@@ -10,8 +10,9 @@
         "id": "vacation"
       },
       {
+        "id": "workshop_driveway_override",
         "name": "Workshop Driveway Override",
-        "id": "workshop_driveway_override"
+        "icon": "mdi:light-flood-down"
       },
       {
         "id": "christmas",

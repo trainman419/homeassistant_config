@@ -119,8 +119,12 @@
                   "name": "KEXP",
                   "hold_action": {
                     "action": "perform-action",
-                    "perform_action": "media_player.turn_off",
-                    "target": {}
+                    "perform_action": "media_player.media_stop",
+                    "target": {
+                      "entity_id": [
+                        "media_player.bathroom"
+                      ]
+                    }
                   },
                   "tap_action": {
                     "action": "perform-action",
@@ -153,8 +157,10 @@
                   "entity": "media_player.bathroom",
                   "hold_action": {
                     "action": "perform-action",
-                    "perform_action": "media_player.turn_off",
-                    "target": {}
+                    "perform_action": "media_player.media_stop",
+                    "target": {
+                      "entity_id": "media_player.bathroom"
+                    }
                   },
                   "tap_action": {
                     "action": "perform-action",
@@ -188,8 +194,10 @@
                   "entity": "media_player.bathroom",
                   "hold_action": {
                     "action": "perform-action",
-                    "perform_action": "media_player.turn_off",
-                    "target": {}
+                    "perform_action": "media_player.media_stop",
+                    "target": {
+                      "entity_id": "media_player.bathroom"
+                    }
                   },
                   "tap_action": {
                     "action": "perform-action",
