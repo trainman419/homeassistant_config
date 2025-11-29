@@ -869,48 +869,6 @@
           "panel": true,
           "path": "calendar",
           "title": "Calendar"
-        },
-        {
-          "type": "panel",
-          "path": "nspanel",
-          "cards": [
-            {
-              "square": true,
-              "type": "grid",
-              "cards": [
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "entity": "scene.bedroom_on"
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "entity": "scene.bedroom_off"
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "entity": "script.bedtime"
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "entity": "script.lights_off"
-                },
-                {
-                  "type": "weather-forecast",
-                  "entity": ""
-                }
-              ],
-              "columns": 2
-            }
-          ],
-          "title": "NsPanel"
         }
       ]
     }

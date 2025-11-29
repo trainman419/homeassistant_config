@@ -28,7 +28,9 @@
       {
         "id": "nspanel",
         "name": "nspanel",
-        "device_trackers": [],
+        "device_trackers": [
+          "device_tracker.px30_evb"
+        ],
         "user_id": "58af5d664c9c49dc8e038a6ad4724ec4",
         "picture": null
       }

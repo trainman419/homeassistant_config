@@ -70,7 +70,8 @@
                   "tap_action": {
                     "action": "none"
                   },
-                  "name": "Bedtime (hold)"
+                  "name": "Bedtime (hold)",
+                  "icon": "mdi:bed-king"
                 },
                 {
                   "show_name": true,
