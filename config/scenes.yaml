@@ -1,0 +1,243 @@
+- id: '1764381862640'
+  name: Bedroom On
+  entities:
+    light.hue_color_lamp_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 0
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 33.767
+      - 84.314
+      rgb_color:
+      - 255
+      - 161
+      - 40
+      xy_color:
+      - 0.561
+      - 0.4042
+      mode: normal
+      dynamics: none
+      friendly_name: Austin Bed
+      supported_features: 40
+      state: 'on'
+    light.hue_lightstrip_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 0
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 36.053
+      - 89.412
+      rgb_color:
+      - 255
+      - 164
+      - 27
+      xy_color:
+      - 0.5609
+      - 0.4111
+      mode: normal
+      dynamics: none
+      friendly_name: Bed
+      supported_features: 40
+      state: 'on'
+    light.hue_color_lamp_3:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 0
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 33.767
+      - 84.314
+      rgb_color:
+      - 255
+      - 161
+      - 40
+      xy_color:
+      - 0.561
+      - 0.4042
+      mode: normal
+      dynamics: none
+      friendly_name: Katrina Bed
+      supported_features: 40
+      state: 'on'
+    light.hue_color_lamp_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 0
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 33.767
+      - 84.314
+      rgb_color:
+      - 255
+      - 161
+      - 40
+      xy_color:
+      - 0.561
+      - 0.4042
+      mode: normal
+      dynamics: none
+      friendly_name: Dresser
+      supported_features: 40
+      state: 'on'
+  icon: mdi:white-balance-sunny
+  metadata: {}
+- id: '1764381926667'
+  name: Bedroom Off
+  entities:
+    light.hue_color_lamp_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Austin Bed
+      supported_features: 40
+      state: 'off'
+    light.hue_lightstrip_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Bed
+      supported_features: 40
+      state: 'off'
+    light.hue_color_lamp_3:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Katrina Bed
+      supported_features: 40
+      state: 'off'
+    light.hue_color_lamp_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Dresser
+      supported_features: 40
+      state: 'off'
+  icon: mdi:weather-night
+  metadata: {}
+- id: '1764381985201'
+  name: Bedroom Off
+  entities:
+    light.hue_color_lamp_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Dresser
+      supported_features: 40
+      state: 'off'
+    light.hue_color_lamp_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Austin Bed
+      supported_features: 40
+      state: 'off'
+  icon: mdi:weather-night
+  metadata: {}

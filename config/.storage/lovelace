@@ -853,6 +853,47 @@
           "panel": true,
           "path": "calendar",
           "title": "Calendar"
+        },
+        {
+          "type": "panel",
+          "path": "nspanel",
+          "cards": [
+            {
+              "square": true,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "light",
+                  "entity": "light.hue_color_lamp_1"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "group.bedroom",
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "icon": "mdi:lightbulb",
+                  "show_state": false
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "script.bedtime"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "script.lights_off"
+                }
+              ],
+              "columns": 2
+            }
+          ],
+          "title": "NsPanel"
         }
       ]
     }

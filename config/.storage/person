@@ -26,15 +26,10 @@
         "id": "katrina"
       },
       {
-        "id": "joe",
-        "name": "Joe",
-        "device_trackers": [
-          "device_tracker.iphone1_28",
-          "device_tracker.ms_iphone",
-          "device_tracker.cat_sitter_phone",
-          "device_tracker.cat_sitter_laptop"
-        ],
-        "user_id": "77bdb70271714acbb3e68c9e4d59a021",
+        "id": "nspanel",
+        "name": "nspanel",
+        "device_trackers": [],
+        "user_id": "58af5d664c9c49dc8e038a6ad4724ec4",
         "picture": null
       }
     ]

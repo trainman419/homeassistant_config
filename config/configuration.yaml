@@ -42,6 +42,9 @@ config:
 # Enable scripts
 script: !include scripts.yaml
 
+# Enable scenes
+scene: !include scenes.yaml
+
 # Checks for available updates
 #updater:
 
