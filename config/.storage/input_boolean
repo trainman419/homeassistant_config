@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_boolean",
+  "data": {
+    "items": [
+      {
+        "name": "Vacation",
+        "icon": "mdi:tent",
+        "id": "vacation"
+      },
+      {
+        "name": "Workshop Driveway Override",
+        "id": "workshop_driveway_override"
+      },
+      {
+        "id": "christmas",
+        "name": "Christmas",
+        "icon": "mdi:string-lights"
+      }
+    ]
+  }
+}

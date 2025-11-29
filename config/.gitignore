@@ -6,3 +6,5 @@ home-assistant.log
 home-assistant_v2.db
 phue.conf
 known_devices.yaml
+.storage/application_credentials
+.storage/auth
