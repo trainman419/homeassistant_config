@@ -260,5 +260,9 @@ group: !include groups.yaml
 rest_command:
   play_preset1_on_bathroom:
     url: "http://Bathroom:11000/Preset?id=1"
+  shuffle_bathroom:
+    url: "http://Bathroom:11000/Shuffle?state=1"
   play_preset1_on_kitchen:
     url: "http://Kitchen:11000/Preset?id=1"
+  shuffle_kitchen:
+    url: "http://Kitchen:11000/Shuffle?state=1"

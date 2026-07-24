@@ -831,6 +831,10 @@
                 "play_pause_stop",
                 "next"
               ]
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.bathroom"
             }
           ]
         },

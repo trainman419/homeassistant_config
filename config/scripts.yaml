@@ -213,20 +213,9 @@ bathroom_wakeup:
       is_volume_muted: true
     target:
       entity_id: media_player.bathroom
-  - action: media_player.play_media
+  - action: rest_command.play_preset1_on_bathroom
     metadata: {}
-    data:
-      media:
-        media_content_id: ''
-        media_content_type: ''
-        metadata:
-          navigateIds:
-          - {}
-          - media_content_type: ''
-            media_content_id: __MANUAL_ENTRY__
-          browse_entity_id: media_player.bathroom
-    target:
-      entity_id: media_player.bathroom
+    data: {}
   - action: media_player.shuffle_set
     metadata: {}
     data:
