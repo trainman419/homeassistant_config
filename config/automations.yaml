@@ -257,7 +257,7 @@
   - data:
       transition: 300
       brightness_pct: 100
-      color_temp: 299
+      color_temp_kelvin: 2992
     target:
       area_id: a7e7176a46f44fccb565020478a1496b
       device_id:
