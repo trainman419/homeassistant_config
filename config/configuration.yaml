@@ -135,17 +135,6 @@ sensor:
   #     - weather_4d
   #     - weather_4n
 
-light:
-  - platform: decora_wifi
-    username: namniart@gmail.com
-    password: !secret leviton_password
-
-influxdb:
-  host: 127.0.0.1
-  port: 8086
-  username: home_assistant
-  password: home_assistant
-
 #google:
 #  client_id: !secret google_cal_client_id
 #  client_secret: !secret google_cal_client_secret
