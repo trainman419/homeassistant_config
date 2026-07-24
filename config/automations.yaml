@@ -302,28 +302,38 @@
 - id: '1670289138359'
   alias: Xmas Tree On
   description: ''
-  trigger:
-  - platform: time
-    at: 08:00:00
-  condition: []
-  action:
-  - service: switch.turn_on
-    data: {}
+  triggers:
+  - at: 08:00:00
+    trigger: time
+  conditions: []
+  actions:
+  - data: {}
     target:
       entity_id: switch.tplink_switch
+    action: switch.turn_on
+  - action: switch.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.kasa_smart_wi_fi_plug_2
   mode: single
 - id: '1670289179108'
   alias: Xmas Tree Off
   description: ''
-  trigger:
-  - platform: time
-    at: '22:00:00'
-  condition: []
-  action:
-  - service: switch.turn_off
-    data: {}
+  triggers:
+  - at: '22:00:00'
+    trigger: time
+  conditions: []
+  actions:
+  - data: {}
     target:
       entity_id: switch.tplink_switch
+    action: switch.turn_off
+  - action: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.kasa_smart_wi_fi_plug_2
   mode: single
 - id: '1670641280609'
   alias: Laundry Motion Light - On

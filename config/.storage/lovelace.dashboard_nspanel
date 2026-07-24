@@ -58,7 +58,7 @@
                   "show_name": true,
                   "show_icon": true,
                   "type": "button",
-                  "entity": "script.bedtime",
+                  "entity": "script.katrina_bedtime",
                   "hold_action": {
                     "action": "call-service",
                     "service": "script.turn_on",

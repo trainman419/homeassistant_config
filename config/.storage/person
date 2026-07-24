@@ -29,9 +29,19 @@
         "id": "nspanel",
         "name": "nspanel",
         "device_trackers": [
-          "device_tracker.px30_evb"
+          "device_tracker.px30_evb",
+          "device_tracker.nspanel"
         ],
         "user_id": "58af5d664c9c49dc8e038a6ad4724ec4",
+        "picture": null
+      },
+      {
+        "id": "mira",
+        "name": "Mira",
+        "device_trackers": [
+          "device_tracker.miras_iphone"
+        ],
+        "user_id": "4f3be9017a8f433c89ad9a2ac92af98f",
         "picture": null
       }
     ]

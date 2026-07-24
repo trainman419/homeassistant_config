@@ -21,15 +21,6 @@
         "require_admin": false,
         "mode": "storage",
         "url_path": "dashboard-nspanel"
-      },
-      {
-        "id": "dashboard_lcars",
-        "show_in_sidebar": true,
-        "icon": "mdi:rocket-launch",
-        "title": "LCARS",
-        "require_admin": false,
-        "mode": "storage",
-        "url_path": "dashboard-lcars"
       }
     ]
   }

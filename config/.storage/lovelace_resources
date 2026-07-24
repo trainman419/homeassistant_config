@@ -21,17 +21,17 @@
       },
       {
         "id": "8fb6079696c744f584121f5bf578cf1d",
-        "url": "/hacsfiles/atomic-calendar-revive/atomic-calendar-revive.js?hacstag=2465497471000",
+        "url": "/hacsfiles/atomic-calendar-revive/atomic-calendar-revive.js?hacstag=2465497471031",
         "type": "module"
       },
       {
         "id": "e53397ba6b2f4d70a5daefde062ce917",
-        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375508",
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375511",
         "type": "module"
       },
       {
         "id": "1c00591ebc9f4ebe9b58a975776db55b",
-        "url": "/hacsfiles/battery-state-card/battery-state-card.js?hacstag=256292682321",
+        "url": "/hacsfiles/battery-state-card/battery-state-card.js?hacstag=256292682420",
         "type": "module"
       }
     ]

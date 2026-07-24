@@ -137,3 +137,107 @@ great_room_blinds_up:
       entity_id: remote.family_room_remote
   mode: single
   icon: mdi:blinds-open
+katrina_bedtime:
+  sequence:
+  - data: {}
+    target:
+      area_id:
+      - dining_room
+      - great_room
+      - hallway
+      - living_room
+      - mechanical_room
+      - bar
+    action: light.turn_off
+  - data: {}
+    target:
+      entity_id:
+      - switch.deck_light
+      - switch.great_room_porch
+      - switch.laundry
+      - switch.outside_laundry
+      - switch.back_door_light
+      - switch.detached_garage_lights
+    action: switch.turn_off
+  - data: {}
+    target:
+      entity_id: input_boolean.workshop_driveway_override
+    action: input_boolean.turn_off
+  alias: Katrina Bedtime
+  mode: single
+  icon: mdi:lightbulb-group-off
+  description: ''
+going_out:
+  sequence:
+  - data: {}
+    target:
+      area_id:
+      - bar_room
+      - dining_room
+      - downstairs_hall
+      - great_room
+      - kitchen
+      - living_room
+      - stairs
+      - bar
+      - a7e7176a46f44fccb565020478a1496b
+    action: light.turn_off
+  - data: {}
+    target:
+      entity_id:
+      - switch.deck_light
+      - switch.great_room_porch
+      - switch.laundry
+      - switch.outside_laundry
+      - switch.back_door_light
+      - switch.detached_garage_lights
+    action: switch.turn_off
+  - data: {}
+    target:
+      entity_id: input_boolean.workshop_driveway_override
+    action: input_boolean.turn_off
+  alias: Going Out
+  mode: single
+  icon: mdi:lightbulb-group-off
+  description: ''
+bathroom_wakeup:
+  sequence:
+  - action: media_player.clear_playlist
+    metadata: {}
+    data: {}
+    target:
+      entity_id: media_player.bathroom
+  - action: media_player.volume_mute
+    metadata: {}
+    data:
+      is_volume_muted: true
+    target:
+      entity_id: media_player.bathroom
+  - action: media_player.play_media
+    metadata: {}
+    data:
+      media:
+        media_content_id: ''
+        media_content_type: ''
+        metadata:
+          navigateIds:
+          - {}
+          - media_content_type: ''
+            media_content_id: __MANUAL_ENTRY__
+          browse_entity_id: media_player.bathroom
+    target:
+      entity_id: media_player.bathroom
+  - action: media_player.shuffle_set
+    metadata: {}
+    data:
+      shuffle: true
+    target:
+      entity_id: media_player.bathroom
+  - action: media_player.volume_mute
+    metadata: {}
+    data:
+      is_volume_muted: false
+    target:
+      entity_id: media_player.bathroom
+  alias: Bathroom Wakeup
+  description: ''
