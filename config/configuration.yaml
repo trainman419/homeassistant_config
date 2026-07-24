@@ -158,13 +158,11 @@ calendar:
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations
 
-cover:
-  - platform: template
-    covers:
-      left_garage_door:
-        device_class: garage
-        friendly_name: "Left Garage Door"
-        position_template: "{{ states('binary_sensor.left_garage_door_sensor_window_door_is_open') != 'off' }}"
+template:
+  - cover:
+      - device_class: garage
+        name: "Left Garage Door"
+        position: "{{ states('binary_sensor.left_garage_door_sensor_window_door_is_open') != 'off' }}"
         open_cover:
           - condition: state
             entity_id: binary_sensor.left_garage_door_sensor_window_door_is_open
@@ -183,16 +181,16 @@ cover:
           service: switch.turn_on
           target:
             entity_id: switch.left_garage_door
-        icon_template: >-
+        icon: >-
           {% if states('binary_sensor.left_garage_door_sensor_window_door_is_open') != 'off' %}
             mdi:garage-open
           {% else %}
             mdi:garage
           {% endif %}
-      right_garage_door:
-        device_class: garage
-        friendly_name: "Right Garage Door"
-        position_template: "{{ states('binary_sensor.right_garage_door_sensor_window_door_is_open') != 'off' }}"
+  - cover:
+      - device_class: garage
+        name: "Right Garage Door"
+        position: "{{ states('binary_sensor.right_garage_door_sensor_window_door_is_open') != 'off' }}"
         open_cover:
           - condition: state
             entity_id: binary_sensor.right_garage_door_sensor_window_door_is_open
@@ -211,15 +209,15 @@ cover:
           service: switch.turn_on
           target:
             entity_id: switch.right_garage_door
-        icon_template: >-
+        icon: >-
           {% if states('binary_sensor.right_garage_door_sensor_window_door_is_open') != 'off' %}
             mdi:garage-open
           {% else %}
             mdi:garage
           {% endif %}
-      dining_blinds:
-        device_class: shade
-        friendly_name: "Dining Shades"
+  - cover:
+      - device_class: shade
+        name: "Dining Shades"
         open_cover:
           - service: remote.send_command
             data:
@@ -237,9 +235,9 @@ cover:
         # Icons
         # icon: mdi:blinds
         # icon: mdi:blinds-open
-      great_room_blinds:
-        device_class: shade
-        friendly_name: "Great Room Shades"
+  - cover:
+      - device_class: shade
+        name: "Great Room Shades"
         open_cover:
           - service: remote.send_command
             data:
