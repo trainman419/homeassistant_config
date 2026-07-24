@@ -206,27 +206,49 @@ bathroom_wakeup:
     metadata: {}
     data: {}
     target:
-      entity_id: media_player.bathroom
+      entity_id:
+      - media_player.kitchen
   - action: media_player.volume_mute
     metadata: {}
     data:
       is_volume_muted: true
     target:
-      entity_id: media_player.bathroom
-  - action: rest_command.play_preset1_on_bathroom
+      entity_id:
+      - media_player.kitchen
+      - media_player.bathroom
+      - media_player.living_room
+  - action: media_player.join
     metadata: {}
-    data: {}
+    target:
+      entity_id: media_player.kitchen
+    data:
+      group_members:
+      - media_player.bathroom
+      - media_player.living_room_2
+  - action: media_player.select_source
+    metadata: {}
+    target:
+      entity_id: media_player.kitchen
+    data:
+      source: Wakeup
   - action: media_player.shuffle_set
     metadata: {}
+    target:
+      entity_id: media_player.kitchen
     data:
       shuffle: true
+  - action: media_player.media_next_track
+    metadata: {}
+    data: {}
     target:
-      entity_id: media_player.bathroom
+      entity_id: media_player.kitchen
   - action: media_player.volume_mute
     metadata: {}
     data:
       is_volume_muted: false
     target:
-      entity_id: media_player.bathroom
-  alias: Bathroom Wakeup
+      entity_id:
+      - media_player.kitchen
+    enabled: true
+  alias: Music Wakeup
   description: ''

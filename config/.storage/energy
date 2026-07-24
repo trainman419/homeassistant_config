@@ -1,23 +1,23 @@
 {
   "version": 1,
-  "minor_version": 1,
+  "minor_version": 3,
   "key": "energy",
   "data": {
     "energy_sources": [
       {
         "type": "grid",
-        "flow_from": [
-          {
-            "stat_energy_from": "sensor.total_wh",
-            "stat_cost": null,
-            "entity_energy_price": null,
-            "number_energy_price": null
-          }
-        ],
-        "flow_to": [],
-        "cost_adjustment_day": 0.0
+        "cost_adjustment_day": 0.0,
+        "stat_energy_from": "sensor.total_wh",
+        "stat_cost": null,
+        "entity_energy_price": null,
+        "number_energy_price": null,
+        "stat_energy_to": null,
+        "stat_compensation": null,
+        "entity_energy_price_export": null,
+        "number_energy_price_export": null
       }
     ],
-    "device_consumption": []
+    "device_consumption": [],
+    "device_consumption_water": []
   }
 }

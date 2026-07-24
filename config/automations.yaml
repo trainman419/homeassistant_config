@@ -249,13 +249,12 @@
 - id: '1656398231281'
   alias: Wake up
   description: ''
-  trigger:
-  - platform: time
-    at: input_datetime.wakeup
-  condition: []
-  action:
-  - service: light.turn_on
-    data:
+  triggers:
+  - at: input_datetime.wakeup
+    trigger: time
+  conditions: []
+  actions:
+  - data:
       transition: 300
       brightness_pct: 100
       color_temp: 299
@@ -268,6 +267,10 @@
       - b895526190c97def3ad9324f36f69f2a
       - b6024b903b5a35924daeb44ce2f50820
       - 0c27a8ca4e24809c2c9cc5402aff2d75
+    action: light.turn_on
+  - action: script.bathroom_wakeup
+    metadata: {}
+    data: {}
   mode: single
 - id: '1663601026179'
   alias: Update espresso time
