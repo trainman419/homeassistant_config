@@ -237,18 +237,148 @@ bathroom_wakeup:
       entity_id: media_player.kitchen
     data:
       shuffle: true
+    enabled: false
   - action: media_player.media_next_track
     metadata: {}
     data: {}
     target:
       entity_id: media_player.kitchen
-  - action: media_player.volume_mute
+  - action: media_player.volume_set
+    metadata: {}
+    target:
+      entity_id: media_player.kitchen
+    data:
+      volume_level: 0.08
+  - action: media_player.volume_set
     metadata: {}
     data:
-      is_volume_muted: false
+      volume_level: 0.21
+    target:
+      entity_id: media_player.living_room
+  - action: media_player.volume_set
+    metadata: {}
+    target:
+      entity_id:
+      - media_player.bathroom
+    data:
+      volume_level: 0.12
+  alias: Music Wakeup
+  description: ''
+music_wakeup_duplicate:
+  sequence:
+  - action: media_player.clear_playlist
+    metadata: {}
+    data: {}
     target:
       entity_id:
       - media_player.kitchen
+  - action: media_player.volume_mute
+    metadata: {}
+    data:
+      is_volume_muted: true
+    target:
+      entity_id:
+      - media_player.kitchen
+      - media_player.bathroom
+      - media_player.living_room
+  - action: media_player.join
+    metadata: {}
+    target:
+      entity_id: media_player.kitchen
+    data:
+      group_members:
+      - media_player.bathroom
+      - media_player.living_room_2
+  - action: media_player.select_source
+    metadata: {}
+    target:
+      entity_id: media_player.kitchen
+    data:
+      source: Workday Wakeup
+  - action: media_player.shuffle_set
+    metadata: {}
+    target:
+      entity_id: media_player.kitchen
+    data:
+      shuffle: true
     enabled: true
-  alias: Music Wakeup
+  - action: media_player.media_next_track
+    metadata: {}
+    data: {}
+    target:
+      entity_id: media_player.kitchen
+  - action: media_player.volume_set
+    metadata: {}
+    target:
+      entity_id: media_player.kitchen
+    data:
+      volume_level: 0.08
+  - action: media_player.volume_set
+    metadata: {}
+    data:
+      volume_level: 0.21
+    target:
+      entity_id: media_player.living_room
+  - action: media_player.volume_set
+    metadata: {}
+    target:
+      entity_id:
+      - media_player.bathroom
+    data:
+      volume_level: 0.12
+  alias: Austin Wakeup
+  description: ''
+play_radio:
+  sequence:
+  - action: media_player.unjoin
+    metadata: {}
+    data: {}
+    target:
+      entity_id: '{{player}}'
+  - wait_for_trigger:
+    - trigger: state
+      entity_id:
+      - media_player.bathroom
+      to:
+      - idle
+    continue_on_timeout: false
+    timeout:
+      hours: 0
+      minutes: 1
+      seconds: 0
+      milliseconds: 0
+    enabled: false
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - action: media_player.play_media
+    metadata: {}
+    target:
+      entity_id: '{{player}}'
+    data:
+      media:
+        media_content_id: '{{radio_url}}'
+        media_content_type: ''
+        metadata:
+          navigateIds:
+          - {}
+          - media_content_type: ''
+            media_content_id: __MANUAL_ENTRY__
+          browse_entity_id: '{{player}}'
+    enabled: true
+  fields:
+    radio_url:
+      selector:
+        text:
+      name: Radio URL
+      required: true
+    player:
+      selector:
+        entity:
+          domain: media_player
+      name: Player
+      required: true
+  alias: Play Radio
   description: ''

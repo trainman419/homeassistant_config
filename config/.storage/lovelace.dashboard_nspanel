@@ -128,25 +128,11 @@
                   },
                   "tap_action": {
                     "action": "perform-action",
-                    "perform_action": "media_player.play_media",
-                    "target": {
-                      "entity_id": "media_player.bathroom"
-                    },
+                    "perform_action": "script.play_radio",
+                    "target": {},
                     "data": {
-                      "media": {
-                        "media_content_id": "https://kexp.streamguys1.com/kexp160.aac",
-                        "media_content_type": "",
-                        "metadata": {
-                          "navigateIds": [
-                            {},
-                            {
-                              "media_content_type": "",
-                              "media_content_id": "__MANUAL_ENTRY__"
-                            }
-                          ],
-                          "browse_entity_id": "media_player.bathroom"
-                        }
-                      }
+                      "radio_url": "https://kexp.streamguys1.com/kexp160.aac",
+                      "player": "media_player.bathroom"
                     }
                   }
                 },
@@ -164,25 +150,11 @@
                   },
                   "tap_action": {
                     "action": "perform-action",
-                    "perform_action": "media_player.play_media",
-                    "target": {
-                      "entity_id": "media_player.bathroom"
-                    },
+                    "perform_action": "script.play_radio",
+                    "target": {},
                     "data": {
-                      "media": {
-                        "media_content_id": "https://classicalking.streamguys1.com/king-fm-aac-128k",
-                        "media_content_type": "",
-                        "metadata": {
-                          "navigateIds": [
-                            {},
-                            {
-                              "media_content_type": "",
-                              "media_content_id": "__MANUAL_ENTRY__"
-                            }
-                          ],
-                          "browse_entity_id": "media_player.bathroom"
-                        }
-                      }
+                      "radio_url": "https://classicalking.streamguys1.com/king-fm-aac-128k",
+                      "player": "media_player.bathroom"
                     }
                   },
                   "name": "Classical King"
@@ -201,25 +173,11 @@
                   },
                   "tap_action": {
                     "action": "perform-action",
-                    "perform_action": "media_player.play_media",
-                    "target": {
-                      "entity_id": "media_player.bathroom"
-                    },
+                    "perform_action": "script.play_radio",
+                    "target": {},
                     "data": {
-                      "media": {
-                        "media_content_id": "https://knkx-live-a.edge.audiocdn.com/6285_256k",
-                        "media_content_type": "",
-                        "metadata": {
-                          "navigateIds": [
-                            {},
-                            {
-                              "media_content_type": "",
-                              "media_content_id": "__MANUAL_ENTRY__"
-                            }
-                          ],
-                          "browse_entity_id": "media_player.bathroom"
-                        }
-                      }
+                      "radio_url": "https://knkx-live-a.edge.audiocdn.com/6285_256k",
+                      "player": "media_player.bathroom"
                     }
                   },
                   "name": "JAZZ24"

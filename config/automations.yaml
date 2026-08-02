@@ -83,20 +83,26 @@
   mode: single
 - id: arrive_lights
   alias: Lights on when we get home
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - zone.home
-    to: '1'
-    from: '0'
-  condition:
+    to:
+    - '1'
+    - '2'
+    from:
+    - '0'
+    trigger: state
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+  conditions:
   - condition: state
     entity_id: sun.sun
     state: below_horizon
-  action:
-  - service: light.turn_on
-    data:
-      color_temp: 300
+  actions:
+  - data:
+      color_temp_kelvin: 3000
       brightness_pct: 100
     target:
       area_id: a7e7176a46f44fccb565020478a1496b
@@ -105,6 +111,7 @@
       - light.stair_light
       - light.kitchen
       - light.living_room_walkway
+    action: light.turn_on
   mode: single
 - id: bedtime
   alias: Lights down for bedtime
@@ -945,4 +952,26 @@
     data: {}
     target:
       entity_id: light.extended_color_light_1_2
+  mode: single
+- id: '1784957107971'
+  alias: Away
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - zone.home
+    attribute: persons
+    to:
+    - '0'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
+  - action: notify.mobile_app_austin_s_iphone
+    metadata: {}
+    data:
+      message: Away Automation Test
+      title: Away
   mode: single
